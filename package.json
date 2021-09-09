@@ -4,7 +4,8 @@
   "description": "SRMSC Lab Website using Express js",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "node server.js",
+    "devRun" : "nodemon server.js"
   },
   "author": "Parth Gupta",
   "license": "ISC",
