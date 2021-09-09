@@ -1,0 +1,970 @@
+/// connect to MongoDB Atlas using the following command in cmd prompt 	--
+mongosh "mongodb+srv://cluster0.6ddag.mongodb.net/SRMSC" --username parth
+/// pwd - abhi123
+
+/// creating collection - index
+
+db.createCollection('index')
+
+/// inserting main content and heading in it
+
+db.index.insertMany([{
+	'top_msg' : 'Dr. Roy is having an NPTEL course on "Techniques of Materials characterization". This will be released very soon'
+},{
+	'intro' : {
+		'title' : 'Who are WE ???',
+		'para-content' : 'SPP is an IIT Kharagpur-based research group in the Materials Science Centre lead by Dr. Shibayan Roy since 2016. The group tries to correlate the mechanical behavior with the microstructures in the different systems (Metal-based alloys, Composites, and Glass-ceramics). The main purpose of the SPP group is to interrelate and find the link between the three main stems, i.e., Structure, Property, and Processing in various systems. The group is very diverse and has no barriers in terms of background. It includes Physicists, Metallurgists, Ceramists, Nano-technologists, and Mechanical people and is open to many more such minds who are very passionate and enthusiasts for research and can dive in and explore the limitless extremities.',
+		'quote' : 'WE BELIEVE THAT RESEARCH IS A LIFESTYLE, NOT A JOB'	   	
+		}
+},
+{
+	'group_updates' : [
+		{
+	'point' : 'Ashoktaru has been granted an operator-ship of departmental FESEM.'
+},
+{
+	'point' : 'Kamalika and Roja have successfully completed their registration seminar.'
+},
+{
+	'point' : 'Souvik published a paper titled "Site-dependent microstructure, porosity and mechanical properties of LENSTM processed Ti-6Al-4V alloy", in Materials Science and Engineering A.'
+},
+{
+	'point' : 'Souvik published a paper titled "Statistical modeling of microstructure evolution in a Ti-6Al-4V alloy during isothermal compression" in Acta Materialia.'
+},
+{
+	'point' : 'Faizal has recently secured 3rd prize for the group project titled "Write an article to Wikipedia on the use of glass in the human body" at the 2nd ICG-CGCRI Tutorial 2021.'
+}
+]}])
+
+/// create collection - group_members
+
+db.createCollection('group_members')
+
+/// fiiling in group_members
+
+db.group_members.insertMany([{
+	'shibayan_sir' : {
+	'name' : 'Dr. Shibayan Roy',
+	'role' : 'Assistant Professor, IIT Kharagpur',
+	'para_content' : 'Dr. Shibayan Roy is currently an Assistant Professor in the Materials Science Center of Indian Institute of Technology IIT-Kharagpur in India. He has joined the institute in November 2015 and continuing to date.',
+	'links' : {
+		'home_website' : 'https://sites.google.com/site/shibayansdreams/home?authuser=0',
+		'researcher_id' : 'https://publons.com/researcher/2730857/shibayan-roy/',
+		'google_scholar' : 'https://scholar.google.co.in/citations?user=YkEQ8ZsAAAAJ&oi=ao',
+		'email' : 'shibayan@matsc.iitkgp.ac.in'
+		},
+	'img_url' : 'shibayan.jpg'
+}},
+{
+	'team_members' : [
+{
+	'mem_id' : '0',
+	'name' : 'Souvik Sahoo',
+	'role' : 'Research Scholar',
+	'img_url' : 'souvik.jpg',
+	'cv_link' : 'https://drive.google.com/file/d/0Bzb-lXif_LfzLUhpVXh6MzBuWE0/view?resourcekey=0-Zjp_q-NcNMN46SaY9eQOoQ'
+},
+{
+	'mem_id' : '1',
+	'name' : 'Ashoktaru Chakraborty',
+	'role' : 'Research Scholar',
+	'img_url' : 'ashoktaru.jpg',
+	'cv_link' : 'https://drive.google.com/file/d/0Bzb-lXif_LfzWlUtcFN1ZDc3MTA/view?resourcekey=0-pzbdoWtK4tzUf_zVmBpf0w',
+},
+{
+	'mem_id' : '2',
+	'name' : 'Samarendra Roy',
+	'role' : 'Research Scholar',
+	'img_url' : 'samarendra.jpg',
+	'cv_link' : 'https://drive.google.com/file/d/0Bzb-lXif_LfzYnFxZXJtNWVtV2s/view?resourcekey=0-Em48P5GNXQr06hJ2qgFnXw',
+},
+{
+	'mem_id' : '3',
+	'name' : 'Kamalika Mandal',
+	'role' : 'Research Scholar',
+	'img_url' : 'kamalika.jpg',
+	'cv_link' : 'https://drive.google.com/file/d/13b4-i5VCW7gwz-iQkJ_qYEbOYlvefCbM/view',
+},
+{
+	'mem_id' : '4',
+	'name' : 'Samar Mondal',
+	'role' : 'Research Scholar',
+	'img_url' : 'samar.jpg',
+	'cv_link' : 'NA',
+},
+{
+	'mem_id' : '5',
+	'name' : 'Roja Rani K.',
+	'role' : 'Research Scholar',
+	'img_url' : 'roja.jpg',
+	'cv_link' : 'https://drive.google.com/file/d/1atfgCWapOVyh9-ttLhps087THkDs-fVz/view',
+},
+{
+	'mem_id' : '6',
+	'name' : 'Saumya Gupta',
+	'role' : 'Research Scholar',
+	'img_url' : 'saumya.jpg',
+	'cv_link' : 'https://drive.google.com/file/d/1aqS2DG0dbavlhlXNCpxeCYCOvOt_L__f/view',
+},
+{
+	'mem_id' : '7',
+	'name' : 'Arjun Mahato',
+	'role' : 'Research Scholar',
+	'img_url' : 'arjun.jpg',
+	'cv_link' : 'https://drive.google.com/file/d/1EZxw0wogV4guwT_EqD8SYha5wuH83Sk8/view',
+},
+{
+	'mem_id' : '8',
+	'name' : 'Mohamed Faizal Usaama J.',
+	'role' : 'Research Scholar',
+	'img_url' : 'faizal.jpg',
+	'cv_link' : 'https://drive.google.com/file/d/1rje9h1WWSieCC140SJ9s9GVXTyQyr5EY/view',
+},
+{
+	'mem_id' : '9',
+	'name' : 'Malarvizhi Thangarasu',
+	'role' : 'Research Scholar',
+	'img_url' : 'malarvizhi.jpg',
+	'cv_link' : 'https://drive.google.com/file/d/1mRTvOE1pBqGHT4yVjnCeXNrc9bWaj-gk/view',
+},
+{
+	'mem_id' : '10',
+	'name' : 'Lalit Ahlawat',
+	'role' : 'Research Scholar',
+	'img_url' : 'lalit.jpg',
+	'cv_link' : 'NA',
+}
+]
+},
+{
+	'team_interns': [
+{
+	'intern_id' : '0',
+	'details' : 'Nidhi Gupta, Visvesvaraya National Institute of Technology VNIT Nagpur (August 2020-)'
+},
+{
+	'intern_id' : '1',
+	'details' : 'Shubhadip Paul, National Institute of Technology Durgapur (April 2021-)'
+},
+{
+	'intern_id' : '2',
+	'details' : 'Rohan Pathy, National Institute of Technology Rourkela (April 2021-)'
+}
+]
+},
+{
+	'alumni' : [
+{
+	'alumni_id' : '0',
+	'name' : 'Mrinmoy Garari',
+	'details' : {
+		'0' : 'Post-doctoral fellow (DST-SERB N-PDF) from March 2017 to March 2019',
+		'1' : 'Project: Processing, microstructure and mechanical properties of high-strength Mica and Leucite based glass-ceramics',
+		'2' : 'Current status: Quality Assurance Officer, Directorate General of Aeronautical Quality Assurance (DGAQA), Ministry of Defense, Govt. of India',
+		'3' : 'Previous Education: Ph. D. (Chemistry), Jadavpur University, 2016 (Worked at: CSIR-Central Glass & Ceramic Research Institute, Kolkata, India)'
+	},
+	'img_url' : 'mrinmoy.jpg',
+	'email' : 'mrinmoygarai@yahoo.co.in'
+},
+{
+	'alumni_id' : '1',
+	'name' : 'Sunil Yadav',
+	'details' : {
+		'0' : 'Course registered: M. Tech (July 2015 - May 2017)',
+		'1' : 'Current status: Doctoral student at IIT Madras',
+		'2' : 'Project: Microstructure-processing-property correlation in machinable glass ceramics',
+		'3' : 'Previous Education: B.E. in Metallurgical Engineering, O.P. Jindal Institute of Technology, Raigarh, Chattisgarh'
+	},
+	'img_url' : 'sunil.jpg',
+	'email' : 'suniyadav786@gmail.com'
+},
+{
+	'alumni_id' : '2',
+	'name' : 'Silva Basu',
+	'details' : {
+		'0' : 'Course registered: M. Tech (July 2015 - May 2017)',
+		'1' : 'Current status: Doctoral student at Karlsruhe Institute of Technology, Germany',
+		'2' : 'Project: Strain rate sensitivity of a TRIP-assisted dual-phase high-entropy alloy (as a DAAD fellow in RWTH Aachen & MPIE Dusseldorf, Germany)',
+		'3' : 'Previous Education: B Tech in Metallurgical and Materials Engineering, Jadavpur University, Kolkata'
+	},
+	'img_url' : 'silva.jpg',
+	'email' : 'silva.basu@kit.edu'
+},
+{
+	'alumni_id' : '3',
+	'name' : 'Anuja P. Joshi',
+	'details' : {
+		'0' : 'Course registered: M. Tech (July 2015 - May 2017)',
+		'1' : 'Current Status: Research Scientist at Airbus India',
+		'2' : 'Project: Processing - microstructure - mechanical property relationship in additive manufactured (LENS) Ti-6Al-4V alloy',
+		'3' : 'Previous Education: B. Tech in Metallurgy and Material Science, College of Engineering, Pune'
+	},
+	'img_url' : 'anuja.jpg',
+	'email' : 'anuja.joshi@airbus.com'
+},
+{
+	'alumni_id' : '4',
+	'name' : 'Anoop Kumar Maurya',
+	'details' : {
+		'0' : 'Current status: Doctoral student at School of Materials Science and Engineering, Gyeongsang National University, South Korea',
+		'1' : 'Course registered: M. Tech (July 2016 - May 2018)',
+		'2' : 'Project: Effect of process variables on the microstructure, micro-texture and mechanical properties of additive manufactured (LENS) Ti-6Al-4V alloy',
+		'3' : 'Previous Education: M.Sc in General Chemistry, VNIT Nagpur'
+	},
+	'img_url' : 'anoop.jpg',
+	'email' : 'anoopmaurya70@gmail.com'
+},
+{
+	'alumni_id' : '5',
+	'name' : 'Biswajit M. Patra',
+	'details' : {
+		'0' : 'Course registered: M. Tech (July 2017 - May 2019)',
+		'1' : 'Current status: Research scientist at Tata Steel India',
+		'2' : 'Project: Microstructure-processing-mechanical property relationship of hot pressed (powder metallurgy) Cu-Sn alloy',
+		'3' : 'Previous Education: B. Tech in Ceramic Engineering, National Institute of Technology NIT Rourkela, Odisha'
+	},
+	'img_url' : 'biswajit.jpg',
+	'email' : 'biswajitmpatra1@gmail.com'
+},
+{
+	'alumni_id' : '6',
+	'name' : 'Sushmita Sharma',
+	'details' : {
+		'0' : 'Course registered: M. Tech (July 2017 - May 2019)',
+		'1' : 'Current status: Research scientist at Tata Advanced Systems Ltd.',
+		'2' : 'Project: Structure-property relationship of a) Direct metal laser sintering (DMLS) manufactured Ti-6Al-4V alloy, and b) ZrO2 containing Mica glass ceramics',
+		'3' : 'Previous Education: B. Tech in Nanotechnology, Central University of Jharkhand, Ranchi, Jharkhand'
+	},
+	'img_url' : 'sushmita.jpg',
+	'email' : 'sush.sumi17@gmail.com'
+},
+{
+	'alumni_id' : '7',
+	'name' : 'Saumya Gupta',
+	'details' : {
+		'0' : 'Course registered: M. Tech (July 2018 - May 2020)',
+		'1' : 'Current status: Doctoral student at Materials Science Center, IIT Kharagpur',
+		'2' : 'Project: Structure-property relationship in additively manufactured steel and Ni-superalloys (In collaboration with Wayne State University, USA)',
+		'3' : 'Previous Education: Masters of Science (Physics), Kanpur University (C.S.J.M.U.)'
+	},
+	'img_url' : 'saumya.jpg',
+	'email' : 'iamsaumyagupta@gmail.com'
+},
+{
+	'alumni_id' : '8',
+	'name' : 'Arjun Mahato',
+	'details' : {
+		'0' : 'Course registered: M. Tech (July 2018 - May 2020)',
+		'1' : 'Current status: Doctoral student at Materials Science Center, IIT Kharagpur',
+		'2' : 'Project: Structure-property relationship for C-fiber reinforced MMC and CMC (In collaboration with Tata Steel)',
+		'3' : 'Previous Education: B. Tech in Nanotechnology from Central university of Jharkhand, Ranchi'
+	},
+	'img_url' : 'arjun.jpg',
+	'email' : 'mahatoarjun244@gmail.co'
+},
+{
+	'alumni_id' : '9',
+	'name' : 'Kavin Kannan',
+	'details' : {
+		'0' : 'Course registered: M. Tech (July 2019 -May 2021)',
+		'1' : 'Current status: Scientist in Bureau of Indian Standards (BIS)',
+		'2' : 'Project: Microstructure and texture evolution during thermo-mechanical processing of Titanium alloys',
+		'3' : 'Previous Education: B. E. in Metallurgical Engineering, PSG College of Technology, Coimbatore'
+	},
+	'img_url' : 'kavin.jpg',
+	'email' : 'kavinpsg1996@gmail.com'
+},
+{
+	'alumni_id' : '10',
+	'name' : 'Chalapakka Phani N.',
+	'details' : {
+		'0' : 'Course registered: M. Tech (July 2019 -May 2021)',
+		'1' : 'Current status: Applying for higher studies',
+		'2' : 'Project: Structure-property relationship for C-fibre reinforced ultra-high temperature (UHC) ceramics composites',
+		'3' : 'Previous Education: B. E. in Metallurgical Engineering, JNTUK University College of Engineering, Vizianagaram'
+	},
+	'img_url' : 'phani.jpg',
+	'email' : 'ch.phanikumar654@gmail.com'
+}
+]
+},
+{
+	'alumni_interns' : [
+{
+	'intern_id' : '0',
+	'details' : 'Anubhav Singh, Birla Institute of Technology Mesra, Jharkhand (May-July 2017)'
+},
+{
+	'intern_id' : '1',
+	'details' : 'Deeksha Kodangal, National Institute of Technology, Karnataka (December 2017-January 2018)'
+},
+{
+	'intern_id' : '2',
+	'details' : 'Abhirup Saha, Indian Institute of Technology, IIT Kanpur (December 2017-January 2018)'
+},
+{
+	'intern_id' : '3',
+	'details' : 'Subham Ray, National Institute of Technology NIT Durgapur (December 2018-January 2019; August-November 2020 )'
+},
+{
+	'intern_id' : '4',
+	'details' : 'Milind Nayek, University of Waterloo, Canada (January -April 2019)'
+},
+{
+	'intern_id' : '5',
+	'details' : 'Munmi Das, National Institute of Technology NIT Rourkela (May-July 2019)'
+},
+{
+	'intern_id' : '6',
+	'details' : 'Bhaskarjyoti Das, Indian Institute of Engineering Science and Technology (IIEST), Shibpur (May-July 2019)'
+},
+{
+	'intern_id' : '7',
+	'details' : 'Koomarmangalam Dey, Indian Institute of Technology, IIT Kharagpur (May-July 2019; May 2020)'
+},
+{
+	'intern_id' : '8',
+	'details' : 'Pronoy Roy, National Institute of Technology NIT Durgapur (June 2020-September 2020)'
+},
+{
+	'intern_id' : '9',
+	'details' : 'Tharun Reddy, Sir M. Visvesvaraya Institute of Technology, Bangalore (September 2020-January 2021)'
+}
+]
+}])
+
+/// create collection - research
+
+db.createCollection('research')
+
+/// filling in research data
+
+db.research.insertMany([
+{
+	'intro' : {
+		'title' : 'What We Do Research???',
+		'para_content' : 'As for the research interest of Dr. Roy, the members of the SPP group are involved in the broad area of “Processing-Structure-Property correlation” through the understanding of micro-mechanisms that governs the fundamental mechanical response of materials. Our studies are mostly experimental in nature, however, we always try to complement our experimental results with various simulation-based approaches (Density functional theory, Artificial neural network, etc.).',
+		'research_interests' : [
+			{
+				'interest' : 'Mechanical properties of materials'
+			},
+			{
+				'interest' : 'Meso- and micro-scale mechanical characterization'
+			},
+			{
+				'interest' : 'Crystallographic texture of materials and EBSD'
+			},
+			{
+				'interest' : 'Glass and glass-ceramics'
+			},
+			{
+				'interest' : 'Additive and Laser-based manufacturing'
+			}
+		],
+		'research_insights' : [
+			{
+				'img_url' : 'Cu-Sn.jpg',
+				'img_caption' : 'Cu-Sn',
+			},
+			{
+				'img_url' : 'Mica-and-luicite-based-glass-ceramics.png',
+				'img_caption' : 'Mica and leucite based Glass Ceramics',
+			},
+			{
+				'img_url' : 'glass-ceramics.png',
+				'img_caption' : 'Glass Ceramics',
+			},
+			{
+				'img_url' : 'ceramic-composite.jpg',
+				'img_caption' : 'Ceramic Composites',
+			},
+			{
+				'img_url' : 'cryo-rolling-of-CP- Aluminium.png',
+				'img_caption' : 'Cryo-rolling of CP-Al',
+			},
+			{
+				'img_url' : 'Additive-Manufacturing.png',
+				'img_caption' : 'AM over different metallic systems',
+			},
+			{
+				'img_url' : 'Titanium-alloy.png',
+				'img_caption' : 'Ti alloy',
+			},
+			{
+				'img_url' : 'Aluminium-alloy.jpg',
+				'img_caption' : 'Al alloy',
+			},
+			{
+				'img_url' : 'Shear-Banding.png',
+				'img_caption' : 'Shear Banding',
+			},
+			{
+				'img_url' : '2-point-statistics-for-Ti-alloy.png',
+				'img_caption' : 'Two-point statistics for Ti alloy',
+			}
+		]
+	}
+},
+{
+	'ongoing_work' : [
+			{
+				'ongoing_id' : '0',
+				'title' : 'Microstructure formation, macro-zone removal of Ti-alloys',
+				'members_involved' : 'Souvik Sahoo',
+				'para_content' : 'The objective of the study is to observe microstructure and texture evolution in as-cast and thermo-mechanically processed (rolled, forged, and extruded) two-phase Ti-6Al-4V alloys. For that, reconstruction of β-phase from room temperature α-phase was carried out to observe prior β grain morphology and texture. Furthermore, grain boundary α and elemental distribution effect were considered for microstructure and texture formation. In addition, crystallography of the α/β- or α/α-phase interface was noticed for the as-cast and thermo-mechanically processed alloys.',
+				'img_url' : [
+					{
+						'url' : '1.jpg'
+					},
+					{
+						'url' : '2.jpg'
+					}
+				]
+			},
+			{
+				'ongoing_id' : '1',
+				'title' : 'High temperature-high strength Al-alloys',
+				'members_involved' : 'Samarendra Roy & Roja Rani K.',
+				'para_content' : 'Al alloys have a heavy amount of usage in the aerospace and automotive industry. But the precipitate hardened Al alloys have a very limited high-temperature performance. Due to precipitate coarsening the mechanical properties of the alloys degrades drastically. In our study, we try to engineer the interfacial property of the precipitates in order to stabilize them at high temperatures by the means of adding a trace amount of alloying elements. Both cast and wrought Al alloys are studied in greater detail for the development of new alloy systems. State-of-the-art simulation techniques and diffusion-based studies are also done to support the experimental works.',
+				'img_url' : [
+					{
+						'url' : '1.png'
+					},
+					{
+						'url' : '2.png'
+					}
+				]
+			},
+			{
+				'ongoing_id' : '2',
+				'title' : 'Machinable glass ceramics',
+				'members_involved' : 'Kamalika Manadal & Faizal Usaama J.',
+				'para_content' : 'Glass-ceramics is a unique type of material that contains randomly oriented crystals in the glass matrix. Mica glass-ceramics shows good machinability and can be made in complex shapes like metals. These materials are used in Aerospace/space applications. In our study, Microstructure development and mechanical properties of Mica machinable glass-ceramics are observed by varying processing parameters like temperature, heating rate, composition, etc. using different characterization techniques like XRD, SEM, TEM, EBSD, and fracture test.',
+				'img_url' : [
+					{
+						'url' : '1.png'
+					},
+					{
+						'url' : '2.png'
+					}
+				]
+			},
+			{
+				'ongoing_id' : '3',
+				'title' : 'Shear band formation',
+				'members_involved' : 'Ashoktaru Chakraborty',
+				'para_content' : 'During plastic deformation, a strong inhomogeneity occurs in metals and alloys by virtue of thermomechanical instability. Therefore, a strong localization of strain is observed due to inherent crystal anisotropy of polycrystalline materials and geometrical restrictions like grain and phase boundaries. This localization of plastic strain results in the formation of shear bands in materials and most often leads to a catastrophic failure by intensely localized shearing. In our study, we explore the formation mechanism of the shear band and its effect on the mechanical property of different materials with different crystal structures and crystallographic properties.',
+				'img_url' : [
+					{
+						'url' : '1.png'
+					}
+				]
+			},
+			{
+				'ongoing_id' : '4',
+				'title' : 'Additive manufacturing of metallic systems',
+				'members_involved' : 'Saumya Gupta & Ashoktaru Chakraborty',
+				'para_content' : 'Laser metal deposited stainless steel (17-4 Ar PH and 316L) and WSU 100 (a Ni-based superalloy) systems are extensively studied. To date, the effect of extensive thermal cycles in the as-deposited specimens has been studied via various methods. It includes microstructure-based characterizations (OM, SEM, quantification with EBSD and XRD, etc.) and mechanical testing (micro-hardness, etc.). In addition, the porosities were identified and analyzed with the help of X-ray micro-CT. Currently, heat treatment and high temperature-based studies are going on in these systems and will be further compared from the as-deposited ones.',
+				'img_url' : [
+					{
+						'url' : '1.png'
+					},
+					{
+						'url' : '2.png'
+					}
+				]
+			},
+			{
+				'ongoing_id' : '5',
+				'title' : 'Carbon fiber reinforced Ultra high-temperature ceramic composites',
+				'members_involved' : 'Samar Mondal & Arjun Mahato',
+				'para_content' : 'Ultra-high temperature applicability has made carbon fiber reinforced silicon carbide (C-SiC) composites, a potential solution in the field of aerospace. C-SiC composite is a thermo-structural material that has excellent thermal shock resistance, erosion, and oxidation resistance properties. Because of its high fracture toughness and damage tolerability, it is considered an appropriate candidate for structural applications.3D nonwoven needle-punched Carbon fiber reinforced Silicon Carbide (C-SiC) composites were synthesized by the liquid silicon infiltration (LSI) method. The microstructure, mechanical, chemical, ablation (by plasma arc jet testing), and thermal properties are being investigated in our study.',
+				'img_url' : [
+					{
+						'url' : '1.png'
+					},
+					{
+						'url' : '2.png'
+					}
+				]
+			},
+		]
+},
+{
+	'featured_work' : {
+			'research_articles' : [
+			{
+				'article_id' : '0',
+				'article_link' : 'https://www.sciencedirect.com/science/article/abs/pii/S0921509321007632',
+				'img_url' : 'article0.jfif',
+				'title' : 'S Sahoo, A. Joshi, V. K. Balla, M. Das, Shibayan Roy, "Site-dependent microstructure, porosity and mechanical properties of LENSTM processed Ti-6Al-4V alloy", Materials Science and Engineering A, Accepted for publication (2021).'
+			},
+			{
+				'article_id' : '1',
+				'article_link' : 'https://www.sciencedirect.com/science/article/abs/pii/S135964542100207X',
+				'img_url' : 'article1.jfif',
+				'title' : 'E. Hoar, S. Sahoo, M. Mahdavi, S. Liang, Shibayan Roy, H. Garmestani, "Statistical modeling of microstructure evolution in a Ti-6Al-4V alloy during isothermal compression", Acta Materialia, 210 (2021) 116827.'
+			},
+			{
+				'article_id' : '2',
+				'article_link' : 'https://www.frontiersin.org/articles/10.3389/fmats.2020.00057/full?&utm_source=Email_to_authors_&utm_medium=Email&utm_content=T1_11.5e1_author&utm_campaign=Email_publication&field=&journalName=Frontiers_in_Materials&id=506083',
+				'img_url' : 'article2.jpg',
+				'title' : 'M. Garai, B Karmakar, Shibayan Roy, "Cr+6 controlled nucleation in SiO2-MgO-Al2O3-K2O-B2O3-F glass sealant (SOFC)", Frontiers in Materials, 7 (2020) 1-15.'
+			},
+			{
+				'article_id' : '3',
+				'work_link' : 'https://www.cambridge.org/core/journals/mrs-advances/article/abs/zn2-controlled-crystallization-and-microstructure-in-klimgbsialf-glass/E1096F64ACC457FE9AB79B7BCF6A2328#',
+				'img_url' : 'article3.jpg',
+				'title' : 'M. Garai, A. K. Maurya, Shibayan Roy, "Zn2+-controlled crystallization and microstructure in K-Li-Mg-B-Si-Al-F glass", MRS Advances (2018) 1-9.'
+			}
+			],
+			'book_chapters' : [
+				{
+					'title': 'S. Sahoo, Shibayan Roy, Additive manufacturing of Titanium alloys: Microstructure and texture Evolution, defect formation and mechanical response, Chapter 8: Additive manufacturing: A tool for industrial revolution 4.0, Elsevier Publications (2021).',
+					'description' : 'Souviks Book',
+					'img_url' : 'souvik-book.jpg'
+				}
+			]
+	}
+},
+{
+		'fundtion_collaboration' : {
+			'funding' : {
+				'current_projects' : [
+					{
+						'title' : '"Understanding the mica-based machinable glass ceramics systems from an unprecedented perspective of processing-microstructure-property correlation using novel heat treatment techniques, advanced microstructural and crystallographic orientation characterizations, full-scale mechanical testing, and phenomenological theoretical modeling (Acronym: MGC By MGC: Machinable Glass-ceramics By Multifaceted Generalized Concepts)"',
+						'funding_agency' : 'Department of Science & Technology - Science & Engineering Research Board (DST-SERB)',
+						'duration' : 'September 2018 to August 2021',
+						'amount' : 'Rs. 72,00,000/-'
+					}
+				],
+				'completed_projects' : [
+					{
+						'title' : '"Processing-microstructure-property correlation in machinable mica-based glass-ceramics"',
+						'funding_agency' : 'Sponsored Research & Industrial Consultancy (SRIC), IIT Kharagpur',
+						'duration' : 'December 2016 to December 2019',
+						'amount' : 'Rs. 28,000,00/-'
+					},
+					{
+						'title' : '"Processing microstructure and mechanical properties of high-strength mica and leucite based glass-ceramics"',
+						'funding_agency' : 'Department of Science & Technology - Science & Engineering Research Board (DST-SERB)',
+						'duration' : 'March 2017 to March 2019',
+						'amount' : 'Rs. 19,000,00/-'
+					}
+				]
+			},
+			'collaboration' : [
+				{
+					'collaborator' : 'Prof. Satyam Suwas, Department of Materials Engineering, Indian Institute of Science, IISc Bangalore, India'
+				},
+				{
+					'collaborator' : 'Prof. Saurabh Ghosh, Department of Physical Sciences, SRM Institute of Science and Technology, Chennai, India'
+				},
+				{
+					'collaborator' : 'Prof. Rajdip Mukherjee, Department of Materials Science and Engineering, Indian Institute of Technology, IIT Kanpur, India'
+				},
+				{
+					'collaborator' : 'Dr. Suman Guha, Principal Researcher, Product Application Research Group R&D, Tata Steel Research and Development, Jamshedpur, India'
+				},
+				{
+					'collaborator' : 'Prof. K. Shiva Prasad, Department of Metallurgical and Materials Engineering, National Institute of Technology, NIT Trichy, India'
+				},
+				{
+					'collaborator' : 'Dr. S. T. Aruna, Surface Engineering Division, National Aerospace Laboratories, Bangalore, India'
+				},
+				{
+					'collaborator' : 'Dr. Divyendu Chakravarty, Center for Nanomaterials, International Advanced Research Center for Powder Metallurgy and New Materials, Hyderabad, India'
+				},
+				{
+					'collaborator' : 'Dr. Mitun Das, Bioceramics and Coatings Division, Central Glass & Ceramics Research Institute, Kolkata, India'
+				},
+				{
+					'collaborator' : 'Dr. Atiar Rahman Molla, Glass Ceramics and Technology Division, Central Glass & Ceramics Research Institute, Kolkata, India'
+				},
+				{
+					'collaborator' : 'Prof. Martin F.-X. Wagner, Institute for Materials Science and Engineering (IWW), Chemnitz University of Technology, Germany'
+				},
+				{
+					'collaborator' : 'Dr. Amit Shyam, Mechanical Properties and Mechanics Group, Materials Science & Technology Division, Oak Ridge National Laboratory, USA'
+				},
+				{
+					'collaborator' : 'Prof. Gunther Eggeler, Chair for Materials Science, Institute for Materials, Faculty of Mechanical Engineering, Ruhr University Bochum, Germany'
+				},
+				{
+					'collaborator' : 'Prof. Baishakhi Mazumder, Department of Materials Design and Innovation, School of Engineering and Applied Sciences, Department of Materials Design and Innovation, University of Buffalo, New York, USA'
+				},
+				{
+					'collaborator' : 'Dr. S. L. Semiatin, US Air Force Research Laboratory, Wright Patterson Airbase, Dayton, OH, USA'
+				},
+				{
+					'collaborator' : 'Prof. Hamid Garmestani, School of Materials Science and Engineering, Georgia Institute of Technology, Atlanta, GA, USA'
+				},
+				{
+					'collaborator' : 'Prof. Rohan Mishra, McKelvey School of Engineering, Washington University in St. Louis, MO, USA'
+				},
+				{
+					'collaborator' : 'Prof. Lionel Germain, Lecturer in Material Sciences, Université de Lorraine – Site Technopole, METZ, France'
+				},
+				{
+					'collaborator' : 'Prof. Guru P. Dinda, Assistant Professor, Mechanical Engineering Department, College of Engineering, Wayne State University, Detroit, MI, USA'
+				},
+				{
+					'collaborator' : 'Prof. N. Subba Reddy, School of Materials Science and Engineering, Gyeongsang National University, South Korea'
+				},
+				{
+					'collaborator' : 'Prof. Heinz-Günter Brockmeier, TEXMAT Department, Institute of Materials Science and Engineering, Clausthal University of Technology, Germany'
+				}
+			]
+		}
+	}
+])
+
+/// create collection - facilities
+
+db.createCollection('facilities')
+
+/// filing facilities data in collection
+
+db.facilities.insertOne(
+	{
+		'lab' : [
+			{	
+				'facility_id' : '00',
+				'name' : 'Low Speed Cutter',
+				'img_url' : '0_low_speed_cutter.jfif',
+				'specifications' : [
+					{
+						'heading' : '',
+						'detail' : ''
+					}
+				]
+			},
+			{
+				'facility_id' : '01',
+				'name' : 'Grinder',
+				'img_url' : '1_grinder.jfif',
+				'specifications' : [
+					{
+						'heading' : '',
+						'detail' : ''
+					}
+				]
+			},
+			{
+				'facility_id' : '02',
+				'name' : 'Hot Mounting Machine',
+				'img_url' : '2_hot_mounting_machine.jfif',
+				'specifications' : [
+					{
+						'heading' : 'Manufacturer',
+						'detail' : 'Chennai metco.'
+					},
+					{
+						'heading' : 'Model name',
+						'detail' : 'Bainmount',
+					},
+					{
+						'heading' : 'Working temperature',
+						'detail' : 'Up to 200 ᵒC',
+					},
+					{
+						'heading' : '',
+						'detail' : 'Water cooled',
+					}
+				]
+			},
+			{
+				'facility_id' : '03',
+				'name' : 'Mechanical Polishing Machine',
+				'img_url' : '3_mechanical_polishing_machine.jpeg',
+				'specifications' : [
+					{
+						'heading' : '',
+						'detail' : ''
+					}
+				]
+			},
+			{
+				'facility_id' : '04',
+				'name' : 'VibroMet',
+				'img_url' : '4_vibromet.jpg',
+				'specifications' : [
+					{
+						'heading': '',
+						'detail' : ''
+					}
+				]
+			},
+			{
+				'facility_id' : '05',
+				'name' : 'Fume Chamber',
+				'img_url' : '5_fume_chamber.jfif',
+				'specifications' : [
+					{
+						'heading' : '',
+						'detail' : ''
+					}
+				]
+			},
+			{
+				'facility_id' : '06',
+				'name' : 'Optical Microscope',
+				'img_url' : '6_optical_microscope.jfif',
+				'specifications' : [
+					{
+						'heading' : '',
+						'detail' : ''
+					}
+				]
+			},
+			{
+				'facility_id' : '07',
+				'name' : 'Optical Microscope with heating stage',
+				'img_url' : '7_optical_microscope_with_heating_stage.jfif',
+				'specifications' : [
+					{
+						'heading' : 'Company name',
+						'detail' : 'Leica',
+					},
+					{
+						'heading' : 'Microscope type',
+						'detail' : 'Transmission',
+					},
+					{
+						'heading' : 'Magnification',
+						'detail' : 'upto 1000X',
+					},
+					{
+						'heading' : 'Heating',
+						'detail' : 'upto 300ᵒC',
+					}
+				]
+			},
+			{
+				'facility_id' : '08',
+				'name' : 'Microhardness Tester',
+				'img_url' : '8_microhardness_tester.jfif',
+				'specifications' : [
+					{
+						'heading' : 'Manufacturer',
+						'detail' : 'Omnitech'
+					},
+					{
+						'heading' : 'Model name',
+						'detail' : 'MHT- Smart'
+					},
+					{
+						'heading' : 'Load range',
+						'detail' : '10 gms to 1000gms'
+					},
+					{
+						'heading' : 'Dwell time',
+						'detail' : '5 – 99 sec'
+					},
+					{
+						'heading' : 'Microscope Magnification',
+						'detail' : '100 x, 400 x'
+					},
+					{
+						'heading' : '',
+						'detail' : 'Automatic loading and releasing'
+					}
+				]
+			},
+			{
+				'facility_id' : '09',
+				'name' : 'Macrohardness Tester',
+				'img_url' : '9_macrohardness_tester.jpg',
+				'specifications' : [
+					{
+						'heading' : 'Company name',
+						'detail' : 'Vertex'
+					},
+					{
+						'heading' : 'Model number',
+						'detail' : 'VM-50'
+					},
+					{
+						'heading' : 'Testing Loads',
+						'detail' : '1, 5, 10, 20, 30, 50 kgf'
+					},
+					{
+						'heading' : 'Dwell time',
+						'detail' : '0.30 &plusmn; 2 sec'
+					},
+					{
+						'heading' : 'Indenter',
+						'detail' : 'Diamond Pyramid'
+					}
+				]
+			},
+			{
+				'facility_id' : '10',
+				'name' : 'Scratch Tester',
+				'img_url' : '10_scratch_tester.jfif',
+				'specifications' : [
+					{
+						'heading' : 'Company',
+						'detail' : 'DUCOM'
+					},
+					{
+						'heading' : 'Model',
+						'detail' : 'TR-101-IAS'
+					},
+					{
+						'heading' : 'Load',
+						'detail' : '0 to 20 N'
+					},
+					{
+						'heading' : 'Loading rate',
+						'detail' : '0 to 2 N/sec'
+					},
+					{
+						'heading' : 'Stroke length',
+						'detail' : '50 mm'
+					},
+					{
+						'heading' : 'Speed',
+						'detail' : ' 0 to 10 mm/s'
+					},
+					{
+						'heading' : 'Sample size (L x W x T maximum)',
+						'detail' : '60 x 60 x 10'
+					},
+					{
+						'heading' : 'Indenter',
+						'detail' : 'Diamond indenter Rockwell C, with tip radius R200 micrometer'
+					},
+					{
+						'heading' : '',
+						'detail' : 'Constant and Ramp loading'
+					}
+				]
+			},
+			{
+				'facility_id' : '11',
+				'name' : 'Microwave Furnace',
+				'img_url' : '11_microwave_furnace.jfif',
+				'specifications' : [
+					{
+						'heading' : '',
+						'detail' : ''
+					}
+				]
+			},
+			{
+				'facility_id' : '12',
+				'name' : 'Muffle Furnace',
+				'img_url' : '12_muffle_furnace.jfif',
+				'specifications' : [
+					{
+						'heading' : '',
+						'detail' : 'Box type'
+					},
+					{
+						'heading' : 'Max working temperature',
+						'detail' : '850 ᵒC'
+					}
+				]
+			}
+		],
+		'departmental' : [
+			{
+				'facility_id' : '00',
+				'name' : 'UTM with DIC',
+				'img_url' : '0_UTM_with_DIC.jpg',
+				'specifications' : [
+					{
+						'heading' : 'Company name',
+						'detail' : 'Zwick/Roell'
+					},
+					{
+						'heading' : 'Model number',
+						'detail' : 'Z050'
+					},
+					{
+						'heading' : 'Maximum load capacity',
+						'detail' : '50 kN with detachable 2.5 kN load cell'
+					},
+					{
+						'heading' : 'Grips and platen',
+						'detail' : '3-point bend testing grip; tensile grip; compression platen'
+					}
+				]
+			},
+			{
+				'facility_id' : '01',
+				'name' : 'Vacuum Arc Melting Furnace',
+				'img_url' : '1_vacuum_arc_melting_furnace.jpg',
+				'specifications' : [
+					{
+						'heading' : 'Company name',
+						'detail' : 'Vacuum Technologies PVT. LTD, Bangalore'
+					},
+					{
+						'heading' : 'Temperature',
+						'detail' : 'upto 2800ᵒC'
+					},
+					{
+						'heading' : 'Purging gas',
+						'detail' : 'Argon'
+					},
+					{
+						'heading' : 'Maximum bead size',
+						'detail' : '2cm diameter'
+					}
+				]
+			},
+			{
+				'facility_id' : '02',
+				'name' : 'X-ray Diffractometer',
+				'img_url' : '2_x_ray_diffractometer.jpg',
+				'specifications' : [
+					{
+						'heading' : 'Manufacturer name',
+						'detail' : 'Panalytical'
+					},
+					{
+						'heading' : 'Model name',
+						'detail' : 'Empyrean'
+					},
+					{
+						'heading' : 'Facility',
+						'detail' : 'phase identification, stress, texture, high temperature, GIXRD, Thin film'
+					}
+				]
+			},
+			{
+				'facility_id' : '03',
+				'name' : 'SEM',
+				'img_url' : '3_sem.jpg',
+				'specifications' : [
+					{
+						'heading' : 'Company name',
+						'detail' : 'Zeiss'
+					},
+					{
+						'heading' : 'Model number',
+						'detail' : 'Gemini 500'
+					},
+					{
+						'heading' : 'Acceleration voltage',
+						'detail' : '0.02-30kV'
+					},
+					{
+						'heading' : 'Magnification',
+						'detail' : '20 times to 2,000,000 times'
+					},
+					{
+						'heading' : 'resolution',
+						'detail' : '0.5nm at 15kV, 0.9 nm at 1kV, 1.0 nm at 500V'
+					},
+					{
+						'heading' : 'Detectors',
+						'detail' : 'In-lens SE; In-lens BSE; EDS'
+					}
+				]
+			}
+		]
+	}
+)

@@ -1,0 +1,19 @@
+{
+  "name": "srmsc-express-site",
+  "version": "1.0.0",
+  "description": "SRMSC Lab Website using Express js",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "author": "Parth Gupta",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "mongodb": "^4.1.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  }
+}

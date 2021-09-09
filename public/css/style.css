@@ -1,0 +1,1331 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* code for header and general properties */
+
+body {
+  background-color: white;
+  font-family: 'Bahnschrift Light';
+}
+
+hr {
+  outline: 0.1px solid black;
+  border: none;
+}
+
+/* code for top message on index page */
+
+#top-msg {
+  width: 100%;
+  background-color: #00255c;
+  color: white;
+  text-align: center;
+  padding: 1%;
+  font-size: 1em;
+  font-family: 'Open Sans Light';
+  position: relative;
+  text-align: center;
+}
+
+#top-msg span {
+  display: block;
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#top-msg button {
+  height: 25px;
+  width: 25px;
+  position: absolute;
+  right: 30px;
+  top: 13px;
+  background-color: white;
+  outline: none;
+  border: none;
+  border-radius: 50%;
+  background-image: url(../imgs/general_site_imgs/close-icon.png);
+  background-size: cover;
+}
+
+#top-msg button:hover, #top-msg button:active {
+  background-color: red;
+}
+
+/* code for SPP branding div */
+
+.brand-div {
+  width: 100%;
+  text-align: center;
+  font-family: 'Bradley Hand', cursive;
+  background-color: white;
+  padding-bottom: 2%;
+}
+
+.brand-div img {
+  float: left;
+  margin: 3% 2% 0% 6%;
+  background-color: white;
+}
+
+.brand-div a {
+  color: black;
+  text-decoration: none;
+}
+
+.brand-div p {
+  font-size: 3em;
+  padding: 2% 0 1%;
+  font-variant: small-caps;
+  text-decoration: underline;
+}
+
+.brand-div span {
+  font-size: 1.3em;
+}
+
+/* code for navigation bar */
+
+nav {
+  display: inline-block;
+  width: 100%;
+  background-color: black;
+  border-top: #289ccd 5px solid;
+  font-family: 'Copperplate Gothic';
+}
+
+nav a:link {
+  display: inline-block;
+  margin: 0 1%;
+  text-transform: uppercase;
+  color: white;
+  text-decoration: none;
+  font-size: 1em;
+  /* font-family: 'Consolas'; */
+  font-family: 'Bahnschrift Light';
+  padding: 1.2%;
+}
+
+nav a:visited {
+  color: white;
+  text-decoration: none;
+}
+
+nav a:hover {
+  text-decoration: underline 2px;
+  text-decoration-color: white;
+}
+
+nav a:focus {
+  outline: none;
+  color: #289ccd;
+  text-decoration: underline;
+}
+
+.active:focus {
+  color: black;
+}
+
+.active:hover {
+  text-decoration: none;
+}
+
+.active {
+  background-color: #289ccd;
+}
+
+/* code for hidden nav dropdown */
+
+nav div {
+  display: none;
+  position: absolute;
+  width: 10%;
+  left: 19%;
+  padding: 1% 0;
+  background-color: black;
+  outline: 2px solid #289ccd;
+}
+
+nav div a:link {
+  width: 100%;
+  text-align: center;
+  padding: 10% 0;
+  color: black;
+}
+
+/* .nav-dropdown:hover div {
+  display: block;
+} */
+
+/* code for sticking navbar to top */
+
+/* #fixed-to-top {
+    width: 100%;
+    position: sticky;
+    top: 0;
+} */
+
+/* code for right side colum on index page */
+
+.split-left-sec {
+  display: inline-block;
+  width: 65%;
+  border-right: 5px solid black;
+}
+
+.split-right-sec {
+  display: block;
+  width: 34.99%;
+  float: right;
+  padding: 5% 3%;
+  /* background-image: linear-gradient(#44e39a, #448ee4); */
+  background-color: white;
+  /* background-color: #448ee4; */
+  /* color: #44e34a; */
+}
+
+.split-right-sec h3 {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 20%;
+  font-size: 2em;
+  font-variant: small-caps;
+  font-family: helvetica;
+  width: 100%;
+  text-align: center;
+  text-decoration: underline;
+}
+
+.split-right-sec ul {
+    margin-top: 20%;
+}
+
+.split-right-sec li {
+  font-size: 1.3em;
+  padding: 10% 5%;
+  line-height: 1.3em;
+  text-align: justify;
+  list-style-type: none;
+}
+
+.split-right-sec strong{
+  color: #3500D3;
+  text-decoration: underline 1px;
+}
+
+.typewriter h3 {
+  text-align: center;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: 0.1em solid grey; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: 0.1em; /* Adjust as needed */
+  animation: typing 4s steps(12, end), blink-caret 1s step-end infinite;
+}
+
+.typewriter-after h3 {
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: 0.1em; /* Adjust as needed */
+}
+
+/* The typing effect */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: grey;
+  }
+}
+
+/* adding slideshow animation */
+
+.slideshow-container {
+  height: 20em;
+  /* border: 2px solid red; */
+  overflow: hidden;
+  position: relative;
+  /* border-right: 2px black solid; */
+  /* border-left: 2px black solid; */
+}
+
+.slideshow-container > * {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  animation: 20s autoplay infinite ease-in-out;
+}
+
+@keyframes autoplay {
+  0% {
+    top: 100%;
+  }
+  4% {
+    top: 0%;
+  }
+  20% {
+    top: 0;
+  } 
+  23% {
+    top: -100%;
+  }
+  100% {
+    top: -100%;
+  }
+}
+
+.slideshow-container > *:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.slideshow-container > *:nth-child(2) {
+  animation-delay: 4s;
+}
+
+.slideshow-container > *:nth-child(3) {
+  animation-delay: 8s;
+}
+
+.slideshow-container > *:nth-child(4) {
+  animation-delay: 12s;
+}
+
+.slideshow-container > *:nth-child(5) {
+  animation-delay: 16s;
+}
+
+#see-all-btn {
+  width: 80%;
+  margin: 0 auto;
+  border: black solid 1px;
+  font-size: 1.1em;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-align: center;
+  color: white;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  cursor: pointer;
+  background-color: #05716c;
+}
+
+#see-all-btn:hover {
+  /* outline: solid 1px black; */
+  text-decoration: underline 1px;
+  background-color: rgba(9, 160, 152, 0.986);
+}
+
+#see-all-btn:active {
+  color: black;
+  text-decoration: underline;
+}
+
+/* code for top-most section of home page (which holds the background image and content) */
+
+.body-top-sec {
+  width: 100%;
+  height: 20vw;
+  color: rgba(255, 255, 255, 0.733);
+  background-image: linear-gradient(rgba(0, 0, 255, 0.1), rgba(0, 0, 255, 0.4)), url(../imgs/general_site_imgs/home-header-bkgrnd.png);
+  background-size: cover;
+  background-position: initial;
+}
+
+/* I dont think this block of commented out code does anything */
+
+/* .body-top-sec h1 {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  margin: 10% auto 2%;
+  font-size: 5vw;
+  padding: 1.5% 0;
+  font-family: serif;
+  font-variant: small-caps;
+  color: lightblue;
+  font-weight: 500;
+}
+
+.body-top-sec div {
+  font-size: 3vw;
+  color: lightblue;
+  width: 80%;
+  margin: 10% auto 5%;
+  text-align: center;
+} */
+
+.clear-both {
+  clear: both;
+}
+
+.float-l {
+  float: left;
+}
+
+.float-r {
+  float: right;
+}
+
+.hide-this {
+  display: none;
+}
+
+.invisible {
+  visibility: hidden;
+}
+
+/* code for home / index page */
+
+.body-sec {
+  margin: 0 auto;
+  padding: 3% 0;
+  /* background-image: linear-gradient(#1fbfb8 , #1978a5, #05716c); */
+  /* background-image: linear-gradient(#d2e4f8, #a5c9f2, #79aeeb, #4c93e5, #2078de, #1960b2, #134885); */
+  background-repeat: no-repeat;
+  /* background-image: url(../imgs/general_site_imgs/body-sec-bkgrnd.jpg); */
+  /* background-image: url(../imgs/general_site_imgs/body-sec-bkgrnd-3.jpg); */
+  background-size: cover;
+  /* background-image: url(../imgs/general_site_imgs/body-sec-bkgrnd.jpg); */
+  background-color: lightblue;
+  background-image: none;
+}
+
+.heading-hr {
+  width: 65%;
+  margin: 0 auto;
+  height: 2px;
+  padding: 0 40%;
+  background-color: black; /* change later */
+}
+
+.hr-top {
+  margin-bottom: 2%;
+  margin-top: 1%;
+}
+
+.hr-btm {
+  margin-top: 2%;
+  margin-bottom: 5%;
+}
+
+.body-sec h2 {
+  margin: 0 auto;
+  text-align: center;
+  font-size: 3em;
+  font-family: cursive;
+  padding: 2%;
+  width: 60%;
+}
+
+.body-sec p {
+  width: 70%;
+  font-size: 1.3em;
+  margin: 4% auto;
+  padding: 2%;
+  line-height: 1.5em;
+  text-align: justify;
+  font-family: 'Bahnschrift Light';
+}
+
+.body-sec blockquote {
+  width: 80%;
+  margin: 4% auto;
+  text-align: center;
+  font-size: 2em;
+  border-right: 7px solid grey;
+  border-left: 7px solid grey;
+  border-radius: 5%;
+  padding: 3% 2%;
+  font-family: 'Bahnschrift SemiBold';
+  background-color: black;
+  color: white;
+}
+
+.poster-sec {
+  position: relative;
+}
+
+.poster-sec p {
+  width: 40%;
+  float: right;
+  margin-top: 4%;
+  margin-right: 4%;
+  text-align: center;
+}
+
+.poster-sec button {
+  display: block;
+  margin: 0;
+  color: white;
+  background-color: #05716c;
+  border: none;
+  outline: none;
+  width: 80%;
+  font-size: 0.7em;
+  margin: 10% auto;
+  padding: 5% 2%;
+  outline: 2px solid black;
+  cursor: pointer;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.poster-sec button:hover, .poster-sec button:focus   {
+  background-color: rgba(9, 160, 152, 0.986);
+  text-decoration: underline;
+}
+
+.poster-sec button:active {
+  color: grey;
+}
+
+#img-container {
+  display: inline-block;
+  width: 430px;
+  height: 600px;
+  outline: 3px solid black;
+  margin: 2% 0 2% 3%;
+}
+
+#img-container img {
+  width: 100%;
+}
+
+#img-container img:hover {
+  border: 0;
+}
+
+/* code for modal box */
+
+/* The Modal (background) */
+.modal-box {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: rgb(1, 192, 255);
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 10px;
+  border: 1px solid #888;
+  width: 95%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+  color: black;
+  float: right;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: red;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-content img {
+  width: 100%;
+}
+
+/* code for footer */
+
+footer {
+  width: 100%;
+  margin: 0 auto;
+  padding: 1%;
+  padding-right: 15%;
+  font-size: 1.1em;
+  text-align: right;
+  background-color: #00255c;
+  color: wheat;
+}
+
+/* code for top-most section for non home pages (background image and stuff) */
+
+.non-home-body-top-sec {
+  width: 100%;
+  height: 20vw;
+  color: rgba(255, 255, 255, 0.733);
+  background-image: linear-gradient(rgba(0, 0, 255, 0.1), rgba(0, 0, 255, 0.4)), url(../imgs/general_site_imgs/home-header-bkgrnd.png);
+  background-size: cover;
+  background-position: initial;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.non-home-body-top-sec h1 {
+  position: absolute;
+  display: block;
+  width: 50%;
+  text-align: center;
+  margin: 5% 25%;
+  font-size: 5vw;
+  padding: 1.5% 0;
+  font-family: serif;
+  font-variant: small-caps;
+  color: black;
+  font-weight: 500;
+  background-color: white;
+}
+
+.non-home-body-top-sec div {
+  font-size: 3vw;
+  color: lightblue;
+  width: 80%;
+  margin: 10% auto 5%;
+  text-align: center;
+}
+
+/* code for members page */
+
+.for-gap {
+  width: 100%;
+  height: 450px;
+}
+
+.members-nav {
+  width: 100%;
+  margin: 3% auto;
+  text-align: center;
+}
+
+.members-nav-option {
+  display: inline-block;
+  width: 35%;
+  margin: 1% 4%;
+  padding: 2% 0;
+  font-size: 2em;
+  position: relative;
+  border: 1px solid black;
+  cursor: pointer;
+  background-color: #05716c;
+  color: white;
+  font-variant: small-caps;
+  letter-spacing: 1px;
+  font-weight: 300;
+}
+
+.bgcolor-onclick {
+  background-color: rgba(5, 113, 108, 0.686);
+}
+
+.div-menu {
+  background-color: inherit;
+  width: 45px;
+  height: 45px;
+  position: absolute;
+  top: 21%;
+  right: 3%;
+}
+
+.bar {
+  height: 7px;
+  width: 100%;
+  background-color: black;
+  display: block;
+  margin: 5% 0;
+  transition: 0.1s ease-in;
+}
+
+#bar1 {
+  transform: translateY(0px);
+}
+
+#bar2 {
+  transform: translateY(7px);
+}
+
+#bar3 {
+  transform: translateY(14px);
+}
+
+.clicked .bar {
+  background-color: black; /* #289ccd */
+}
+
+.clicked #bar1 {
+  transform: translateY(15px) rotateZ(45deg);
+}
+
+.clicked #bar3 {
+  transform: translateY(-3px) rotateZ(-45deg);
+}
+
+.clicked #bar2 {
+  opacity: 0;
+}
+
+#team-sec {
+  background-color: white;
+  padding-bottom: 5%;
+  /* background-image: url(https://media.giphy.com/media/l3q2vQ6rlZutXsYN2/giphy.gif); */
+}
+
+.subpage-heading {
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 3.5em;
+  padding: 3% 0;
+  border-bottom: 3px solid black;
+  font-family: 'Bahnschrift Light';
+  background-color: #1978a5;
+  border-bottom-right-radius: 20%;
+  border-bottom-left-radius: 20%;
+}
+
+.shibayan-sir {
+  padding: 3% 4%;
+  position: relative;
+  width: 90vw;
+  margin: 1% auto;
+  background-color: lightskyblue;
+  /* background-image: radial-gradient(#1fbfb8, #1fbfb8, #1fbfb8, #1fbfb8, lightpink); */
+}
+
+.shibayan-sir img {
+  display: inline-block;
+  width: 30%;
+  margin: 1%;
+  outline: 3px black solid;
+}
+
+.shibayan-sir > div {
+  display: block;
+  width: 50%;
+  position: absolute;
+  top: 10%;
+  left: 40%;
+}
+
+.shibayan-sir > div h3 {
+  width: 100%;
+  font-size: 2.5em;
+  text-align: center;
+  padding: 2% 0;
+}
+
+.shibayan-sir > div hr {
+  height: 3px;
+  width: 80%;
+  margin: 1% auto;
+  background-color: black;
+}
+
+.shibayan-sir > div article {
+  width: 100%;
+  margin: 2vw 0 2vw;
+  padding: 1vw;
+}
+
+.shibayan-sir > div article h5 {
+  font-size: 1.5em;
+  font-weight: 600;
+  text-align: center;
+  font-family: 'Bahnschrift Light';
+}
+
+.shibayan-sir > div article p {
+  padding-top: 1vw;
+  font-size: 1.2em;
+  text-align: justify;
+  font-family: 'Bahnschrift Light';
+}
+
+.shibayan-sir-links {
+  text-align: center;
+}
+
+.shibayan-sir-links a:link {
+  display: inline-block;
+  width: 10vw;
+  text-align: center;
+  padding: 1% 0;
+  background-color: #05716c;
+  outline: 1px solid white;
+  margin: 0 1%;
+  font-size: 1em;
+  text-decoration: none;
+  color: white;
+  font-family: 'Bahnschrift Light';
+}
+
+.shibayan-sir-links a:visited {
+  color: white;
+}
+
+.shibayan-sir-links a:hover, .shibayan-sir-links a:focus {
+  outline: 2px solid black;
+  text-decoration: underline;
+}
+
+.all-team {
+  display: block;
+  width: 90%;
+  margin: 0 auto;
+  /* background-color: #1fbfb8; */
+  /* background-image: linear-gradient(#1fbfb8, #1fbfb8); */
+}
+
+.all-team div {
+  width: 25%;
+  float: left;
+  text-align: center;
+  margin: 0 4.16%;
+  position: relative;
+  text-align: center;
+  margin-top: 5%;
+  outline: solid black 3px;
+}
+
+.all-team figure {
+  width: 100%;
+  padding: 10px;
+}
+
+.all-team div:nth-child(3n+1) {
+  clear: both;
+}
+
+.all-team figure img {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.all-team figure a:link {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 30px;
+  height: 30px;
+}
+
+abbr {
+  text-decoration: none;
+}
+
+.all-team figure figcaption {
+  font-size: 1.4em;
+  padding: 5% 0;
+  text-align: center;
+  background-color: #1fbfb8;
+  margin-bottom: 1%;
+  font-family: 'Bahnschrift Light';
+  outline: 2px solid black;
+}
+
+.all-team figure figcaption:hover {
+  text-decoration: underline;
+  cursor: default;
+}
+
+#team-interns {
+  width: 85%;
+  margin: 0 auto;
+}
+
+#team-interns h3 {
+  clear: both;
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin: 0.5% auto;
+  font-size: 3em;
+  background-color: #1978a5;
+  padding: 1.5% 0;
+  font-family: 'Bahnschrift Light';
+}
+
+#team-interns ul {
+  margin: 2% 5%;
+}
+
+#team-interns li {
+  padding: 0.5% 0;
+  font-size: 1.3em;
+  list-style: square;
+  font-family: 'Bahnschrift Light';
+}
+
+#alumni-sec {
+  background-color: white;
+  padding-bottom: 5%;
+}
+
+.individual-profile {
+  width: 90%;
+  margin: 2% auto;
+  border: black 1px solid;
+  padding-bottom: 4%;
+  background-color: lightskyblue;
+}
+
+.individual-profile img {
+  width: 15%;
+  margin: 3%;
+  margin-right: 2%;
+  float: left;
+  outline: solid black 2px;
+}
+
+.individual-profile article {
+  display: inline-block;
+  width: 70%;
+  margin: 3% 0 1%;
+  margin-left: 3%;
+  font-family: 'Bahnschrift Light';
+}
+
+.individual-profile article h3 {
+  font-size: 1.5em;
+  padding-left: 2%;
+  margin: 2% 0;
+}
+
+.individual-profile article li {
+  margin: 0.5% 0 0;
+  font-size: 1.05em;
+}
+
+.individual-profile a:link {
+  width: 10%;
+  text-align: center;
+  padding: 1% 0;
+  outline: solid black 1px;
+  float: right;
+  margin-right: 5%;
+  color: white;
+  text-decoration: none;
+  background-color: #031163;
+  font-family: 'Bahnschrift Light';
+}
+
+.individual-profile a:visited {
+  color: black;
+}
+
+.individual-profile a:hover {
+  outline: white 2px solid;
+  text-decoration: underline;
+}
+
+.odd {
+  /* background-color: rgba(125, 255, 125, 0.829); */
+  background-color: #1fbfb7;
+}
+
+/* .odd:hover {
+  background-color: rgba(43, 253, 43, 0.747);
+} */
+
+.eve {
+  /* background-color: #1fbfb781; */
+  background-color: #1fbfb7;
+}
+
+/* .eve:hover {
+  background-color: #1fbfb7;
+} */
+
+#alumni-interns {
+  width: 85%;
+  margin: 0 auto;
+}
+
+#alumni-interns h3 {
+  clear: both;
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin: 0.5% auto;
+  font-size: 3em;
+  background-color: #1978a5;
+  padding: 1.5% 0;
+  font-family: 'Bahnschrift Light';
+}
+
+#alumni-interns ul {
+  margin: 2% 5%;
+}
+
+#alumni-interns li {
+  padding: 0.5% 0;
+  font-size: 1.3em;
+  list-style: square;
+  font-family: 'Bahnschrift Light';
+}
+
+/* code for research page */
+
+#research-top-sec {
+  background-color: lightblue;
+  background-image: none;
+}
+
+.research-container .sticky-navbar {
+  width: 100%;
+  background-color: #00255c;
+  color: white;
+  padding: 0.5%;
+  padding-left: 5%;
+  font-size: 1.2em;
+  position: sticky;
+  top: 0;
+  opacity: 1;
+  z-index: 5;
+}
+
+.sticky-navbar-slash {
+  padding: 0 10px;
+  color: white;
+}
+
+.research-container a:link {
+  text-decoration: none;
+  color: white;
+}
+
+.research-container a:visited {
+  color: white;
+}
+
+.research-container a:hover, .research-container a:focus {
+  text-decoration: underline;
+}
+
+/* headings have subpage-heading class for styling */
+
+.research-div ul {
+  width: 70%;
+  margin: 1% auto;
+  text-align: center;
+  padding: 2% 0;
+  font-size: 1.3em;
+  /* background-image: linear-gradient(to right, lightskyblue ,#3500D3, #3500D3, #3500D3, #3500D3, lightskyblue) ; */
+  border-radius: 1%;
+  /* background-image: url(../imgs/general_site_imgs/body-sec-bkgrnd-3.jpg); */
+  /* background-position: right; */
+  /* background-size: cover; */
+  /* background-repeat: space; */
+  /* background-attachment: fixed; */
+}
+
+.research-div li {
+  width: 70%;
+  margin: 2% auto;
+  padding: 0.7%;
+  font-size: 1.1em;
+  opacity: 0.7;
+  list-style-type: none;
+  background-color: white;
+}
+
+/* .research-div li:hover {
+  opacity: 1;
+  cursor: default;
+} */
+
+.research-div figure {
+  width: 30%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.research-div img {
+  width: 100%;
+}
+
+.research-subpage h3 {
+  width: 50%;
+  margin: 0 auto 5%;
+  font-size: 3em;
+  text-align: center;
+  padding: 3% 0 1%;
+  border-bottom: 2px black solid;
+}
+
+.research-subpage img {
+  width: 10%;
+}
+
+.ongoing-work-div {
+  width: 80%;
+  margin: 1.5% auto;
+  /* border: 1px solid red; */
+  padding: 2%;
+  text-align: center;
+  background-image: linear-gradient(to top left, lightgreen, wheat, salmon);
+  border-radius: 3%;
+  border: 3px solid black;
+}
+
+.ongoing-work-div h5 {
+  margin: 0 auto;
+  font-size: 2em;
+  width: 100%;
+  padding: 2% 0;
+  text-align: center;
+  text-decoration: underline;
+}
+
+.ongoing-work-div h6 {
+  margin: 1% auto;
+  font-size: 1.5em;
+  text-align: center;
+}
+
+.ongoing-work-div p {
+  display: block;
+  width: 100%;
+  margin: 3% auto;
+  padding: 1% 5%;
+  font-size: 1.2em;
+  text-align: justify;
+}
+
+.ongoing-work-div img {
+  width: 30%;
+  margin: 0 7%;
+}
+
+.featured-work-div {
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.featured-work-div h4 {
+  width: 45%;
+  margin: 0 auto;
+  font-size: 2.5em;
+  text-align: center;
+  margin-bottom: 5%;
+  padding: 2% 0;
+  /* background-color: #1fbfb8; */
+  /* background-image: linear-gradient(to right, lightskyblue, #1fbfb8, #1fbfb8, #0bb6ad, #1fbfb8, #1fbfb8, lightskyblue); */
+}
+
+.research-article {
+  display: inline-block;
+  width: 45%;
+  height: 450px;
+  /* border: 2px solid red; */
+  background-image: linear-gradient(20deg, lightpink, #3500d36b, lightgreen);
+  border-radius: 2%;
+  border: 3px solid black;
+  margin: 3% 2%;
+  text-align: center;
+}
+
+.research-article a:link {
+  display: block;
+}
+
+.research-article a:hover {
+  color: black;
+}
+
+.inside-a-article {
+  width: 100%;
+  margin: 3% auto;
+}
+
+.inside-a-article img {
+  width: 90%;
+  outline: solid black 1px;
+}
+
+.inside-a-article h5 {
+  width: 75%;
+  margin: 4% auto 2%;
+  padding: 1% 0;
+  font-size: 1em;
+  text-align: justify;
+  font-family: Helvetica;
+  line-height: 1.2em;
+}
+
+.featured-book {
+  width: 100%;
+  height: auto;
+  margin: 4% auto;
+}
+
+.featured-book img {
+  width: 60%;
+  float: left;
+  margin: 1% 0 5%;
+  outline: solid 3px black;
+}
+
+.featured-book h5 {
+  display: inline-block;
+  width: 30%;
+  text-align: justify;
+  margin: 2% 0 0;
+  font-size: 1.5em;
+  padding-top: 4%;
+}
+
+.funding-div {
+  width: 90%;
+  margin: -8% auto 0;
+  padding: 4%;
+}
+
+.funding-div h4 {
+  width: 45%;
+  text-align: center;
+  font-size: 2.5em;
+  padding: 2% 0;
+  margin: 2% auto;
+  padding: 2% 0;
+  /* background-color: #1fbfb8; */
+  /* background-image: linear-gradient(to right, lightskyblue, #1fbfb8, #1fbfb8, #0bb6ad, #1fbfb8, #1fbfb8, lightskyblue); */
+}
+
+.funded-project {
+  padding: 2% 0;
+  margin: 1%;  
+  background-image: linear-gradient(20deg, lightpink, #3500d36b, lightgreen);
+  border: 3px solid black;
+  border-radius: 3%;
+  margin-bottom: 3%;
+}
+
+.funded-project blockquote {
+  margin: 3% auto;
+  font-size: 1.5em;
+  width: 95%;
+  text-align: justify;
+  color: black;
+  font-weight: bolder;
+}
+
+.funded-project p {
+  margin: 2% auto;
+  font-size: 1.4em;
+  width: 90%;
+}
+
+.collab-list {
+  padding: 3% 1%;
+  padding-left: 4%;
+  margin-left: 5%;
+  background-color: lightpink;
+}
+
+.collab-list li {
+  list-style-type: square;
+  font-size: 1.3em;
+  padding: 1% 0;
+}
+
+#ongoing-work {
+  background-color: white;
+}
+
+/* code for facilities page */
+
+.facility {
+  display: block;
+  width: 90%;
+  margin: 0 auto;
+  /* background-color: #1fbfb8; */
+  /* background-image: linear-gradient(#1fbfb8, #1fbfb8); */
+}
+
+.facility div {
+  width: 25%;
+  float: left;
+  text-align: center;
+  margin: 3% 4.16%;
+  position: relative;
+  text-align: center;
+  outline: solid black 3px;
+  cursor: pointer;
+}
+
+.facility div:hover {
+  text-decoration: underline;
+}
+
+.facility figure {
+  width: 100%;
+  padding: 10px;
+}
+
+.facility div:nth-child(3n+1) {
+  clear: both;
+}
+
+.facility figure img {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.facility figure figcaption {
+  font-size: 1.4em;
+  padding: 5% 0;
+  text-align: center;
+  background-color: #1fbfb8;
+  margin-bottom: 1%;
+  font-family: 'Bahnschrift Light';
+  outline: 2px solid black;
+}
+
+.facilities-modal figure {
+  width: 30%;
+  float: left;
+  margin: 0;
+  padding: 0;
+}
+
+.facilities-modal figure img {
+  outline: solid 3px black;
+}
+
+.facilities-modal article {
+  display: inline-block;
+  width: 69%;
+  margin: 0;
+  padding: 20px;
+}
+
+.facilities-modal article h4 {
+  font-size: 2em;
+  width: 90%;
+  margin-left: 10%;
+}
+
+.facilities-modal article p {
+  font-size: 1.1em;
+  margin: 20px 0;
+  padding: 20px;
+}
+
