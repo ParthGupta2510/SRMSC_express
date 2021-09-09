@@ -5,11 +5,12 @@
   "main": "index.js",
   "scripts": {
     "start": "node server.js",
-    "devRun" : "nodemon server.js"
+    "devRun": "nodemon server.js"
   },
   "author": "Parth Gupta",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^10.0.0",
     "ejs": "^3.1.6",
     "express": "^4.17.1",
     "mongodb": "^4.1.1"

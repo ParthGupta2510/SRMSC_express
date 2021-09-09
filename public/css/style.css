@@ -1267,7 +1267,10 @@ abbr {
   margin: 3% 4.16%;
   position: relative;
   text-align: center;
-  outline: solid black 3px;
+  /* outline: solid black 3px; */
+  border: solid 3px black;
+  border-radius: 20px;
+
   cursor: pointer;
 }
 
@@ -1287,6 +1290,7 @@ abbr {
 .facility figure img {
   width: 100%;
   margin: 0 auto;
+  border-radius: 20px;
 }
 
 .facility figure figcaption {
@@ -1296,7 +1300,9 @@ abbr {
   background-color: #1fbfb8;
   margin-bottom: 1%;
   font-family: 'Bahnschrift Light';
-  outline: 2px solid black;
+  /* outline: 2px solid black; */
+  border: solid 2px black;
+  border-radius: 20px;
 }
 
 .facilities-modal figure {

@@ -1,10 +1,11 @@
+const dotenv = require('dotenv').config()
 const MongoClient = require('mongodb').MongoClient;
 const express = require('express')
 const path = require('path')
 const app = express()
 const port = process.env.PORT || 5000
 
-const uri = 'mongodb+srv://parth:abhi123@cluster0.6ddag.mongodb.net/test?retryWrites=true&w=majority';
+const uri = process.env.MONGO_URI;
 
 MongoClient.connect(uri, { useUnifiedTopology: true })
 .then(client => {
