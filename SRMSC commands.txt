@@ -8,330 +8,401 @@ db.createCollection('index')
 
 /// inserting main content and heading in it
 
-db.index.insertMany([{
-	'top_msg' : 'Dr. Roy is having an NPTEL course on "Techniques of Materials characterization". This will be released very soon'
-},{
+db.index.insertOne({
+	'top_msg' : {
+			'top_msg' : 'Dr. Roy is having an NPTEL course on "Techniques of Materials characterization". This will be released very soon'
+		},
+	
 	'intro' : {
 		'title' : 'Who are WE ???',
-		'para-content' : 'SPP is an IIT Kharagpur-based research group in the Materials Science Centre lead by Dr. Shibayan Roy since 2016. The group tries to correlate the mechanical behavior with the microstructures in the different systems (Metal-based alloys, Composites, and Glass-ceramics). The main purpose of the SPP group is to interrelate and find the link between the three main stems, i.e., Structure, Property, and Processing in various systems. The group is very diverse and has no barriers in terms of background. It includes Physicists, Metallurgists, Ceramists, Nano-technologists, and Mechanical people and is open to many more such minds who are very passionate and enthusiasts for research and can dive in and explore the limitless extremities.',
+		'para_content' : 'SPP is an IIT Kharagpur-based research group in the Materials Science Centre lead by Dr. Shibayan Roy since 2016. The group tries to correlate the mechanical behavior with the microstructures in the different systems (Metal-based alloys, Composites, and Glass-ceramics). The main purpose of the SPP group is to interrelate and find the link between the three main stems, i.e., Structure, Property, and Processing in various systems. The group is very diverse and has no barriers in terms of background. It includes Physicists, Metallurgists, Ceramists, Nano-technologists, and Mechanical people and is open to many more such minds who are very passionate and enthusiasts for research and can dive in and explore the limitless extremities.',
 		'quote' : 'WE BELIEVE THAT RESEARCH IS A LIFESTYLE, NOT A JOB'	   	
-		}
-},
-{
+		},
+
 	'group_updates' : [
 		{
-	'point' : 'Ashoktaru has been granted an operator-ship of departmental FESEM.'
-},
-{
-	'point' : 'Kamalika and Roja have successfully completed their registration seminar.'
-},
-{
-	'point' : 'Souvik published a paper titled "Site-dependent microstructure, porosity and mechanical properties of LENSTM processed Ti-6Al-4V alloy", in Materials Science and Engineering A.'
-},
-{
-	'point' : 'Souvik published a paper titled "Statistical modeling of microstructure evolution in a Ti-6Al-4V alloy during isothermal compression" in Acta Materialia.'
-},
-{
-	'point' : 'Faizal has recently secured 3rd prize for the group project titled "Write an article to Wikipedia on the use of glass in the human body" at the 2nd ICG-CGCRI Tutorial 2021.'
-}
-]}])
-
-/// create collection - group_members
-
-db.createCollection('group_members')
-
-/// fiiling in group_members
-
-db.group_members.insertMany([{
-	'shibayan_sir' : {
-	'name' : 'Dr. Shibayan Roy',
-	'role' : 'Assistant Professor, IIT Kharagpur',
-	'para_content' : 'Dr. Shibayan Roy is currently an Assistant Professor in the Materials Science Center of Indian Institute of Technology IIT-Kharagpur in India. He has joined the institute in November 2015 and continuing to date.',
-	'links' : {
-		'home_website' : 'https://sites.google.com/site/shibayansdreams/home?authuser=0',
-		'researcher_id' : 'https://publons.com/researcher/2730857/shibayan-roy/',
-		'google_scholar' : 'https://scholar.google.co.in/citations?user=YkEQ8ZsAAAAJ&oi=ao',
-		'email' : 'shibayan@matsc.iitkgp.ac.in'
+			'point' : 'Ashoktaru has been granted an operator-ship of departmental FESEM.'
 		},
-	'img_url' : 'shibayan.jpg'
-}},
-{
+		{
+			'point' : 'Kamalika and Roja have successfully completed their registration seminar.'
+		},
+		{
+			'point' : 'Souvik published a paper titled "Site-dependent microstructure, porosity and mechanical properties of LENSTM processed Ti-6Al-4V alloy", in Materials Science and Engineering A.'
+		},
+		{
+			'point' : 'Souvik published a paper titled "Statistical modeling of microstructure evolution in a Ti-6Al-4V alloy during isothermal compression" in Acta Materialia.'
+		},
+		{
+			'point' : 'Faizal has recently secured 3rd prize for the group project titled "Write an article to Wikipedia on the use of glass in the human body" at the 2nd ICG-CGCRI Tutorial 2021.'
+		}
+]})
+
+/// create collection - members
+
+db.createCollection('members')
+
+/// fiiling in members
+
+db.members.insertOne({
+	'shibayan_sir' : {
+		'name' : 'Dr. Shibayan Roy',
+		'role' : 'Assistant Professor, IIT Kharagpur',
+		'para_content' : 'Dr. Shibayan Roy is currently an Assistant Professor in the Materials Science Center of Indian Institute of Technology IIT-Kharagpur in India. He has joined the institute in November 2015 and continuing to date.',
+		'links' : {
+			'home_website' : 'https://sites.google.com/site/shibayansdreams/home?authuser=0',
+			'researcher_id' : 'https://publons.com/researcher/2730857/shibayan-roy/',
+			'google_scholar' : 'https://scholar.google.co.in/citations?user=YkEQ8ZsAAAAJ&oi=ao',
+			'email' : 'shibayan@matsc.iitkgp.ac.in'
+			},
+		'img_url' : 'shibayan.jpg'
+	},
+
 	'team_members' : [
-{
-	'mem_id' : '0',
-	'name' : 'Souvik Sahoo',
-	'role' : 'Research Scholar',
-	'img_url' : 'souvik.jpg',
-	'cv_link' : 'https://drive.google.com/file/d/0Bzb-lXif_LfzLUhpVXh6MzBuWE0/view?resourcekey=0-Zjp_q-NcNMN46SaY9eQOoQ'
-},
-{
-	'mem_id' : '1',
-	'name' : 'Ashoktaru Chakraborty',
-	'role' : 'Research Scholar',
-	'img_url' : 'ashoktaru.jpg',
-	'cv_link' : 'https://drive.google.com/file/d/0Bzb-lXif_LfzWlUtcFN1ZDc3MTA/view?resourcekey=0-pzbdoWtK4tzUf_zVmBpf0w',
-},
-{
-	'mem_id' : '2',
-	'name' : 'Samarendra Roy',
-	'role' : 'Research Scholar',
-	'img_url' : 'samarendra.jpg',
-	'cv_link' : 'https://drive.google.com/file/d/0Bzb-lXif_LfzYnFxZXJtNWVtV2s/view?resourcekey=0-Em48P5GNXQr06hJ2qgFnXw',
-},
-{
-	'mem_id' : '3',
-	'name' : 'Kamalika Mandal',
-	'role' : 'Research Scholar',
-	'img_url' : 'kamalika.jpg',
-	'cv_link' : 'https://drive.google.com/file/d/13b4-i5VCW7gwz-iQkJ_qYEbOYlvefCbM/view',
-},
-{
-	'mem_id' : '4',
-	'name' : 'Samar Mondal',
-	'role' : 'Research Scholar',
-	'img_url' : 'samar.jpg',
-	'cv_link' : 'NA',
-},
-{
-	'mem_id' : '5',
-	'name' : 'Roja Rani K.',
-	'role' : 'Research Scholar',
-	'img_url' : 'roja.jpg',
-	'cv_link' : 'https://drive.google.com/file/d/1atfgCWapOVyh9-ttLhps087THkDs-fVz/view',
-},
-{
-	'mem_id' : '6',
-	'name' : 'Saumya Gupta',
-	'role' : 'Research Scholar',
-	'img_url' : 'saumya.jpg',
-	'cv_link' : 'https://drive.google.com/file/d/1aqS2DG0dbavlhlXNCpxeCYCOvOt_L__f/view',
-},
-{
-	'mem_id' : '7',
-	'name' : 'Arjun Mahato',
-	'role' : 'Research Scholar',
-	'img_url' : 'arjun.jpg',
-	'cv_link' : 'https://drive.google.com/file/d/1EZxw0wogV4guwT_EqD8SYha5wuH83Sk8/view',
-},
-{
-	'mem_id' : '8',
-	'name' : 'Mohamed Faizal Usaama J.',
-	'role' : 'Research Scholar',
-	'img_url' : 'faizal.jpg',
-	'cv_link' : 'https://drive.google.com/file/d/1rje9h1WWSieCC140SJ9s9GVXTyQyr5EY/view',
-},
-{
-	'mem_id' : '9',
-	'name' : 'Malarvizhi Thangarasu',
-	'role' : 'Research Scholar',
-	'img_url' : 'malarvizhi.jpg',
-	'cv_link' : 'https://drive.google.com/file/d/1mRTvOE1pBqGHT4yVjnCeXNrc9bWaj-gk/view',
-},
-{
-	'mem_id' : '10',
-	'name' : 'Lalit Ahlawat',
-	'role' : 'Research Scholar',
-	'img_url' : 'lalit.jpg',
-	'cv_link' : 'NA',
-}
-]
-},
-{
+	{
+		'mem_id' : '0',
+		'name' : 'Souvik Sahoo',
+		'role' : 'Research Scholar',
+		'img_url' : 'souvik.jpg',
+		'cv_link' : 'https://drive.google.com/file/d/0Bzb-lXif_LfzLUhpVXh6MzBuWE0/view?resourcekey=0-Zjp_q-NcNMN46SaY9eQOoQ'
+	},
+	{
+		'mem_id' : '1',
+		'name' : 'Ashoktaru Chakraborty',
+		'role' : 'Research Scholar',
+		'img_url' : 'ashoktaru.jpg',
+		'cv_link' : 'https://drive.google.com/file/d/0Bzb-lXif_LfzWlUtcFN1ZDc3MTA/view?resourcekey=0-pzbdoWtK4tzUf_zVmBpf0w',
+	},
+	{
+		'mem_id' : '2',
+		'name' : 'Samarendra Roy',
+		'role' : 'Research Scholar',
+		'img_url' : 'samarendra.jpg',
+		'cv_link' : 'https://drive.google.com/file/d/0Bzb-lXif_LfzYnFxZXJtNWVtV2s/view?resourcekey=0-Em48P5GNXQr06hJ2qgFnXw',
+	},
+	{
+		'mem_id' : '3',
+		'name' : 'Kamalika Mandal',
+		'role' : 'Research Scholar',
+		'img_url' : 'kamalika.jpg',
+		'cv_link' : 'https://drive.google.com/file/d/13b4-i5VCW7gwz-iQkJ_qYEbOYlvefCbM/view',
+	},
+	{
+		'mem_id' : '4',
+		'name' : 'Samar Mondal',
+		'role' : 'Research Scholar',
+		'img_url' : 'samar.jpg',
+		'cv_link' : 'NA',
+	},
+	{
+		'mem_id' : '5',
+		'name' : 'Roja Rani K.',
+		'role' : 'Research Scholar',
+		'img_url' : 'roja.jpg',
+		'cv_link' : 'https://drive.google.com/file/d/1atfgCWapOVyh9-ttLhps087THkDs-fVz/view',
+	},
+	{
+		'mem_id' : '6',
+		'name' : 'Saumya Gupta',
+		'role' : 'Research Scholar',
+		'img_url' : 'saumya.jpg',
+		'cv_link' : 'https://drive.google.com/file/d/1aqS2DG0dbavlhlXNCpxeCYCOvOt_L__f/view',
+	},
+	{
+		'mem_id' : '7',
+		'name' : 'Arjun Mahato',
+		'role' : 'Research Scholar',
+		'img_url' : 'arjun.jpg',
+		'cv_link' : 'https://drive.google.com/file/d/1EZxw0wogV4guwT_EqD8SYha5wuH83Sk8/view',
+	},
+	{
+		'mem_id' : '8',
+		'name' : 'Mohamed Faizal Usaama J.',
+		'role' : 'MS Student',
+		'img_url' : 'faizal.jpg',
+		'cv_link' : 'https://drive.google.com/file/d/1rje9h1WWSieCC140SJ9s9GVXTyQyr5EY/view',
+	},
+	{
+		'mem_id' : '9',
+		'name' : 'Malarvizhi Thangarasu',
+		'role' : 'M. Tech',
+		'img_url' : 'malarvizhi.jpg',
+		'cv_link' : 'https://drive.google.com/file/d/1mRTvOE1pBqGHT4yVjnCeXNrc9bWaj-gk/view',
+	},
+	{
+		'mem_id' : '10',
+		'name' : 'Lalit Ahlawat',
+		'role' : 'M. Tech',
+		'img_url' : 'lalit.jpg',
+		'cv_link' : 'NA',
+	}],
+
 	'team_interns': [
-{
-	'intern_id' : '0',
-	'details' : 'Nidhi Gupta, Visvesvaraya National Institute of Technology VNIT Nagpur (August 2020-)'
-},
-{
-	'intern_id' : '1',
-	'details' : 'Shubhadip Paul, National Institute of Technology Durgapur (April 2021-)'
-},
-{
-	'intern_id' : '2',
-	'details' : 'Rohan Pathy, National Institute of Technology Rourkela (April 2021-)'
-}
-]
-},
-{
+	{
+		'intern_id' : '0',
+		'details' : 'Nidhi Gupta, Visvesvaraya National Institute of Technology VNIT Nagpur (August 2020-)'
+	},
+	{
+		'intern_id' : '1',
+		'details' : 'Shubhadip Paul, National Institute of Technology Durgapur (April 2021-)'
+	},
+	{
+		'intern_id' : '2',
+		'details' : 'Rohan Pathy, National Institute of Technology Rourkela (April 2021-)'
+	}],
+
 	'alumni' : [
-{
-	'alumni_id' : '0',
-	'name' : 'Mrinmoy Garari',
-	'details' : {
-		'0' : 'Post-doctoral fellow (DST-SERB N-PDF) from March 2017 to March 2019',
-		'1' : 'Project: Processing, microstructure and mechanical properties of high-strength Mica and Leucite based glass-ceramics',
-		'2' : 'Current status: Quality Assurance Officer, Directorate General of Aeronautical Quality Assurance (DGAQA), Ministry of Defense, Govt. of India',
-		'3' : 'Previous Education: Ph. D. (Chemistry), Jadavpur University, 2016 (Worked at: CSIR-Central Glass & Ceramic Research Institute, Kolkata, India)'
+	{
+		'alumni_id' : '0',
+		'name' : 'Mrinmoy Garari',
+		'details' : [
+		{
+			'point' : 'Post-doctoral fellow (DST-SERB N-PDF) from March 2017 to March 2019'
+		},
+		{
+			'point' : 'Project: Processing, microstructure and mechanical properties of high-strength Mica and Leucite based glass-ceramics'
+		},
+		{
+			'point' : 'Current status: Quality Assurance Officer, Directorate General of Aeronautical Quality Assurance (DGAQA), Ministry of Defense, Govt. of India'
+		},
+		{
+			'point' : 'Previous Education: Ph. D. (Chemistry), Jadavpur University, 2016 (Worked at: CSIR-Central Glass & Ceramic Research Institute, Kolkata, India)'
+		}],
+		'img_url' : 'mrinmoy.jpg',
+		'email' : 'mrinmoygarai@yahoo.co.in'
 	},
-	'img_url' : 'mrinmoy.jpg',
-	'email' : 'mrinmoygarai@yahoo.co.in'
-},
-{
-	'alumni_id' : '1',
-	'name' : 'Sunil Yadav',
-	'details' : {
-		'0' : 'Course registered: M. Tech (July 2015 - May 2017)',
-		'1' : 'Current status: Doctoral student at IIT Madras',
-		'2' : 'Project: Microstructure-processing-property correlation in machinable glass ceramics',
-		'3' : 'Previous Education: B.E. in Metallurgical Engineering, O.P. Jindal Institute of Technology, Raigarh, Chattisgarh'
+	{
+		'alumni_id' : '1',
+		'name' : 'Sunil Yadav',
+		'details' : [
+			{
+				'point' : 'Course registered: M. Tech (July 2015 - May 2017)'
+			},
+			{
+				'point' : 'Current status: Doctoral student at IIT Madras'
+			},
+			{
+				'point' : 'Project: Microstructure-processing-property correlation in machinable glass ceramics'
+			},
+			{
+				'point' : 'Previous Education: B.E. in Metallurgical Engineering, O.P. Jindal Institute of Technology, Raigarh, Chattisgarh'
+			}],
+		'img_url' : 'sunil.jpg',
+		'email' : 'suniyadav786@gmail.com'
 	},
-	'img_url' : 'sunil.jpg',
-	'email' : 'suniyadav786@gmail.com'
-},
-{
-	'alumni_id' : '2',
-	'name' : 'Silva Basu',
-	'details' : {
-		'0' : 'Course registered: M. Tech (July 2015 - May 2017)',
-		'1' : 'Current status: Doctoral student at Karlsruhe Institute of Technology, Germany',
-		'2' : 'Project: Strain rate sensitivity of a TRIP-assisted dual-phase high-entropy alloy (as a DAAD fellow in RWTH Aachen & MPIE Dusseldorf, Germany)',
-		'3' : 'Previous Education: B Tech in Metallurgical and Materials Engineering, Jadavpur University, Kolkata'
+	{
+		'alumni_id' : '2',
+		'name' : 'Silva Basu',
+		'details' : [
+			{
+				'point' : 'Course registered: M. Tech (July 2015 - May 2017)'
+			},
+			{
+				'point' : 'Current status: Doctoral student at Karlsruhe Institute of Technology, Germany'
+			},
+			{
+				'point' : 'Project: Strain rate sensitivity of a TRIP-assisted dual-phase high-entropy alloy (as a DAAD fellow in RWTH Aachen & MPIE Dusseldorf, Germany)'
+			},
+			{
+				'point' : 'Previous Education: B Tech in Metallurgical and Materials Engineering, Jadavpur University, Kolkata'
+			}],
+		'img_url' : 'silva.jpg',
+		'email' : 'silva.basu@kit.edu'
 	},
-	'img_url' : 'silva.jpg',
-	'email' : 'silva.basu@kit.edu'
-},
-{
-	'alumni_id' : '3',
-	'name' : 'Anuja P. Joshi',
-	'details' : {
-		'0' : 'Course registered: M. Tech (July 2015 - May 2017)',
-		'1' : 'Current Status: Research Scientist at Airbus India',
-		'2' : 'Project: Processing - microstructure - mechanical property relationship in additive manufactured (LENS) Ti-6Al-4V alloy',
-		'3' : 'Previous Education: B. Tech in Metallurgy and Material Science, College of Engineering, Pune'
+	{
+		'alumni_id' : '3',
+		'name' : 'Anuja P. Joshi',
+		'details' : [
+			{
+				'point' : 'Course registered: M. Tech (July 2015 - May 2017)'
+			},
+			{
+				'point' : 'Current Status: Research Scientist at Airbus India'
+			},
+			{
+				'point' : 'Project: Processing - microstructure - mechanical property relationship in additive manufactured (LENS) Ti-6Al-4V alloy'
+			},
+			{
+				'point' : 'Previous Education: B. Tech in Metallurgy and Material Science, College of Engineering, Pune'
+			}],
+		'img_url' : 'anuja.jpg',
+		'email' : 'anuja.joshi@airbus.com'
 	},
-	'img_url' : 'anuja.jpg',
-	'email' : 'anuja.joshi@airbus.com'
-},
-{
-	'alumni_id' : '4',
-	'name' : 'Anoop Kumar Maurya',
-	'details' : {
-		'0' : 'Current status: Doctoral student at School of Materials Science and Engineering, Gyeongsang National University, South Korea',
-		'1' : 'Course registered: M. Tech (July 2016 - May 2018)',
-		'2' : 'Project: Effect of process variables on the microstructure, micro-texture and mechanical properties of additive manufactured (LENS) Ti-6Al-4V alloy',
-		'3' : 'Previous Education: M.Sc in General Chemistry, VNIT Nagpur'
+	{
+		'alumni_id' : '4',
+		'name' : 'Anoop Kumar Maurya',
+		'details' : [
+			{
+				'point' : 'Current status: Doctoral student at School of Materials Science and Engineering, Gyeongsang National University, South Korea'
+			},
+			{
+				'point' : 'Course registered: M. Tech (July 2016 - May 2018)'
+			},
+			{
+				'point' : 'Project: Effect of process variables on the microstructure, micro-texture and mechanical properties of additive manufactured (LENS) Ti-6Al-4V alloy'
+			},
+			{
+				'point' : 'Previous Education: M.Sc in General Chemistry, VNIT Nagpur'
+			}],
+		'img_url' : 'anoop.jpg',
+		'email' : 'anoopmaurya70@gmail.com'
 	},
-	'img_url' : 'anoop.jpg',
-	'email' : 'anoopmaurya70@gmail.com'
-},
-{
-	'alumni_id' : '5',
-	'name' : 'Biswajit M. Patra',
-	'details' : {
-		'0' : 'Course registered: M. Tech (July 2017 - May 2019)',
-		'1' : 'Current status: Research scientist at Tata Steel India',
-		'2' : 'Project: Microstructure-processing-mechanical property relationship of hot pressed (powder metallurgy) Cu-Sn alloy',
-		'3' : 'Previous Education: B. Tech in Ceramic Engineering, National Institute of Technology NIT Rourkela, Odisha'
+	{
+		'alumni_id' : '5',
+		'name' : 'Biswajit M. Patra',
+		'details' : [
+			{
+				'point' : 'Course registered: M. Tech (July 2017 - May 2019)'
+			},
+			{
+				'point' : 'Current status: Research scientist at Tata Steel India'
+			},
+			{
+				'point' : 'Project: Microstructure-processing-mechanical property relationship of hot pressed (powder metallurgy) Cu-Sn alloy'
+			},
+			{
+				'point' : 'Previous Education: B. Tech in Ceramic Engineering, National Institute of Technology NIT Rourkela, Odisha'
+			}],
+		'img_url' : 'biswajit.jpg',
+		'email' : 'biswajitmpatra1@gmail.com'
 	},
-	'img_url' : 'biswajit.jpg',
-	'email' : 'biswajitmpatra1@gmail.com'
-},
-{
-	'alumni_id' : '6',
-	'name' : 'Sushmita Sharma',
-	'details' : {
-		'0' : 'Course registered: M. Tech (July 2017 - May 2019)',
-		'1' : 'Current status: Research scientist at Tata Advanced Systems Ltd.',
-		'2' : 'Project: Structure-property relationship of a) Direct metal laser sintering (DMLS) manufactured Ti-6Al-4V alloy, and b) ZrO2 containing Mica glass ceramics',
-		'3' : 'Previous Education: B. Tech in Nanotechnology, Central University of Jharkhand, Ranchi, Jharkhand'
+	{
+		'alumni_id' : '6',
+		'name' : 'Sushmita Sharma',
+		'details' : [
+			{
+				'point' : 'Course registered: M. Tech (July 2017 - May 2019)'
+			},
+			{
+				'point' : 'Current status: Research scientist at Tata Advanced Systems Ltd.'
+			},
+			{
+				'point' : 'Project: Structure-property relationship of a) Direct metal laser sintering (DMLS) manufactured Ti-6Al-4V alloy, and b) ZrO2 containing Mica glass ceramics'
+			},
+			{
+				'point' : 'Previous Education: B. Tech in Nanotechnology, Central University of Jharkhand, Ranchi, Jharkhand'
+			}],
+		'img_url' : 'sushmita.jpg',
+		'email' : 'sush.sumi17@gmail.com'
 	},
-	'img_url' : 'sushmita.jpg',
-	'email' : 'sush.sumi17@gmail.com'
-},
-{
-	'alumni_id' : '7',
-	'name' : 'Saumya Gupta',
-	'details' : {
-		'0' : 'Course registered: M. Tech (July 2018 - May 2020)',
-		'1' : 'Current status: Doctoral student at Materials Science Center, IIT Kharagpur',
-		'2' : 'Project: Structure-property relationship in additively manufactured steel and Ni-superalloys (In collaboration with Wayne State University, USA)',
-		'3' : 'Previous Education: Masters of Science (Physics), Kanpur University (C.S.J.M.U.)'
+	{
+		'alumni_id' : '7',
+		'name' : 'Saumya Gupta',
+		'details' : [
+			{
+				'point' : 'Course registered: M. Tech (July 2018 - May 2020)'
+			},
+			{
+				'point' : 'Current status: Doctoral student at Materials Science Center, IIT Kharagpur'
+			},
+			{
+				'point' : 'Project: Structure-property relationship in additively manufactured steel and Ni-superalloys (In collaboration with Wayne State University, USA)'
+			},
+			{
+				'point' : 'Previous Education: Masters of Science (Physics), Kanpur University (C.S.J.M.U.)'
+			}],
+		'img_url' : 'saumya.jpg',
+		'email' : 'iamsaumyagupta@gmail.com'
 	},
-	'img_url' : 'saumya.jpg',
-	'email' : 'iamsaumyagupta@gmail.com'
-},
-{
-	'alumni_id' : '8',
-	'name' : 'Arjun Mahato',
-	'details' : {
-		'0' : 'Course registered: M. Tech (July 2018 - May 2020)',
-		'1' : 'Current status: Doctoral student at Materials Science Center, IIT Kharagpur',
-		'2' : 'Project: Structure-property relationship for C-fiber reinforced MMC and CMC (In collaboration with Tata Steel)',
-		'3' : 'Previous Education: B. Tech in Nanotechnology from Central university of Jharkhand, Ranchi'
+	{
+		'alumni_id' : '8',
+		'name' : 'Arjun Mahato',
+		'details' : [
+			{
+				'point' : 'Course registered: M. Tech (July 2018 - May 2020)'
+			},
+			{
+				'point' : 'Current status: Doctoral student at Materials Science Center, IIT Kharagpur'
+			},
+			{
+				'point' : 'Project: Structure-property relationship for C-fiber reinforced MMC and CMC (In collaboration with Tata Steel)'
+			},
+			{
+				'point' : 'Previous Education: B. Tech in Nanotechnology from Central university of Jharkhand, Ranchi'
+			}],
+		'img_url' : 'arjun.jpg',
+		'email' : 'mahatoarjun244@gmail.co'
 	},
-	'img_url' : 'arjun.jpg',
-	'email' : 'mahatoarjun244@gmail.co'
-},
-{
-	'alumni_id' : '9',
-	'name' : 'Kavin Kannan',
-	'details' : {
-		'0' : 'Course registered: M. Tech (July 2019 -May 2021)',
-		'1' : 'Current status: Scientist in Bureau of Indian Standards (BIS)',
-		'2' : 'Project: Microstructure and texture evolution during thermo-mechanical processing of Titanium alloys',
-		'3' : 'Previous Education: B. E. in Metallurgical Engineering, PSG College of Technology, Coimbatore'
+	{
+		'alumni_id' : '9',
+		'name' : 'Kavin Kannan',
+		'details' : [
+			{
+				'point' : 'Course registered: M. Tech (July 2019 -May 2021)'
+			},
+			{
+				'point' : 'Current status: Scientist in Bureau of Indian Standards (BIS)'
+			},
+			{
+				'point' : 'Project: Microstructure and texture evolution during thermo-mechanical processing of Titanium alloys'
+			},
+			{
+				'point' : 'Previous Education: B. E. in Metallurgical Engineering, PSG College of Technology, Coimbatore'
+			}],
+		'img_url' : 'kavin.jpg',
+		'email' : 'kavinpsg1996@gmail.com'
 	},
-	'img_url' : 'kavin.jpg',
-	'email' : 'kavinpsg1996@gmail.com'
-},
-{
-	'alumni_id' : '10',
-	'name' : 'Chalapakka Phani N.',
-	'details' : {
-		'0' : 'Course registered: M. Tech (July 2019 -May 2021)',
-		'1' : 'Current status: Applying for higher studies',
-		'2' : 'Project: Structure-property relationship for C-fibre reinforced ultra-high temperature (UHC) ceramics composites',
-		'3' : 'Previous Education: B. E. in Metallurgical Engineering, JNTUK University College of Engineering, Vizianagaram'
-	},
-	'img_url' : 'phani.jpg',
-	'email' : 'ch.phanikumar654@gmail.com'
-}
-]
-},
-{
+	{
+		'alumni_id' : '10',
+		'name' : 'Chalapakka Phani N.',
+		'details' : [
+			{
+				'point' : 'Course registered: M. Tech (July 2019 -May 2021)'
+			},
+			{
+				'point' : 'Current status: Applying for higher studies'
+			},
+			{
+				'point' : 'Project: Structure-property relationship for C-fibre reinforced ultra-high temperature (UHC) ceramics composites'
+			},
+			{
+				'point' : 'Previous Education: B. E. in Metallurgical Engineering, JNTUK University College of Engineering, Vizianagaram'
+			}],
+		'img_url' : 'phani.jpg',
+		'email' : 'ch.phanikumar654@gmail.com'
+	}],
+
 	'alumni_interns' : [
-{
-	'intern_id' : '0',
-	'details' : 'Anubhav Singh, Birla Institute of Technology Mesra, Jharkhand (May-July 2017)'
-},
-{
-	'intern_id' : '1',
-	'details' : 'Deeksha Kodangal, National Institute of Technology, Karnataka (December 2017-January 2018)'
-},
-{
-	'intern_id' : '2',
-	'details' : 'Abhirup Saha, Indian Institute of Technology, IIT Kanpur (December 2017-January 2018)'
-},
-{
-	'intern_id' : '3',
-	'details' : 'Subham Ray, National Institute of Technology NIT Durgapur (December 2018-January 2019; August-November 2020 )'
-},
-{
-	'intern_id' : '4',
-	'details' : 'Milind Nayek, University of Waterloo, Canada (January -April 2019)'
-},
-{
-	'intern_id' : '5',
-	'details' : 'Munmi Das, National Institute of Technology NIT Rourkela (May-July 2019)'
-},
-{
-	'intern_id' : '6',
-	'details' : 'Bhaskarjyoti Das, Indian Institute of Engineering Science and Technology (IIEST), Shibpur (May-July 2019)'
-},
-{
-	'intern_id' : '7',
-	'details' : 'Koomarmangalam Dey, Indian Institute of Technology, IIT Kharagpur (May-July 2019; May 2020)'
-},
-{
-	'intern_id' : '8',
-	'details' : 'Pronoy Roy, National Institute of Technology NIT Durgapur (June 2020-September 2020)'
-},
-{
-	'intern_id' : '9',
-	'details' : 'Tharun Reddy, Sir M. Visvesvaraya Institute of Technology, Bangalore (September 2020-January 2021)'
-}
-]
-}])
+	{
+		'intern_id' : '0',
+		'details' : 'Anubhav Singh, Birla Institute of Technology Mesra, Jharkhand (May-July 2017)'
+	},
+	{
+		'intern_id' : '1',
+		'details' : 'Deeksha Kodangal, National Institute of Technology, Karnataka (December 2017-January 2018)'
+	},
+	{
+		'intern_id' : '2',
+		'details' : 'Abhirup Saha, Indian Institute of Technology, IIT Kanpur (December 2017-January 2018)'
+	},
+	{
+		'intern_id' : '3',
+		'details' : 'Subham Ray, National Institute of Technology NIT Durgapur (December 2018-January 2019; August-November 2020 )'
+	},
+	{
+		'intern_id' : '4',
+		'details' : 'Milind Nayek, University of Waterloo, Canada (January -April 2019)'
+	},
+	{
+		'intern_id' : '5',
+		'details' : 'Munmi Das, National Institute of Technology NIT Rourkela (May-July 2019)'
+	},
+	{
+		'intern_id' : '6',
+		'details' : 'Bhaskarjyoti Das, Indian Institute of Engineering Science and Technology (IIEST), Shibpur (May-July 2019)'
+	},
+	{
+		'intern_id' : '7',
+		'details' : 'Koomarmangalam Dey, Indian Institute of Technology, IIT Kharagpur (May-July 2019; May 2020)'
+	},
+	{
+		'intern_id' : '8',
+		'details' : 'Pronoy Roy, National Institute of Technology NIT Durgapur (June 2020-September 2020)'
+	},
+	{
+		'intern_id' : '9',
+		'details' : 'Tharun Reddy, Sir M. Visvesvaraya Institute of Technology, Bangalore (September 2020-January 2021)'
+	}]
+})
 
 /// create collection - research
 
@@ -339,8 +410,7 @@ db.createCollection('research')
 
 /// filling in research data
 
-db.research.insertMany([
-{
+db.research.insertOne({
 	'intro' : {
 		'title' : 'What We Do Research???',
 		'para_content' : 'As for the research interest of Dr. Roy, the members of the SPP group are involved in the broad area of “Processing-Structure-Property correlation” through the understanding of micro-mechanisms that governs the fundamental mechanical response of materials. Our studies are mostly experimental in nature, however, we always try to complement our experimental results with various simulation-based approaches (Density functional theory, Artificial neural network, etc.).',
@@ -403,9 +473,7 @@ db.research.insertMany([
 				'img_caption' : 'Two-point statistics for Ti alloy',
 			}
 		]
-	}
-},
-{
+	},
 	'ongoing_work' : [
 			{
 				'ongoing_id' : '0',
@@ -488,9 +556,7 @@ db.research.insertMany([
 					}
 				]
 			},
-		]
-},
-{
+		],
 	'featured_work' : {
 			'research_articles' : [
 			{
@@ -525,11 +591,9 @@ db.research.insertMany([
 					'img_url' : 'souvik-book.jpg'
 				}
 			]
-	}
-},
-{
-		'fundtion_collaboration' : {
-			'funding' : {
+	},
+	'funding_collaboration' : {
+		'funding' : {
 				'current_projects' : [
 					{
 						'title' : '"Understanding the mica-based machinable glass ceramics systems from an unprecedented perspective of processing-microstructure-property correlation using novel heat treatment techniques, advanced microstructural and crystallographic orientation characterizations, full-scale mechanical testing, and phenomenological theoretical modeling (Acronym: MGC By MGC: Machinable Glass-ceramics By Multifaceted Generalized Concepts)"',
@@ -616,8 +680,7 @@ db.research.insertMany([
 				}
 			]
 		}
-	}
-])
+})
 
 /// create collection - facilities
 
@@ -968,3 +1031,72 @@ db.facilities.insertOne(
 		]
 	}
 )
+
+// create collection - refreshment
+
+db.createCollection('refreshment')
+
+// filling refreshment data in collection
+
+db.refreshment.insertOne({
+	'we_believe' : [
+		{
+			'point' : 'We do things which we like to do.'
+		},
+		{
+			'point' : 'Our bonus: We get paid for what we like to do.'
+		},
+		{
+			'point' : 'Data + meaning → Information + understanding → Knowledge.'
+		},
+		{
+			'point' : 'Our final outcome = Quality human resource.'
+		}
+	],
+	'fun_imgs' : [
+		{
+			'img_id' : '0',
+			'img_url' : '0.jpg'
+		},
+		{
+			'img_id' : '1',
+			'img_url' : '1.jpg'
+		},
+		{
+			'img_id' : '2',
+			'img_url' : '2.jpg'
+		},
+		{
+			'img_id' : '3',
+			'img_url' : '3.jpg'
+		},
+		{
+			'img_id' : '4',
+			'img_url' : '4.jpg'
+		},
+		{
+			'img_id' : '5',
+			'img_url' : '5.jpg'
+		},
+		{
+			'img_id' : '6',
+			'img_url' : '6.jpg'
+		}
+	]
+})
+
+/// creating collection - contact
+
+db.createCollection('contact')
+
+/// filling contact data in collection
+
+db.contact.insertOne({
+	'details' : {
+		'title' : 'Job Positions',
+		'para_content' : 'Young minds dedicated to research are always welcomed. Feel free to connect with us with your CV.',
+		'email' : 'shibayan@matsc.iitkgp.ac.in',
+		'tel' : '+91 3222 283962',
+		'fax' : '+91 3222 255303 '
+	}
+})

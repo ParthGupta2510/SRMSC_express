@@ -10,10 +10,10 @@ MongoClient.connect(uri, { useUnifiedTopology: true })
 .then(client => {
     console.log('Connected to Database')
     const db = client.db('SRMSC')
-    db.collection('facilities').find().toArray()
+    db.collection('index').find().toArray()
         
         .then( index_data => {
-            console.log(index_data[0]['lab'])
+            console.log(index_data[0]['top_msg']['top_msg'])
         })
         .catch(error => console.error(error))
     })

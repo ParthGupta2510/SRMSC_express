@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="./imgs/general_site_imgs/site-icon.png">
+    <link rel="icon" href="./imgs/general/site-icon.png">
     <title>SPP GROUP</title>
     <link rel="stylesheet" href="./css/style.css">
     <script defer src="./js/app.js"></script>
@@ -17,13 +17,13 @@
         <section id="fixed-to-top">
             <div id="top-msg">
                 <span>
-                    <%= data[0]['top_msg'] %>
+                    <%= data[0]['top_msg']['top-msg'] %>
                 </span>
                 <button onclick="closeTopMsg()" onmouseover="showRedBkgrnd(this)"></button>
             </div>
             <div class="brand-div">
                 <a href="#">
-                    <img src="./imgs/general_site_imgs/logo_Lab.png" alt="Lab Icon">
+                    <img src="./imgs/general/logo_Lab.png" alt="Lab Icon">
                     <div>
                         <p>Structure-Property-Processing Group</p>
                         <span>Materials Science Center, Indian Institute of Technology Kharagpur, India</span>
@@ -58,13 +58,13 @@
         </section>
         <section class="body-sec">
             <hr class="heading-hr hr-top">
-            <h2><%= data[2]['intro']['title'] %></h2>
+            <h2><%= data[0]['intro']['title'] %></h2>
             <hr class="heading-hr hr-btm">
             <p>
-                <%= data[2]['intro']['para_content'] %>
+                <%= data[0]['intro']['para_content'] %>
             </p>
             <blockquote>
-                <q><%= data[2]['intro']['quote'] %></q>
+                <q><%= data[0]['intro']['quote'] %></q>
             </blockquote>
         </section>
         <hr>
@@ -73,7 +73,7 @@
             <h2>Group Poster</h2>
             <hr class="heading-hr hr-btm">
             <figure id="img-container">
-                <img src="./imgs/general_site_imgs/poster_final.jpg" id="poster" alt="Poster">
+                <img src="./imgs/general/poster_final.jpg" id="poster" alt="Poster">
             </figure>
 
             <p>
@@ -93,7 +93,7 @@
                             &times;
                         </abbr>
                     </span>
-                    <img src="./imgs/general_site_imgs/poster_final.jpg" alt="Poster modal-box">
+                    <img src="./imgs/general/poster_final.jpg" alt="Poster modal-box">
                 </div>
             </div>
 
@@ -115,7 +115,7 @@
     <section id="typewriter-effect" class="clear-both split-right-sec typewriter">
             <h3>Group Updates</h3>
             <ul class="slideshow-container" id="slideshow-ul">
-                <% data[1]['group_updates'].forEach( update => { %>
+                <% data[0]['group_updates'].forEach( update => { %>
 
                     <li> <%= update['point'] %> </li>
 

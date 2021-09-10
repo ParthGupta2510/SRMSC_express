@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="./imgs/general_site_imgs/site-icon.png">
+    <link rel="icon" href="./imgs/general/site-icon.png">
     <title>SPP GROUP</title>
     <link rel="stylesheet" href="./css/style.css">
     <script src="./js/app.js"></script>
@@ -16,7 +16,7 @@
         <section id="fixed-to-top">
             <div class="brand-div">
                 <a href="./">
-                    <img src="./imgs/general_site_imgs/logo_Lab.png" alt="Lab Icon">
+                    <img src="./imgs/general/logo_Lab.png" alt="Lab Icon">
                     <div>
                         <p>Structure-Property-Processing Group</p>
                         <span>Materials Science Center, Indian Institute of Technology Kharagpur, India</span>
@@ -51,7 +51,9 @@
         </section>
         <section class="body-sec" id="research-top-sec">
             <hr class="heading-hr hr-top">
-            <h2><%= data[0]['intro']['title'] %></h2>
+            <h2>
+                <%= data[0]['intro']['title'] %>
+            </h2>
             <hr class="heading-hr hr-btm">
             <p>
                 <%= data[0]['intro']['para_content'] %>
@@ -68,26 +70,33 @@
                 <div class="research-div">
                     <h3 class="subpage-heading">Research Interests</h3>
                     <ul>
-                        <% data[0]['intro']['research_interests'].forEach( interest => { %>
-                            <li><%= interest['interest'] %></li>
-                        <% }) %>
+                        <% data[0]['intro']['research_interests'].forEach( interest=> { %>
+                            <li>
+                                <%= interest['interest'] %>
+                            </li>
+                            <% }) %>
                     </ul>
                 </div>
-                <div class="research-div hide-this">
+                <div class="research-div">
                     <h3 class="subpage-heading">Research Insights</h3>
-                    <div class="research-gallery" id="research-gallery">
-                        <% data[0]['intro']['research_insights'].forEach( slide => { %>
+                    <div class="research-gallery research-slideshow-container" id="research-gallery">
+                        <% data[0]['intro']['research_insights'].forEach( slide=> { %>
 
-                            <figure>
-                                <img src="./imgs/research/research_gallery/<%= slide['img_url'] %>" alt="<%= slide['img_caption'] %>">
-                                <figcaption>
+                            <figure class="image-sliderfade fade">
+                                <img src="./imgs/research/research_gallery/<%= slide['img_url'] %>"
+                                    alt="<%= slide['img_caption'] %>">
+                                <figcaption class="text">
                                     <%= slide['img_caption'] %>
                                 </figcaption>
                             </figure>
-                
-                        <% }) %>
 
+                            <% }) %>
 
+                                <div style="text-align:center">
+                                    <% data[0]['intro']['research_insights'].forEach( slide=> { %>
+                                        <span class="dot"></span>
+                                        <% }) %>
+                                </div>
                     </div>
                 </div>
             </section>
@@ -103,22 +112,33 @@
             <section class="research-subpage">
                 <h3>Ongoing Work</h3>
 
-                <% data[3]['ongoing_work'].forEach( work => { %>
-
-                    <div class="ongoing-work-div">
-                        <h5><%= work['title'] %></h5>
-                        <h6>(Members involved: <%= work['members_involved'] %>)</h6>
-                        <p>
-                            <%= work['para_content'] %>
-                        </p>
-
-                        <% work['img_url'].forEach( img => { %>
-                            <img src="./imgs/research/ongoing_work/<%= work['ongoing_id'] %>/<%= img['url'] %>" alt="">
+                <section class="ongoing-navbar">
+                    <div>
+                        <% data[0]['ongoing_work'].forEach( work => { %>
+                            <a href="#ongoing-<%= work['ongoing_id'] %>"><%= work['title'] %></a>
                         <% }) %>
-
                     </div>
-
-                <% }) %>
+                </section>
+                <section>
+                    <% data[0]['ongoing_work'].forEach( work=> { %>
+    
+                        <div class="ongoing-work-div" id="ongoing-<%= work['ongoing_id'] %>">
+                            <h5>
+                                <%= work['title'] %>
+                            </h5>
+                            <h6>(Members involved: <%= work['members_involved'] %>)</h6>
+                            <p>
+                                <%= work['para_content'] %>
+                            </p>
+    
+                            <% work['img_url'].forEach( img=> { %>
+                                <img src="./imgs/research/ongoing_work/<%= work['ongoing_id'] %>/<%= img['url'] %>" alt="">
+                                <% }) %>
+    
+                        </div>
+    
+                        <% }) %>
+                </section>
 
             </section>
         </section>
@@ -135,33 +155,37 @@
                 <h3>Featured Work</h3>
                 <div class="featured-work-div">
                     <h4>Research Articles</h4>
+                    <section>
+                    <% data[0]['featured_work']['research_articles'].forEach( article=> { %>
 
-                    <% data[1]['featured_work']['research_articles'].forEach( article => { %>
-                        
                         <div class="research-article">
                             <a href="<%= article['article_link'] %>" target="_blank">
                                 <div class="inside-a-article">
-                                    <img src="./imgs/research/featured_work/<%= article['img_url'] %>" alt="Article <%= article['article_id'] %> Preview">
-                                    <h5><%= article['title'] %></h5>
+                                    <img src="./imgs/research/featured_work/<%= article['img_url'] %>"
+                                        alt="Article <%= article['article_id'] %> Preview">
+                                    <h5>
+                                        <%= article['title'] %>
+                                    </h5>
                                 </div>
                             </a>
                         </div>
+                        <% }) %>
 
-
-                    <% }) %>
-                
                 </div>
                 <div class="featured-work-div">
                     <h4>Book Chapters</h4>
 
-                    <% data[1]['featured_work']['book_chapters'].forEach( book => { %>
-                        
+                    <% data[0]['featured_work']['book_chapters'].forEach( book=> { %>
+
                         <div class="featured-book">
-                            <img src="./imgs/research/featured_work/<%= book['img_url'] %>" alt="<%= book['description'] %>">
-                            <h5><%= book['title'] %></h5>
+                            <img src="./imgs/research/featured_work/<%= book['img_url'] %>"
+                                alt="<%= book['description'] %>">
+                            <h5>
+                                <%= book['title'] %>
+                            </h5>
                         </div>
 
-                    <% }) %>
+                        <% }) %>
                 </div>
             </section>
         </section>
@@ -179,30 +203,7 @@
                 <div class="funding-div">
                     <h4>Current Projects</h4>
 
-                    <% data[2]['funding_collaboration']['funding']['current_projects'].forEach( project => { %>
-
-                        <div class="funded-project">
-                            <blockquote>
-                                <%= project['title'] %>
-                            </blockquote>
-                            <p>
-                                Funding Agency: <%= project['funding_agency'] %>
-                            </p>
-                            <p>
-                                Duration: <%= project['duration'] %>
-                            </p>
-                            <p>
-                                Amount: <%= project['amount'] %> 
-                            </p>
-                        </div>
-
-                    <% }) %>
-
-                </div>
-                <div class="funding-div">
-                    <h4>Completed Projects</h4>
-
-                    <% data[2]['funding_collaboration']['funding']['completed_projects'].forEach( project => { %>
+                    <% data[0]['funding_collaboration']['funding']['current_projects'].forEach( project=> { %>
 
                         <div class="funded-project">
                             <blockquote>
@@ -219,18 +220,43 @@
                             </p>
                         </div>
 
-                    <% }) %>
+                        <% }) %>
+
+                </div>
+                <div class="funding-div">
+                    <h4>Completed Projects</h4>
+
+                    <% data[0]['funding_collaboration']['funding']['completed_projects'].forEach( project=> { %>
+
+                        <div class="funded-project">
+                            <blockquote>
+                                <%= project['title'] %>
+                            </blockquote>
+                            <p>
+                                Funding Agency: <%= project['funding_agency'] %>
+                            </p>
+                            <p>
+                                Duration: <%= project['duration'] %>
+                            </p>
+                            <p>
+                                Amount: <%= project['amount'] %>
+                            </p>
+                        </div>
+
+                        <% }) %>
 
                 </div>
                 <div class="funding-div">
                     <h4>Collaborators</h4>
                     <div class="collab-list">
                         <ul>
-                            <% data[2]['funding_collaboration']['collaboration'].forEach( collab => { %>
+                            <% data[0]['funding_collaboration']['collaboration'].forEach( collab=> { %>
 
-                                <li><%= collab['collaborator'] %></li>
+                                <li>
+                                    <%= collab['collaborator'] %>
+                                </li>
 
-                            <% }) %>
+                                <% }) %>
                         </ul>
                     </div>
                 </div>
@@ -241,6 +267,46 @@
     <footer>
         &copy; 2021 by SPP GROUP
     </footer>
+
+    <script>
+        var slideIndex = 0;
+        showSlides(); // call showslide method
+
+        function showSlides() {
+            var i;
+
+            // get the array of divs' with classname image-sliderfade
+            var slides = document.getElementsByClassName("image-sliderfade");
+
+            // get the array of divs' with classname dot
+            var dots = document.getElementsByClassName("dot");
+
+            for (i = 0; i < slides.length; i++) {
+                // initially set the display to 
+                // none for every image.
+                slides[i].style.display = "none";
+            }
+
+            // increase by 1, Global variable
+            slideIndex++;
+
+            // check for boundary
+            if (slideIndex > slides.length) {
+                slideIndex = 1;
+            }
+
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.
+                    replace(" active-slide", "");
+            }
+
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active-slide";
+
+            // Change image every 2 seconds
+            setTimeout(showSlides, 5000);
+        }
+    </script>
 </body>
 
 </html>

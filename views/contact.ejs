@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="./imgs/general_site_imgs/site-icon.png">
+    <link rel="icon" href="./imgs/general/site-icon.png">
     <title>SPP GROUP</title>
     <link rel="stylesheet" href="./css/style.css">
     <script src="./js/app.js"></script>
@@ -16,7 +16,7 @@
         <section id="fixed-to-top">
             <div class="brand-div">
                 <a href="./">
-                    <img src="./imgs/general_site_imgs/logo_Lab.png" alt="Lab Icon">
+                    <img src="./imgs/general/logo_Lab.png" alt="Lab Icon">
                     <div>
                         <p>Structure-Property-Processing Group</p>
                         <span>Materials Science Center, Indian Institute of Technology Kharagpur, India</span>
@@ -45,11 +45,33 @@
                 <a href="#" class="active">Contact</a>
             </nav>
         </section>
-        <section class="clear-both heading-sec">
-            <h1>Work in Progress</h1>
+        <section class="clear-both non-home-body-top-sec" id="page-heading-sec">
+            <h1>Contact</h1>
         </section>
     </header>
-
+    <section class="contact-container">
+        <!-- CONTACT FORM GOES HERE -->
+    </section>
+    <section class="contact-container">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3691.0241235532485!2d87.30834241744381!3d22.31492739999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a1d440255555547%3A0x6f2f20dd0c0d6793!2sIndian%20Institute%20of%20Technology%20Kharagpur!5e0!3m2!1sen!2sin!4v1631296767741!5m2!1sen!2sin" width="600" height="450" style="border:0; padding: 30px;" allowfullscreen="" loading="lazy"></iframe>
+        <div>
+            <h3><%= data[0]['details']['title'] %></h3>
+            <p>
+                <%= data[0]['details']['para_content'] %>
+            </p>
+            <a href="mailto:<%= data[0]['details']['email'] %>">Contact</a>
+        </div>
+    </section>
+    <section class="contact-details">
+        <ul>
+            <li style="text-decoration: underline;"><%= data[0]['details']['email'] %></li>
+            <li>Tel: <%= data[0]['details']['tel'] %></li>
+            <li>Fax: <%= data[0]['details']['fax'] %></li>
+        </ul>
+    </section>
+    <section class="contact-container">
+        <img src="./imgs/contact/thanks.png" alt="Thank You">
+    </section>
     <footer>
         &copy; 2021 by SPP GROUP
     </footer>

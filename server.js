@@ -26,40 +26,17 @@ MongoClient.connect(uri, { useUnifiedTopology: true })
         })
         .catch(error => console.error(error))
     })
-
-    app.get('/members', (req, res) => {
-        
-        db.collection('group_members').find().toArray()
-        .then( members_data => {
-            res.render('members', { data : members_data} )
-        })
-        .catch(error => console.log(error))
-    })
-
-    app.get('/research', (req, res) => {
-
-        db.collection('research').find().toArray()
-        .then( research_data => {
-            res.render('research', { data : research_data})
-        })
-        .catch(error => console.log(error))
-    })
-
-    app.get('/facilities', (req, res) => {
-
-        db.collection('facilities').find().toArray()
-        .then( facilities_data => {
-            res.render('facilities', { data : facilities_data} )
-        })
-        .catch(error => console.log(error))
-    })
     
     app.get('/NA', (req,res) => {
         res.send("NOT AVAILABLE")
     })
 
     app.get('/:file', (req, res) => {
-        res.render(`${req.params.file}`)
+        
+        db.collection(`${req.params.file}`).find().toArray()
+        .then( data => {
+            res.render(`${req.params.file}`, { data : data})
+        })
     })
 
     app.listen(port, () => {
