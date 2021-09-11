@@ -1479,7 +1479,12 @@ abbr {
   width: 40%;
   padding: 3%;
   margin: 1.99%;
-  border: solid black 3px;
+}
+
+.fun-img {
+  padding: 0;
+  margin: 4.99%;
+  outline: solid black 2px;
 }
 
 .refreshment-container div {
