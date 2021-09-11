@@ -400,7 +400,8 @@ nav div a:link {
   /* background-image: url(../imgs/general/body-sec-bkgrnd-3.jpg); */
   background-size: cover;
   /* background-image: url(../imgs/general/body-sec-bkgrnd.jpg); */
-  background-color: lightblue;
+  /* background-color: lightblue; */
+  background-color: rgb(197, 229, 240);
   background-image: none;
 }
 
@@ -623,15 +624,18 @@ footer {
   position: relative;
   border: 1px solid black;
   cursor: pointer;
-  background-color: #05716c;
-  color: white;
+  /* background-color: #05716c; */
+  background-color: wheat;
+  /* color: white; */
+  color: black;
   font-variant: small-caps;
   letter-spacing: 1px;
   font-weight: 300;
 }
 
 .bgcolor-onclick {
-  background-color: rgba(5, 113, 108, 0.686);
+  /* background-color: rgba(5, 113, 108, 0.686); */
+  background-color: rgb(245, 207, 138);
 }
 
 .div-menu {
@@ -687,16 +691,17 @@ footer {
 }
 
 .subpage-heading {
-  width: 90%;
+  width: 100%;
   margin: 0 auto;
   text-align: center;
   font-size: 3.5em;
-  padding: 3% 0;
+  padding: 1% 0;
   border-bottom: 3px solid black;
   font-family: 'Bahnschrift Light';
-  background-color: #1978a5;
-  border-bottom-right-radius: 20%;
-  border-bottom-left-radius: 20%;
+  background-color: #0a5679;
+  color: white;
+  /* border-bottom-right-radius: 20%; */
+  /* border-bottom-left-radius: 20%; */
 }
 
 .shibayan-sir {
@@ -704,7 +709,7 @@ footer {
   position: relative;
   width: 90vw;
   margin: 1% auto;
-  background-color: lightskyblue;
+  background-color: rgb(197, 229, 240);
   /* background-image: radial-gradient(#1fbfb8, #1fbfb8, #1fbfb8, #1fbfb8, lightpink); */
 }
 
@@ -989,7 +994,8 @@ abbr {
 
 .research-container .sticky-navbar {
   width: 100%;
-  background-color: #00255c;
+  /* background-color: #00255c; */
+  background-color: black;
   color: white;
   padding: 0.5%;
   padding-left: 5%;
@@ -1005,16 +1011,16 @@ abbr {
   color: white;
 }
 
-.research-container a:link {
+.sticky-navbar>a:link {
   text-decoration: none;
   color: white;
 }
 
-.research-container a:visited {
+.sticky-navbar>a:visited {
   color: white;
 }
 
-.research-container a:hover, .research-container a:focus {
+.sticky-navbar>a:hover, .sticky-navbar>a:focus {
   text-decoration: underline;
 }
 
@@ -1176,7 +1182,8 @@ abbr {
   /* border: 1px solid red; */
   padding: 2%;
   text-align: center;
-  background-image: linear-gradient(to top left, lightgreen, wheat, salmon);
+  /* background-image: linear-gradient(to top left, lightskyblue, wheat, lightskyblue); */
+  background-color: wheat;
   border-radius: 3%;
   border: 3px solid black;
 }
@@ -1237,7 +1244,8 @@ abbr {
   display: inline-block;
   width: calc(45%);
   /* border: 2px solid red; */
-  background-image: linear-gradient(20deg, lightpink, #3500d36b, lightgreen);
+  /* background-image: linear-gradient(20deg, lightpink, #3500d36b, lightgreen); */
+  background-color: rgb(197, 229, 240);
   border-radius: 2%;
   border: 3px solid black;
   margin: 3% 2%;
@@ -1253,10 +1261,16 @@ abbr {
 
 .research-article a:link {
   display: block;
+  color: black;
+  text-decoration: none;
+}
+
+.research-article a:visited {
+  color: black;
 }
 
 .research-article a:hover {
-  color: black;
+  text-decoration: underline;
 }
 
 .inside-a-article {
@@ -1321,7 +1335,8 @@ abbr {
 .funded-project {
   padding: 2% 0;
   margin: 1%;  
-  background-image: linear-gradient(20deg, lightpink, #3500d36b, lightgreen);
+  /* background-image: linear-gradient(20deg, lightpink, #3500d36b, lightgreen); */
+  background-color: rgb(197, 229, 240);
   border: 3px solid black;
   border-radius: 3%;
   margin-bottom: 3%;
@@ -1346,7 +1361,7 @@ abbr {
   padding: 3% 1%;
   padding-left: 4%;
   margin-left: 5%;
-  background-color: lightpink;
+  background-color: wheat;
 }
 
 .collab-list li {
@@ -1464,6 +1479,7 @@ abbr {
   width: 40%;
   padding: 3%;
   margin: 1.99%;
+  border: solid black 3px;
 }
 
 .refreshment-container div {
