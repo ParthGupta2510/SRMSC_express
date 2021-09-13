@@ -66,6 +66,11 @@
             <img src="./imgs/refreshment/fun/<%= img['img_url'] %>" class="fun-img" alt="Fun Img <%= img['img_id'] %>">
         <% }) %>
     </section>
+    <section class="refreshment-container">
+        <% data[0]['videos'].forEach( vid => { %>
+            <video src="./imgs/refreshment/<%= vid['vid_url'] %>" style="padding: 20px;" controls>Video Not Supported</video>
+        <% }) %>
+    </section>
     <footer>
         &copy; 2021 by SPP GROUP
     </footer>

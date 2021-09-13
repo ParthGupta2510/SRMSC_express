@@ -1170,10 +1170,15 @@ abbr {
   font-size: 1.3em;
   display: block;
   padding: 5px;
+  text-decoration: none;
 }
 
 .ongoing-navbar a:visited {
   color: black;
+}
+
+.ongoing-navbar a:hover, .ongoing-navbar a:active {
+  text-decoration: underline;
 }
 
 .ongoing-work-div {
