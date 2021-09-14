@@ -31,11 +31,40 @@ MongoClient.connect(uri, { useUnifiedTopology: true })
         res.send("NOT AVAILABLE")
     })
 
-    app.get('/:file', (req, res) => {
+    app.get('/members', (req, res) => {
         
-        db.collection(`${req.params.file}`).find().toArray()
+        db.collection('members').find().toArray()
         .then( data => {
-            res.render(`${req.params.file}`, { data : data})
+            res.render('members', { data : data})
+        })
+    })
+
+    app.get('/research', (req, res) => {
+        
+        db.collection('research').find().toArray()
+        .then( data => {
+            res.render('research', { data : data})
+        })
+    })
+    app.get('/facilities', (req, res) => {
+        
+        db.collection('facilities').find().toArray()
+        .then( data => {
+            res.render('facilities', { data : data})
+        })
+    })
+    app.get('/refreshment', (req, res) => {
+        
+        db.collection('refreshment').find().toArray()
+        .then( data => {
+            res.render('refreshment', { data : data})
+        })
+    })
+    app.get('/contact', (req, res) => {
+        
+        db.collection('contact').find().toArray()
+        .then( data => {
+            res.render('contact', { data : data})
         })
     })
 

@@ -158,6 +158,19 @@
 
     </section>
 
+    <section class="facilities-container clear-both">
+
+        <h2 class="subpage-heading">Softwares</h2>
+
+        <div class="softwares">
+            <ol>
+                <% data[0]['softwares'].forEach( software => { %>
+                    <li><%= software['name'] %></li>
+                <% }) %>
+            </ol>
+        </div>
+    </section>
+
     <footer class="clear-both">
         &copy; 2021 by SPP GROUP
     </footer>
