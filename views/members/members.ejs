@@ -82,39 +82,39 @@
     <section class="hide-this" id="team-sec">
         <h2 id="Team" class="subpage-heading">Team</h2>
         <div class="shibayan-sir">
-            <img src="./imgs/group_members/team_members/<%= data[0]['shibayan_sir']['img_url'] %> "alt="Shibayan Sir">
+            <img src="./imgs/group_members/team_members/<%= data.shibayan_sir.img_url %> "alt="Shibayan Sir">
             <div>
                 <hr>
-                <h3> <%= data[0]['shibayan_sir']['name']%> </h3>
+                <h3> <%= data.shibayan_sir.name%> </h3>
                 <hr>
                 <article>
-                    <h5><%= data[0]['shibayan_sir']['role']%></h5>
+                    <h5><%= data.shibayan_sir.role %></h5>
                     <p>
-                        <%= data[0]['shibayan_sir']['para_content']%>
+                        <%= data.shibayan_sir.para_content %>
                     </p>
                 </article>
                 <!-- Links -->
                 <div class="shibayan-sir-links">
-                    <a href="<%= data[0]['shibayan_sir']['links']['home_website']%>" target="_blank">Home Website</a>
-                    <a href="<%= data[0]['shibayan_sir']['links']['researcher_id']%>" target="_blank">Researcher ID</a>
-                    <a href="<%= data[0]['shibayan_sir']['links']['google_scholar']%>" target="_blank">Google Scholar</a>
-                    <a href="mailto:<%= data[0]['shibayan_sir']['links']['email']%>" target="_blank">Email</a>
+                    <a href="<%= data.shibayan_sir.links.home_website %>" target="_blank">Home Website</a>
+                    <a href="<%= data.shibayan_sir.links.researcher_id %>" target="_blank">Researcher ID</a>
+                    <a href="<%= data.shibayan_sir.links.google_scholar %>" target="_blank">Google Scholar</a>
+                    <a href="mailto:<%= data.shibayan_sir.links.email %>" target="_blank">Email</a>
                 </div>
             </div>
         </div>
         <div class="all-team">
 
-            <% data[0]['team_members'].forEach( member => { %>
+            <% data.team_members.forEach( member => { %>
                 <div>
 
                     <figure>
-                        <img src="./imgs/group_members/team_members/<%= member['img_url']%>" alt="<%= member['name'] %>">
+                        <img src="./imgs/group_members/team_members/<%= member.img_url %>" alt="<%= member.name %>">
                         <figcaption>
-                            <%= member['name'] %>
+                            <%= member.name %>
                             <br>
-                            <span style="font-size: 0.8em;"> <strong>[ <%= member['role'] %> ]</strong> </span>
+                            <span style="font-size: 0.8em;"> <strong>[ <%= member.role %> ]</strong> </span>
                         </figcaption>
-                        <a href="<%= member['cv_link'] %>" target="_blank" class="cv_link"><abbr title="CV"><img src="./imgs/general/pop-out-icon.jpg" alt="pop-out-icon"></abbr></a>
+                        <a href="<%= member.cv_link %>" target="_blank" class="cv_link"><abbr title="CV"><img src="./imgs/general/pop-out-icon.jpg" alt="pop-out-icon"></abbr></a>
                     </figure>
                     
                 </div>
@@ -126,9 +126,9 @@
             <h3>Interns</h3>
             <hr>
             <ul>
-                <% data[0]['team_interns'].forEach( intern => { %>
+                <% data.team_interns.forEach( intern => { %>
 
-                    <li> <%= intern['details'] %></li>
+                    <li> <%= intern.details %></li>
 
                 <% }) %>
 
@@ -138,23 +138,23 @@
     <section class="hide-this" id="alumni-sec">
         <h2 id="Alumni" class="subpage-heading">Alumni</h2>
         <div>
-            <% data[0]['alumni'].forEach( alumni => { %>
+            <% data.alumni.forEach( alumni => { %>
 
                 <div class="individual-profile">
-                    <img src="./imgs/group_members/alumni/<%= alumni['img_url'] %>" alt="<%= alumni['name'] %>">
+                    <img src="./imgs/group_members/alumni/<%= alumni.img_url %>" alt="<%= alumni.name %>">
                 <article>
                     <h3>
-                        <%= alumni['name'] %>
+                        <%= alumni.name %>
                     </h3>
                     <p>
                         <ul>
-                            <% alumni['details'].forEach( detail => { %>
-                                <li><%= detail['point'] %></li>
+                            <% alumni.details.forEach( detail => { %>
+                                <li><%= detail.point %></li>
                             <% }) %>
                         </ul>
                     </p>
                 </article>
-                <a href="mailto:<%= alumni['email'] %>">Contact</a>
+                <a href="mailto:<%= alumni.email %>">Contact</a>
             </div>
 
             <% }) %>
@@ -165,8 +165,8 @@
             <h3>Intern Alumni</h3>
             <hr>
             <ul>
-                <% data[0]['alumni_interns'].forEach( intern => { %>
-                    <li> <%= intern['details'] %> </li>
+                <% data.alumni_interns.forEach( intern => { %>
+                    <li> <%= intern.details %> </li>
                 <% }) %>
             </ul>
         </div>

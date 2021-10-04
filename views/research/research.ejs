@@ -52,11 +52,11 @@
         <section class="body-sec" id="research-top-sec">
             <hr class="heading-hr hr-top">
             <h2>
-                <%= data[0]['intro']['title'] %>
+                <%= data.intro.title %>
             </h2>
             <hr class="heading-hr hr-btm">
             <p>
-                <%= data[0]['intro']['para_content'] %>
+                <%= data.intro.para_content %>
             </p>
         </section>
     </header>
@@ -70,9 +70,9 @@
                 <div class="research-div">
                     <h3 class="subpage-heading">Research Interests</h3>
                     <ul>
-                        <% data[0]['intro']['research_interests'].forEach( interest=> { %>
+                        <% data.intro.research_interests.forEach( interest=> { %>
                             <li>
-                                <%= interest['interest'] %>
+                                <%= interest.interest %>
                             </li>
                             <% }) %>
                     </ul>
@@ -80,20 +80,20 @@
                 <div class="research-div">
                     <h3 class="subpage-heading">Research Insights</h3>
                     <div class="research-gallery research-slideshow-container" id="research-gallery">
-                        <% data[0]['intro']['research_insights'].forEach( slide=> { %>
+                        <% data.intro.research_insights.forEach( slide=> { %>
 
                             <figure class="image-sliderfade fade">
-                                <img src="./imgs/research/research_gallery/<%= slide['img_url'] %>"
-                                    alt="<%= slide['img_caption'] %>">
+                                <img src="./imgs/research/research_gallery/<%= slide.img_url %>"
+                                    alt="<%= slide.img_caption %>">
                                 <figcaption class="text">
-                                    <%= slide['img_caption'] %>
+                                    <%= slide.img_caption %>
                                 </figcaption>
                             </figure>
 
                             <% }) %>
 
                                 <div style="text-align:center">
-                                    <% data[0]['intro']['research_insights'].forEach( slide=> { %>
+                                    <% data.intro.research_insights.forEach( slide=> { %>
                                         <span class="dot"></span>
                                         <% }) %>
                                 </div>
@@ -114,25 +114,25 @@
 
                 <section class="ongoing-navbar">
                     <div>
-                        <% data[0]['ongoing_work'].forEach( work => { %>
-                            <a href="#ongoing-<%= work['ongoing_id'] %>"><%= work['title'] %></a>
+                        <% data.ongoing_work.forEach( work => { %>
+                            <a href="#ongoing-<%= work.ongoing_id %>"><%= work.title %></a>
                         <% }) %>
                     </div>
                 </section>
                 <section>
-                    <% data[0]['ongoing_work'].forEach( work=> { %>
+                    <% data.ongoing_work.forEach( work=> { %>
     
-                        <div class="ongoing-work-div" id="ongoing-<%= work['ongoing_id'] %>">
+                        <div class="ongoing-work-div" id="ongoing-<%= work.ongoing_id %>">
                             <h5>
-                                <%= work['title'] %>
+                                <%= work.title %>
                             </h5>
-                            <h6>(Members involved: <%= work['members_involved'] %>)</h6>
+                            <h6>(Members involved: <%= work.members_involved %>)</h6>
                             <p>
-                                <%= work['para_content'] %>
+                                <%= work.para_content %>
                             </p>
     
-                            <% work['img_url'].forEach( img=> { %>
-                                <img src="./imgs/research/ongoing_work/<%= work['ongoing_id'] %>/<%= img['url'] %>" alt="">
+                            <% work.img_url.forEach( img=> { %>
+                                <img src="./imgs/research/ongoing_work/<%= work.ongoing_id %>/<%= img.url %>" alt="">
                                 <% }) %>
     
                         </div>
@@ -156,15 +156,15 @@
                 <div class="featured-work-div">
                     <h4>Research Articles</h4>
                     <section>
-                    <% data[0]['featured_work']['research_articles'].forEach( article=> { %>
+                    <% data.featured_work.research_articles.forEach( article=> { %>
 
                         <div class="research-article">
-                            <a href="<%= article['article_link'] %>" target="_blank">
+                            <a href="<%= article.article_link %>" target="_blank">
                                 <div class="inside-a-article">
-                                    <img src="./imgs/research/featured_work/<%= article['img_url'] %>"
-                                        alt="Article <%= article['article_id'] %> Preview">
+                                    <img src="./imgs/research/featured_work/<%= article.img_url %>"
+                                        alt="Article <%= article.article_id %> Preview">
                                     <h5>
-                                        <%= article['title'] %>
+                                        <%= article.title %>
                                     </h5>
                                 </div>
                             </a>
@@ -175,13 +175,13 @@
                 <div class="featured-work-div">
                     <h4>Book Chapters</h4>
 
-                    <% data[0]['featured_work']['book_chapters'].forEach( book=> { %>
+                    <% data.featured_work.book_chapters.forEach( book=> { %>
 
                         <div class="featured-book">
-                            <img src="./imgs/research/featured_work/<%= book['img_url'] %>"
-                                alt="<%= book['description'] %>">
+                            <img src="./imgs/research/featured_work/<%= book.img_url %>"
+                                alt="<%= book.description %>">
                             <h5>
-                                <%= book['title'] %>
+                                <%= book.title %>
                             </h5>
                         </div>
 
@@ -203,20 +203,20 @@
                 <div class="funding-div">
                     <h4>Current Projects</h4>
 
-                    <% data[0]['funding_collaboration']['funding']['current_projects'].forEach( project=> { %>
+                    <% data.funding_collaboration.funding.current_projects.forEach( project=> { %>
 
                         <div class="funded-project">
                             <blockquote>
-                                <%= project['title'] %>
+                                <%= project.title %>
                             </blockquote>
                             <p>
-                                Funding Agency: <%= project['funding_agency'] %>
+                                Funding Agency: <%= project.funding_agency %>
                             </p>
                             <p>
-                                Duration: <%= project['duration'] %>
+                                Duration: <%= project.duration %>
                             </p>
                             <p>
-                                Amount: <%= project['amount'] %>
+                                Amount: <%= project.amount %>
                             </p>
                         </div>
 
@@ -226,20 +226,20 @@
                 <div class="funding-div">
                     <h4>Completed Projects</h4>
 
-                    <% data[0]['funding_collaboration']['funding']['completed_projects'].forEach( project=> { %>
+                    <% data.funding_collaboration.funding.completed_projects.forEach( project=> { %>
 
                         <div class="funded-project">
                             <blockquote>
-                                <%= project['title'] %>
+                                <%= project.title %>
                             </blockquote>
                             <p>
-                                Funding Agency: <%= project['funding_agency'] %>
+                                Funding Agency: <%= project.funding_agency %>
                             </p>
                             <p>
-                                Duration: <%= project['duration'] %>
+                                Duration: <%= project.duration %>
                             </p>
                             <p>
-                                Amount: <%= project['amount'] %>
+                                Amount: <%= project.amount %>
                             </p>
                         </div>
 
@@ -250,10 +250,10 @@
                     <h4>Collaborators</h4>
                     <div class="collab-list">
                         <ul>
-                            <% data[0]['funding_collaboration']['collaboration'].forEach( collab=> { %>
+                            <% data.funding_collaboration.collaboration.forEach( collab=> { %>
 
                                 <li>
-                                    <%= collab['collaborator'] %>
+                                    <%= collab.collaborator %>
                                 </li>
 
                                 <% }) %>

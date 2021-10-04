@@ -1,75 +1,37 @@
-const dotenv = require('dotenv').config()
-const MongoClient = require('mongodb').MongoClient;
+require('dotenv').config()
 const express = require('express')
-const path = require('path')
 const app = express()
-const port = process.env.PORT || 5000
 
-const uri = process.env.MONGO_URI;
+// Requiring All Routes
+const indexRouter = require('./routes/index')
+const membersRouter = require('./routes/members')
+const researchRouter = require('./routes/research')
+const facilitiesRouter = require('./routes/facilities')
+const refreshmentRouter = require('./routes/refreshment')
+const contactRouter = require('./routes/contact')
 
-MongoClient.connect(uri, { useUnifiedTopology: true })
-.then(client => {
+app.set('view engine', 'ejs')
+app.set('views', __dirname + '/views')
+app.use(express.static('public'))
+
+// Database Connection
+const mongoose = require('mongoose')
+mongoose.connect(process.env.DATABASE_URL)
+const db = mongoose.connection
+db.on('error', error => console.error(error))
+db.once('open', () => {
     console.log('Connected to Database')
+})
 
-    const db = client.db('SRMSC')
+// Using Routes
+app.use('/', indexRouter)
+app.use('/members', membersRouter)
+app.use('/research', researchRouter)
+app.use('/facilities', facilitiesRouter)
+app.use('/refreshment', refreshmentRouter)
+app.use('/contact', contactRouter)
 
-    app.use(express.static(path.join(__dirname, "public")))
-
-    app.set('view engine', 'ejs')
-
-    app.get("/", (req, res) => {
-        
-        db.collection('index').find().toArray()
-
-        .then( index_data => {
-            res.render('index', { data : index_data})
-        })
-        .catch(error => console.error(error))
-    })
-    
-    app.get('/NA', (req,res) => {
-        res.send("NOT AVAILABLE")
-    })
-
-    app.get('/members', (req, res) => {
-        
-        db.collection('members').find().toArray()
-        .then( data => {
-            res.render('members', { data : data})
-        })
-    })
-
-    app.get('/research', (req, res) => {
-        
-        db.collection('research').find().toArray()
-        .then( data => {
-            res.render('research', { data : data})
-        })
-    })
-    app.get('/facilities', (req, res) => {
-        
-        db.collection('facilities').find().toArray()
-        .then( data => {
-            res.render('facilities', { data : data})
-        })
-    })
-    app.get('/refreshment', (req, res) => {
-        
-        db.collection('refreshment').find().toArray()
-        .then( data => {
-            res.render('refreshment', { data : data})
-        })
-    })
-    app.get('/contact', (req, res) => {
-        
-        db.collection('contact').find().toArray()
-        .then( data => {
-            res.render('contact', { data : data})
-        })
-    })
-
-    app.listen(port, () => {
-        console.log(`http://localhost:${port}`)
-    })
-  })
-.catch(console.error)
+const port = process.env.PORT || 3000
+app.listen(port, () => {
+    console.log(`Server started at http://localhost:${port}`)
+})

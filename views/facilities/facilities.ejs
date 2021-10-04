@@ -54,13 +54,13 @@
         <h2 class="subpage-heading">Lab facilities</h2>
 
         <div class="facility">
-            <% data[0]['lab'].forEach( facility=> { %>
+            <% data.lab.forEach( facility=> { %>
 
-                <div onclick="showModal(this)" id="lab<%= facility['facility_id'] %>">
+                <div onclick="showModal(this)" id="lab<%= facility.facility_id %>">
                     <figure>
-                        <img src="./imgs/facilities/lab/<%= facility['img_url'] %>" alt="<%= facility['name'] %>">
+                        <img src="./imgs/facilities/lab/<%= facility.img_url %>" alt="<%= facility.name %>">
                         <figcaption>
-                            <%= facility['name'] %>
+                            <%= facility.name %>
                         </figcaption>
                     </figure>
                 </div>
@@ -68,31 +68,31 @@
                 <% }) %>
         </div>
 
-        <% data[0]['lab'].forEach( facility=> { %>
+        <% data.lab.forEach( facility=> { %>
 
-            <section class="modal-box" id="boxlab<%= facility['facility_id'] %>">
+            <section class="modal-box" id="boxlab<%= facility.facility_id %>">
                 <div class="modal-content facilities-modal">
-                    <span class="close" id="closelab<%= facility['facility_id'] %>" onclick="hideModal(this)">
+                    <span class="close" id="closelab<%= facility.facility_id %>" onclick="hideModal(this)">
                         <abbr title="Close">
                             &times;
                         </abbr>
                     </span>
                     <figure>
-                        <img src="./imgs/facilities/lab/<%= facility['img_url'] %>" alt="<%= facility['name'] %>">
+                        <img src="./imgs/facilities/lab/<%= facility.img_url %>" alt="<%= facility.name %>">
                     </figure>
                     <article>
                         <h4>
-                            <%= facility['name'] %>
+                            <%= facility.name %>
                         </h4>
                         <p>
                         <ul>
-                            <% facility['specifications'].forEach( specification=> { %>
+                            <% facility.specifications.forEach( specification=> { %>
                                 <li>
                                     <strong>
-                                        <%= specification['heading'] %>
-                                    </strong> - <%= specification['detail'] %>
+                                        <%= specification.heading %>
+                                    </strong> - <%= specification.detail %>
                                 </li>
-                                <% }) %>
+                            <% }) %>
                         </ul>
                         </p>
                     </article>
@@ -107,45 +107,45 @@
         <h2 class="subpage-heading">Departmental facilities</h2>
 
         <div class="facility">
-            <% data[0]['departmental'].forEach( facility=> { %>
+            <% data.departmental.forEach( facility=> { %>
 
-                <div onclick="showModal(this)" id="dep<%= facility['facility_id'] %>">
+                <div onclick="showModal(this)" id="dep<%= facility.facility_id %>">
                     <figure>
-                        <img src="./imgs/facilities/departmental/<%= facility['img_url'] %>"
-                            alt="<%= facility['name'] %>">
+                        <img src="./imgs/facilities/departmental/<%= facility.img_url %>"
+                            alt="<%= facility.name %>">
                         <figcaption>
-                            <%= facility['name'] %>
+                            <%= facility.name %>
                         </figcaption>
                     </figure>
                 </div>
 
-                <% }) %>
+            <% }) %>
         </div>
 
-        <% data[0]['departmental'].forEach( facility=> { %>
+        <% data.departmental.forEach( facility=> { %>
 
-            <section class="modal-box" id="boxdep<%= facility['facility_id'] %>">
+            <section class="modal-box" id="boxdep<%= facility.facility_id %>">
                 <div class="modal-content facilities-modal">
-                    <span class="close" id="closedep<%= facility['facility_id'] %>" onclick="hideModal(this)">
+                    <span class="close" id="closedep<%= facility.facility_id %>" onclick="hideModal(this)">
                         <abbr title="Close">
                             &times;
                         </abbr>
                     </span>
                     <figure>
-                        <img src="./imgs/facilities/departmental/<%= facility['img_url'] %>"
-                            alt="<%= facility['name'] %>">
+                        <img src="./imgs/facilities/departmental/<%= facility.img_url %>"
+                            alt="<%= facility.name %>">
                     </figure>
                     <article>
                         <h4>
-                            <%= facility['name'] %>
+                            <%= facility.name %>
                         </h4>
                         <p>
                         <ul>
-                            <% facility['specifications'].forEach( specification=> { %>
+                            <% facility.specifications.forEach( specification=> { %>
                                 <li>
                                     <strong>
-                                        <%= specification['heading'] %>
-                                    </strong> - <%= specification['detail'] %>
+                                        <%= specification.heading %>
+                                    </strong> - <%= specification.detail %>
                                 </li>
                             <% }) %>
                         </ul>
@@ -164,8 +164,8 @@
 
         <div class="softwares">
             <ol>
-                <% data[0]['softwares'].forEach( software => { %>
-                    <li><%= software['name'] %></li>
+                <% data.softwares.forEach( software => { %>
+                    <li><%= software.name %></li>
                 <% }) %>
             </ol>
         </div>

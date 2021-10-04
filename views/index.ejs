@@ -17,7 +17,7 @@
         <section id="fixed-to-top">
             <div id="top-msg">
                 <span>
-                    <%= data[0]['top_msg']['top_msg'] %>
+                    <%= data.top_msg.top_msg %>
                 </span>
                 <button onclick="closeTopMsg()" onmouseover="showRedBkgrnd(this)"></button>
             </div>
@@ -58,13 +58,13 @@
         </section>
         <section class="body-sec">
             <hr class="heading-hr hr-top">
-            <h2><%= data[0]['intro']['title'] %></h2>
+            <h2><%= data.intro.title %></h2>
             <hr class="heading-hr hr-btm">
             <p>
-                <%= data[0]['intro']['para_content'] %>
+                <%= data.intro.para_content %>
             </p>
             <blockquote>
-                <q><%= data[0]['intro']['quote'] %></q>
+                <q><%= data.intro.quote %></q>
             </blockquote>
         </section>
         <hr>
@@ -115,7 +115,7 @@
     <section id="typewriter-effect" class="clear-both split-right-sec typewriter">
             <h3>Group Updates</h3>
             <ul class="slideshow-container" id="slideshow-ul">
-                <% data[0]['group_updates'].forEach( update => { %>
+                <% data.group_updates.forEach( update => { %>
 
                     <li> <%= update['point'] %> </li>
 
