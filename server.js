@@ -1,6 +1,7 @@
 require('dotenv').config()
 const express = require('express')
 const app = express()
+const bodyParser = require('body-parser')
 
 // Requiring All Routes
 const indexRouter = require('./routes/index')
@@ -9,10 +10,15 @@ const researchRouter = require('./routes/research')
 const facilitiesRouter = require('./routes/facilities')
 const refreshmentRouter = require('./routes/refreshment')
 const contactRouter = require('./routes/contact')
+const adminRouter = require('./routes/admin')
 
 app.set('view engine', 'ejs')
 app.set('views', __dirname + '/views')
 app.use(express.static('public'))
+app.use(express.urlencoded({
+    limit: '10mb',
+    extended: false
+}))
 
 // Database Connection
 const mongoose = require('mongoose')
@@ -30,6 +36,12 @@ app.use('/research', researchRouter)
 app.use('/facilities', facilitiesRouter)
 app.use('/refreshment', refreshmentRouter)
 app.use('/contact', contactRouter)
+app.use('/admin', adminRouter)
+
+// route for Group Member CV which are not available
+app.get('/NA', (req, res) => {
+    res.send("NOT AVAILABLE")
+})
 
 const port = process.env.PORT || 3000
 app.listen(port, () => {

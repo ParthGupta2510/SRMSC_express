@@ -1,0 +1,8 @@
+<h2>Admin Login</h2>
+<% if (messages.error) { %>
+    <span style="display: inline-block; padding: 4px; color: black; background-color: FFBABA; margin-bottom: 1%;"><%= messages.error %></span>
+<% } %>
+<form action="/admin/login" method="POST">
+    <%- include('./_form_fields') %>
+    <button type="submit" style="margin: 0 1%;">Login</button>
+</form>
