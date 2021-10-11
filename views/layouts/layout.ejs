@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./imgs/general/site-icon.png">
+    <title>SPP GROUP</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script defer src="./js/app.js"></script>
+    <script src="https://unpkg.com/js-image-zoom@0.7.0/js-image-zoom.js" type="application/javascript"></script>
+</head>
+<body>
+    <section class="loading-screen-container" id="loading-screen-container">
+        <div class="loader">
+            <span></span>
+            <span></span>
+            <span></span>
+            <img src="./imgs/general/site-icon.png" alt="SPP GROUP">
+        </div>
+    </section>
+
+    <%- body %>
+    
+    <hr class="clear-both">
+    <footer>
+        &copy; 2021 by SPP GROUP
+    </footer>
+    <script>
+        window.addEventListener("load", function() {
+            const loader = document.querySelector(".loading-screen-container");
+            loader.className += " loaded";
+        })
+    </script>
+</body>
+</html>

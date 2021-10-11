@@ -1,161 +1,149 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="./imgs/general/site-icon.png">
-    <title>SPP GROUP</title>
-    <link rel="stylesheet" href="./css/style.css">
-    <script src="./js/app.js"></script>
-</head>
-
-<body>
-    <header>
-        <section id="fixed-to-top">
-            <div class="brand-div">
-                <a href="./">
-                    <img src="./imgs/general/logo_Lab.png" alt="Lab Icon">
-                    <div>
-                        <p>Structure-Property-Processing Group</p>
-                        <span>Materials Science Center, Indian Institute of Technology Kharagpur, India</span>
-                    </div>
-                </a>
-            </div>
-            <nav class="clear-both">
-                <a href="./">Home</a>
-                <a href="./members">Members</a>
-
-                <div class="hide-this">
-                    <a href="./members.html#Team">Team</a>
-                    <a href="./members.html#Alumni">Alumni</a>
-                </div>
-
-                <a href="#" class="active" class="nav-dropdown">Research</a>
-
+<header>
+    <section id="fixed-to-top">
+        <div class="brand-div">
+            <a href="./">
+                <img src="./imgs/general/logo_Lab.png" alt="Lab Icon">
                 <div>
-                    <a href="#ongoing-work">Ongoing Work</a>
-                    <a href="#featured-work">Featured Work</a>
-                    <a href="#funding">Funding and Collaborators</a>
+                    <p>Structure-Property-Processing Group</p>
+                    <span>Materials Science Center, Indian Institute of Technology Kharagpur, India</span>
                 </div>
+            </a>
+        </div>
+        <nav class="clear-both">
+            <a href="./">Home</a>
+            <a href="./members">Members</a>
 
-                <a href="./facilities">Facilities</a>
-                <a href="./refreshment">Refreshment</a>
-                <a href="./contact">Contact</a>
-            </nav>
-        </section>
-
-        <section class="clear-both non-home-body-top-sec" id="page-heading-sec">
-            <h1>Research</h1>
-        </section>
-        <section class="body-sec" id="research-top-sec">
-            <hr class="heading-hr hr-top">
-            <h2>
-                <%= data.intro.title %>
-            </h2>
-            <hr class="heading-hr hr-btm">
-            <p>
-                <%= data.intro.para_content %>
-            </p>
-        </section>
-    </header>
-    <section class="research-container">
-        <section class="breadcrumb-research">
-            <div class="sticky-navbar" id="research">
-                <span class="sticky-navbar-slash">/</span>
-                <a href="#page-heading-sec">Research</a>
+            <div class="hide-this">
+                <a href="./members.html#Team">Team</a>
+                <a href="./members.html#Alumni">Alumni</a>
             </div>
-            <section class="research-mainpage">
-                <div class="research-div">
-                    <h3 class="subpage-heading">Research Interests</h3>
-                    <ul>
-                        <% data.intro.research_interests.forEach( interest=> { %>
-                            <li>
-                                <%= interest.interest %>
-                            </li>
-                            <% }) %>
-                    </ul>
-                </div>
-                <div class="research-div">
-                    <h3 class="subpage-heading">Research Insights</h3>
-                    <div class="research-gallery research-slideshow-container" id="research-gallery">
-                        <% data.intro.research_insights.forEach( slide=> { %>
 
-                            <figure class="image-sliderfade fade">
-                                <img src="./imgs/research/research_gallery/<%= slide.img_url %>"
-                                    alt="<%= slide.img_caption %>">
-                                <figcaption class="text">
-                                    <%= slide.img_caption %>
-                                </figcaption>
-                            </figure>
+            <a href="#" class="active" class="nav-dropdown">Research</a>
 
-                            <% }) %>
-
-                                <div style="text-align:center">
-                                    <% data.intro.research_insights.forEach( slide=> { %>
-                                        <span class="dot"></span>
-                                        <% }) %>
-                                </div>
-                    </div>
-                </div>
-            </section>
-        </section>
-        <section class="breadcrumb-ongoing" id="ongoing-work">
-            <div class="sticky-navbar">
-                <span class="sticky-navbar-slash">/</span>
-                <a href="#page-heading-sec">Research</a>
-
-                <span class="sticky-navbar-slash">/</span>
+            <div>
                 <a href="#ongoing-work">Ongoing Work</a>
-            </div>
-            <section class="research-subpage">
-                <h3>Ongoing Work</h3>
-
-                <section class="ongoing-navbar">
-                    <div>
-                        <% data.ongoing_work.forEach( work => { %>
-                            <a href="#ongoing-<%= work.ongoing_id %>"><%= work.title %></a>
-                        <% }) %>
-                    </div>
-                </section>
-                <section>
-                    <% data.ongoing_work.forEach( work=> { %>
-    
-                        <div class="ongoing-work-div" id="ongoing-<%= work.ongoing_id %>">
-                            <h5>
-                                <%= work.title %>
-                            </h5>
-                            <h6>(Members involved: <%= work.members_involved %>)</h6>
-                            <p>
-                                <%= work.para_content %>
-                            </p>
-    
-                            <% work.img_url.forEach( img=> { %>
-                                <img src="./imgs/research/ongoing_work/<%= work.ongoing_id %>/<%= img.url %>" alt="">
-                                <% }) %>
-    
-                        </div>
-    
-                        <% }) %>
-                </section>
-
-            </section>
-        </section>
-
-        <section class="breadcrumb-featured" id="featured-work">
-            <div class="sticky-navbar">
-                <span class="sticky-navbar-slash">/</span>
-                <a href="#page-heading-sec">Research</a>
-
-                <span class="sticky-navbar-slash">/</span>
                 <a href="#featured-work">Featured Work</a>
+                <a href="#funding">Funding and Collaborators</a>
             </div>
-            <section class="research-subpage">
-                <h3>Featured Work</h3>
-                <div class="featured-work-div">
-                    <h4>Research Articles</h4>
-                    <section>
+
+            <a href="./facilities">Facilities</a>
+            <a href="./refreshment">Refreshment</a>
+            <a href="./contact">Contact</a>
+        </nav>
+    </section>
+
+    <section class="clear-both non-home-body-top-sec" id="page-heading-sec">
+        <h1>Research</h1>
+    </section>
+    <section class="body-sec" id="research-top-sec">
+        <hr class="heading-hr hr-top">
+        <h2>
+            <%= data.intro.title %>
+        </h2>
+        <hr class="heading-hr hr-btm">
+        <p>
+            <%= data.intro.para_content %>
+        </p>
+    </section>
+</header>
+<section class="research-container">
+    <section class="breadcrumb-research">
+        <div class="sticky-navbar" id="research">
+            <span class="sticky-navbar-slash">/</span>
+            <a href="#page-heading-sec">Research</a>
+        </div>
+        <section class="research-mainpage">
+            <div class="research-div">
+                <h3 class="subpage-heading">Research Interests</h3>
+                <ul>
+                    <% data.intro.research_interests.forEach( interest=> { %>
+                        <li>
+                            <%= interest.interest %>
+                        </li>
+                        <% }) %>
+                </ul>
+            </div>
+            <div class="research-div">
+                <h3 class="subpage-heading">Research Insights</h3>
+                <div class="research-gallery research-slideshow-container" id="research-gallery">
+                    <% data.intro.research_insights.forEach( slide=> { %>
+
+                        <figure class="image-sliderfade fade">
+                            <img src="./imgs/research/research_gallery/<%= slide.img_url %>"
+                                alt="<%= slide.img_caption %>">
+                            <figcaption class="text">
+                                <%= slide.img_caption %>
+                            </figcaption>
+                        </figure>
+
+                        <% }) %>
+
+                            <div style="text-align:center">
+                                <% data.intro.research_insights.forEach( slide=> { %>
+                                    <span class="dot"></span>
+                                    <% }) %>
+                            </div>
+                </div>
+            </div>
+        </section>
+    </section>
+    <section class="breadcrumb-ongoing" id="ongoing-work">
+        <div class="sticky-navbar">
+            <span class="sticky-navbar-slash">/</span>
+            <a href="#page-heading-sec">Research</a>
+
+            <span class="sticky-navbar-slash">/</span>
+            <a href="#ongoing-work">Ongoing Work</a>
+        </div>
+        <section class="research-subpage">
+            <h3>Ongoing Work</h3>
+
+            <section class="ongoing-navbar">
+                <div>
+                    <% data.ongoing_work.forEach( work=> { %>
+                        <a href="#ongoing-<%= work.ongoing_id %>">
+                            <%= work.title %>
+                        </a>
+                        <% }) %>
+                </div>
+            </section>
+            <section>
+                <% data.ongoing_work.forEach( work=> { %>
+
+                    <div class="ongoing-work-div" id="ongoing-<%= work.ongoing_id %>">
+                        <h5>
+                            <%= work.title %>
+                        </h5>
+                        <h6>(Members involved: <%= work.members_involved %>)</h6>
+                        <p>
+                            <%= work.para_content %>
+                        </p>
+
+                        <% work.img_url.forEach( img=> { %>
+                            <img src="./imgs/research/ongoing_work/<%= work.ongoing_id %>/<%= img.url %>" alt="">
+                            <% }) %>
+
+                    </div>
+
+                    <% }) %>
+            </section>
+
+        </section>
+    </section>
+
+    <section class="breadcrumb-featured" id="featured-work">
+        <div class="sticky-navbar">
+            <span class="sticky-navbar-slash">/</span>
+            <a href="#page-heading-sec">Research</a>
+
+            <span class="sticky-navbar-slash">/</span>
+            <a href="#featured-work">Featured Work</a>
+        </div>
+        <section class="research-subpage">
+            <h3>Featured Work</h3>
+            <div class="featured-work-div">
+                <h4>Research Articles</h4>
+                <section>
                     <% data.featured_work.research_articles.forEach( article=> { %>
 
                         <div class="research-article">
@@ -171,142 +159,134 @@
                         </div>
                         <% }) %>
 
-                </div>
-                <div class="featured-work-div">
-                    <h4>Book Chapters</h4>
-
-                    <% data.featured_work.book_chapters.forEach( book=> { %>
-
-                        <div class="featured-book">
-                            <img src="./imgs/research/featured_work/<%= book.img_url %>"
-                                alt="<%= book.description %>">
-                            <h5>
-                                <%= book.title %>
-                            </h5>
-                        </div>
-
-                        <% }) %>
-                </div>
-            </section>
-        </section>
-        <section class="breadcrumb-funding clear-both" id="funding">
-            <div class="sticky-navbar">
-                <span class="sticky-navbar-slash">/</span>
-                <a href="#page-heading-sec">Research</a>
-
-                <span class="sticky-navbar-slash">/</span>
-                <a href="#funding">Funding and Collaborators</a>
             </div>
+            <div class="featured-work-div">
+                <h4>Book Chapters</h4>
 
-            <section class="research-subpage">
-                <h3>Funding and Collaborators</h3>
-                <div class="funding-div">
-                    <h4>Current Projects</h4>
+                <% data.featured_work.book_chapters.forEach( book=> { %>
 
-                    <% data.funding_collaboration.funding.current_projects.forEach( project=> { %>
-
-                        <div class="funded-project">
-                            <blockquote>
-                                <%= project.title %>
-                            </blockquote>
-                            <p>
-                                Funding Agency: <%= project.funding_agency %>
-                            </p>
-                            <p>
-                                Duration: <%= project.duration %>
-                            </p>
-                            <p>
-                                Amount: <%= project.amount %>
-                            </p>
-                        </div>
-
-                        <% }) %>
-
-                </div>
-                <div class="funding-div">
-                    <h4>Completed Projects</h4>
-
-                    <% data.funding_collaboration.funding.completed_projects.forEach( project=> { %>
-
-                        <div class="funded-project">
-                            <blockquote>
-                                <%= project.title %>
-                            </blockquote>
-                            <p>
-                                Funding Agency: <%= project.funding_agency %>
-                            </p>
-                            <p>
-                                Duration: <%= project.duration %>
-                            </p>
-                            <p>
-                                Amount: <%= project.amount %>
-                            </p>
-                        </div>
-
-                        <% }) %>
-
-                </div>
-                <div class="funding-div">
-                    <h4>Collaborators</h4>
-                    <div class="collab-list">
-                        <ul>
-                            <% data.funding_collaboration.collaboration.forEach( collab=> { %>
-
-                                <li>
-                                    <%= collab.collaborator %>
-                                </li>
-
-                                <% }) %>
-                        </ul>
+                    <div class="featured-book">
+                        <img src="./imgs/research/featured_work/<%= book.img_url %>" alt="<%= book.description %>">
+                        <h5>
+                            <%= book.title %>
+                        </h5>
                     </div>
-                </div>
-            </section>
+
+                    <% }) %>
+            </div>
         </section>
     </section>
-    <hr class="clear-both">
-    <footer>
-        &copy; 2021 by SPP GROUP
-    </footer>
+    <section class="breadcrumb-funding clear-both" id="funding">
+        <div class="sticky-navbar">
+            <span class="sticky-navbar-slash">/</span>
+            <a href="#page-heading-sec">Research</a>
 
-    <script>
-        var slideIndex = 0;
-        showSlides(); // call showslide method
+            <span class="sticky-navbar-slash">/</span>
+            <a href="#funding">Funding and Collaborators</a>
+        </div>
 
-        function showSlides() {
-            var i;
+        <section class="research-subpage">
+            <h3>Funding and Collaborators</h3>
+            <div class="funding-div">
+                <h4>Current Projects</h4>
 
-            // get the array of divs' with classname image-sliderfade
-            var slides = document.getElementsByClassName("image-sliderfade");
+                <% data.funding_collaboration.funding.current_projects.forEach( project=> { %>
 
-            // get the array of divs' with classname dot
-            var dots = document.getElementsByClassName("dot");
+                    <div class="funded-project">
+                        <blockquote>
+                            <%= project.title %>
+                        </blockquote>
+                        <p>
+                            Funding Agency: <%= project.funding_agency %>
+                        </p>
+                        <p>
+                            Duration: <%= project.duration %>
+                        </p>
+                        <p>
+                            Amount: <%= project.amount %>
+                        </p>
+                    </div>
 
-            for (i = 0; i < slides.length; i++) {
-                // initially set the display to 
-                // none for every image.
-                slides[i].style.display = "none";
-            }
+                    <% }) %>
 
-            // increase by 1, Global variable
-            slideIndex++;
+            </div>
+            <div class="funding-div">
+                <h4>Completed Projects</h4>
 
-            // check for boundary
-            if (slideIndex > slides.length) {
-                slideIndex = 1;
-            }
+                <% data.funding_collaboration.funding.completed_projects.forEach( project=> { %>
 
-            for (i = 0; i < dots.length; i++) {
-                dots[i].className = dots[i].className.
-                    replace(" active-slide", "");
-            }
+                    <div class="funded-project">
+                        <blockquote>
+                            <%= project.title %>
+                        </blockquote>
+                        <p>
+                            Funding Agency: <%= project.funding_agency %>
+                        </p>
+                        <p>
+                            Duration: <%= project.duration %>
+                        </p>
+                        <p>
+                            Amount: <%= project.amount %>
+                        </p>
+                    </div>
 
-            slides[slideIndex - 1].style.display = "block";
-            dots[slideIndex - 1].className += " active-slide";
+                    <% }) %>
 
-            // Change image every 2 seconds
-            setTimeout(showSlides, 5000);
+            </div>
+            <div class="funding-div">
+                <h4>Collaborators</h4>
+                <div class="collab-list">
+                    <ul>
+                        <% data.funding_collaboration.collaboration.forEach( collab=> { %>
+
+                            <li>
+                                <%= collab.collaborator %>
+                            </li>
+
+                            <% }) %>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </section>
+</section>
+
+<script>
+    var slideIndex = 0;
+    showSlides(); // call showslide method
+
+    function showSlides() {
+        var i;
+
+        // get the array of divs' with classname image-sliderfade
+        var slides = document.getElementsByClassName("image-sliderfade");
+
+        // get the array of divs' with classname dot
+        var dots = document.getElementsByClassName("dot");
+
+        for (i = 0; i < slides.length; i++) {
+            // initially set the display to 
+            // none for every image.
+            slides[i].style.display = "none";
         }
-    </script>
-</body>
 
-</html>
+        // increase by 1, Global variable
+        slideIndex++;
+
+        // check for boundary
+        if (slideIndex > slides.length) {
+            slideIndex = 1;
+        }
+
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.
+                replace(" active-slide", "");
+        }
+
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active-slide";
+
+        // Change image every 2 seconds
+        setTimeout(showSlides, 5000);
+    }
+</script>

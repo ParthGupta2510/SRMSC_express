@@ -1,93 +1,90 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="./imgs/general/site-icon.png">
-    <title>SPP GROUP</title>
-    <link rel="stylesheet" href="./css/style.css">
-    <script src="./js/app.js"></script>
-</head>
-
-<body>
-    <header>
-        <section id="fixed-to-top">
-            <div class="brand-div">
-                <a href="./">
-                    <img src="./imgs/general/logo_Lab.png" alt="Lab Icon">
-                    <div>
-                        <p>Structure-Property-Processing Group</p>
-                        <span>Materials Science Center, Indian Institute of Technology Kharagpur, India</span>
-                    </div>
-                </a>
-            </div>
-            <nav class="clear-both">
-                <a href="./">Home</a>
-                <a href="./members">Members</a>
-
-                <div class="hide-this">
-                    <a href="./members#Team">Team</a>
-                    <a href="./members#Alumni">Alumni</a>
-                </div>
-
-                <a class="nav-dropdown" href="./research">Research</a>
-
+<header>
+    <section id="fixed-to-top">
+        <div class="brand-div">
+            <a href="./">
+                <img src="./imgs/general/logo_Lab.png" alt="Lab Icon">
                 <div>
-                    <a href="./research.html#ongoing-work">Ongoing Work</a>
-                    <a href="./research.html#featured-work">Featured Work</a>
-                    <a href="./research.html#funding">Funding and Collaborators</a>
+                    <p>Structure-Property-Processing Group</p>
+                    <span>Materials Science Center, Indian Institute of Technology Kharagpur, India</span>
                 </div>
-
-                <a href="./facilities">Facilities</a>
-                <a href="./refreshment">Refreshment</a>
-                <a href="#" class="active">Contact</a>
-            </nav>
-        </section>
-        <section class="clear-both non-home-body-top-sec" id="page-heading-sec">
-            <h1>Contact</h1>
-        </section>
-    </header>
-    <section class="contact-container">
-
-        <div class="form-msg-display" id="form-msg-display">
-            <% if (locals.formMsg != null) { %> 
-                <span id="form-msg-<%= status %>"><%= formMsg %></span>
-            <% } %>
+            </a>
         </div>
+        <nav class="clear-both">
+            <a href="./">Home</a>
+            <a href="./members">Members</a>
 
-        <h2>Contact Form</h2>
+            <div class="hide-this">
+                <a href="./members#Team">Team</a>
+                <a href="./members#Alumni">Alumni</a>
+            </div>
 
-        <form method="POST" action="/contact">
-            <%- include('./_form_fields') %>
-            <input type="submit">
-            <span>(*) marked fields are required!</span>
-        </form>
+            <a class="nav-dropdown" href="./research">Research</a>
+
+            <div>
+                <a href="./research.html#ongoing-work">Ongoing Work</a>
+                <a href="./research.html#featured-work">Featured Work</a>
+                <a href="./research.html#funding">Funding and Collaborators</a>
+            </div>
+
+            <a href="./facilities">Facilities</a>
+            <a href="./refreshment">Refreshment</a>
+            <a href="#" class="active">Contact</a>
+        </nav>
     </section>
-    <section class="contact-container">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3691.0241235532485!2d87.30834241744381!3d22.31492739999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a1d440255555547%3A0x6f2f20dd0c0d6793!2sIndian%20Institute%20of%20Technology%20Kharagpur!5e0!3m2!1sen!2sin!4v1631296767741!5m2!1sen!2sin" width="600" height="450" style="border:0; padding: 30px;" allowfullscreen="" loading="lazy"></iframe>
-        <div>
-            <h3><%= data.details.title %></h3>
-            <p>
-                <%= data.details.para_content %>
-            </p>
-            <a href="mailto:<%= data.details.email %>">Contact</a>
+    <section class="clear-both non-home-body-top-sec" id="page-heading-sec">
+        <h1>Contact</h1>
+    </section>
+</header>
+<section class="contact-container">
+
+    <h2 class="subpage-heading">Contact Form</h2>
+
+    <div id="form-main">
+        <div id="form-div">
+            <% if (locals.formMsg !=null) { %>
+                <div class="form-msg-display" id="form-msg-display">
+                    <span id="form-msg-<%= status %>">
+                        <%= formMsg %>
+                    </span>
+                </div>
+                <% } else { %>
+                    <span id="form-instruction">* indicates required information</span>
+                    <form class="montform" id="reused_form" method="POST" action="">
+                        <%- include('./_form_fields') %>
+                            <div class="submit">
+                                <button type="submit" class="button-blue">SUBMIT</button>
+                            </div>
+                    </form>
+                <% } %> 
         </div>
-    </section>
-    <section class="contact-details">
-        <ul>
-            <li style="text-decoration: underline;"><%= data.details.email %></li>
-            <li>Tel: <%= data.details.tel %></li>
-            <li>Fax: <%= data.details.fax %></li>
-        </ul>
-    </section>
-    <section class="contact-container">
-        <img src="./imgs/contact/thanks.png" alt="Thank You">
-    </section>
-    <footer>
-        &copy; 2021 by SPP GROUP
-    </footer>
-</body>
-
-</html>
+    </div>
+    <hr class="clear-both">
+</section>
+<section class="contact-container">
+    <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3691.0241235532485!2d87.30834241744381!3d22.31492739999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a1d440255555547%3A0x6f2f20dd0c0d6793!2sIndian%20Institute%20of%20Technology%20Kharagpur!5e0!3m2!1sen!2sin!4v1631296767741!5m2!1sen!2sin"
+        width="600" height="450" style="border:0; padding: 30px;" allowfullscreen="" loading="lazy"></iframe>
+    <div>
+        <h3>
+            <%= data.details.title %>
+        </h3>
+        <p>
+            <%= data.details.para_content %>
+        </p>
+        <a href="mailto:<%= data.details.email %>">Contact</a>
+    </div>
+</section>
+<section class="contact-details">
+    <ul>
+        <li style="text-decoration: underline;">
+            <%= data.details.email %>
+        </li>
+        <li>Tel: <%= data.details.tel %>
+        </li>
+        <li>Fax: <%= data.details.fax %>
+        </li>
+    </ul>
+</section>
+<section class="contact-container">
+    <img src="./imgs/contact/thanks.png" alt="Thank You">
+</section>

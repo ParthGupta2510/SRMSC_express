@@ -1,7 +1,12 @@
-<label>Name*:<input type="text" name="name" required value="<%= formData.name %>"></label>
-
-<label>Email*:<input type="text" name="email" required value="<%= formData.email %>"></label>
-
-<label>Subject*:<input type="text" name="subject" required value="<%= formData.subject %>"></label>
-
-<label>Message:<br><textarea name="message"><%= formData.message %></textarea></label>
+<p class="name">
+    <input name="name" type="text" class="feedback-input" required placeholder="Name*" id="name" value="<%= formData.name %>"/>
+</p>
+<p class="email">
+  <input name="email" type="email" required class="feedback-input" id="email" placeholder="Email*" value="<%= formData.email %>"/>
+</p>
+<p class="subject">
+  <input name="subject" type="text" required class="feedback-input" id="subject" placeholder="Subject*" value="<%= formData.subject %>" />
+</p>
+<p class="message">
+  <textarea name="message" class="feedback-input" id="message" placeholder="Message"><%= formData.message %></textarea>
+</p>

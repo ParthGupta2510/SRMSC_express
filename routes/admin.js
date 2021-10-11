@@ -34,6 +34,7 @@ router.get('/', checkAuthenticated,async (req, res) => {
     })
 })
 
+
 router.get('/login', checkNotAuthenticated, (req, res) => {
     res.render('admin/login')
 })
@@ -58,20 +59,37 @@ router.post('/register', checkNotAuthenticated, async (req, res) => {
         const newAdmin = await adminCredentials.save()
         res.redirect('/admin/login')
     } catch {
-        res.redirect('/')
+        res.render('admin/register', {
+            errorMsg: "Error! Try Again!"
+        })
     }
 })
 
 router.delete('/logout', (req, res) => {
-    req.logOut()
-    res.redirect('/admin/login')
+    try {
+        req.logOut()
+        res.redirect('/admin/login')
+    } catch (err) {
+        console.log(err)
+    }
+})
+
+router.delete('/:id', checkAuthenticated, async (req, res) => {
+    let entry
+    try {
+        entry = await ContactFormData.findById(req.params.id)
+        await entry.remove()
+        res.redirect('/admin')
+    } catch {
+        res.redirect('/admin')
+    }
 })
 
 function checkAuthenticated(req, res, next) {
     if (req.isAuthenticated()) {
         return next()
     }
-
+    
     res.redirect('/admin/login')
 }
 

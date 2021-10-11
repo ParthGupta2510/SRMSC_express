@@ -1,133 +1,175 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="./imgs/general/site-icon.png">
-    <title>SPP GROUP</title>
-    <link rel="stylesheet" href="./css/style.css">
-    <script defer src="./js/app.js"></script>
-    <script src="https://unpkg.com/js-image-zoom@0.7.0/js-image-zoom.js" type="application/javascript"></script>
-</head>
-
-<body>
-    <header>
-        <section id="fixed-to-top">
-            <div id="top-msg">
-                <span>
-                    <%= data.top_msg.top_msg %>
-                </span>
-                <button onclick="closeTopMsg()" onmouseover="showRedBkgrnd(this)"></button>
-            </div>
-            <div class="brand-div">
-                <a href="#">
-                    <img src="./imgs/general/logo_Lab.png" alt="Lab Icon">
-                    <div>
-                        <p>Structure-Property-Processing Group</p>
-                        <span>Materials Science Center, Indian Institute of Technology Kharagpur, India</span>
-                    </div>
-                </a>
-            </div>
-            <nav class="clear-both">
-                <a href="#" class="active">Home</a>
-                <a href="./members">Members</a>
-
-                <div class="hide-this">
-                    <a href="./members.html#Team">Team</a>
-                    <a href="./members.html#Alumni">Alumni</a>
-                </div>
-
-                <a class="nav-dropdown" href="./research">Research</a>
-
+<header>
+    <section id="fixed-to-top">
+        <div id="top-msg">
+            <span>
+                <%= data.top_msg.top_msg %>
+            </span>
+            <button onclick="closeTopMsg()" onmouseover="showRedBkgrnd(this)"></button>
+        </div>
+        <div class="brand-div">
+            <a href="#">
+                <img src="./imgs/general/logo_Lab.png" alt="Lab Icon">
                 <div>
-                    <a href="./research.html#ongoing-work">Ongoing Work</a>
-                    <a href="./research.html#featured-work">Featured Work</a>
-                    <a href="./research.html#funding">Funding and Collaborators</a>
+                    <p>Structure-Property-Processing Group</p>
+                    <span>Materials Science Center, Indian Institute of Technology Kharagpur, India</span>
                 </div>
+            </a>
+        </div>
+        <nav class="clear-both">
+            <a href="#" class="active">Home</a>
+            <a href="./members">Members</a>
 
-                <a href="./facilities">Facilities</a>
-                <a href="./refreshment">Refreshment</a>
-                <a href="./contact">Contact</a>
-            </nav>
-        </section>
-    </header>
-    <section class="split-left-sec">
-        <section class="clear-both body-top-sec">
-        </section>
-        <section class="body-sec">
-            <hr class="heading-hr hr-top">
-            <h2><%= data.intro.title %></h2>
-            <hr class="heading-hr hr-btm">
-            <p>
-                <%= data.intro.para_content %>
-            </p>
-            <blockquote>
-                <q><%= data.intro.quote %></q>
-            </blockquote>
-        </section>
-        <hr>
-        <section class="body-sec poster-sec">
-            <hr class="heading-hr hr-top">
-            <h2>Group Poster</h2>
-            <hr class="heading-hr hr-btm">
-            <figure id="img-container">
-                <img src="./imgs/general/poster_final.jpg" id="poster" alt="Poster">
-            </figure>
-
-            <p>
-                Roll over the poster to zoom
-                <button id="poster-modal" class="poster-modal">
-                    Click here to View Full Poster
-                </button>
-            </p>
-            
-            <!-- code for modal box -->
-
-            
-            <div id="modal-box" class="modal-box">
-                <div class="modal-content">
-                    <span class="close">
-                        <abbr title="Close">
-                            &times;
-                        </abbr>
-                    </span>
-                    <img src="./imgs/general/poster_final.jpg" alt="Poster modal-box">
-                </div>
+            <div class="hide-this">
+                <a href="./members.html#Team">Team</a>
+                <a href="./members.html#Alumni">Alumni</a>
             </div>
 
-        </section>
-        <script>
-            var zoomOptions = {
-                width: 429.8,
-                height: 600,
-                zoomWidth: 850,
-                offset: {
-                    vertical: 0,
-                    horizontal: 10
-                },
-            }
+            <a class="nav-dropdown" href="./research">Research</a>
 
-            new ImageZoom(document.getElementById('img-container'), zoomOptions);
-        </script>
+            <div>
+                <a href="./research.html#ongoing-work">Ongoing Work</a>
+                <a href="./research.html#featured-work">Featured Work</a>
+                <a href="./research.html#funding">Funding and Collaborators</a>
+            </div>
+
+            <a href="./facilities">Facilities</a>
+            <a href="./refreshment">Refreshment</a>
+            <a href="./contact">Contact</a>
+        </nav>
     </section>
-    <section id="typewriter-effect" class="clear-both split-right-sec typewriter">
-            <h3>Group Updates</h3>
-            <ul class="slideshow-container" id="slideshow-ul">
-                <% data.group_updates.forEach( update => { %>
-
-                    <li> <%= update['point'] %> </li>
-
-                <% }) %>
-                
-            </ul>
-            <div id="see-all-btn" onclick="showAllUpdates()">Show All</div>
+</header>
+<section class="split-left-sec">
+    <section class="clear-both body-top-sec">
     </section>
-    <hr class="clear-both">
-    <footer>
-        &copy; 2021 by SPP GROUP
-    </footer>
-</body>
+    <section class="body-sec">
+        <hr class="heading-hr hr-top">
+        <h2>
+            <%= data.intro.title %>
+        </h2>
+        <hr class="heading-hr hr-btm">
+        <p>
+            <%= data.intro.para_content %>
+        </p>
+        <blockquote>
+            <q>
+                <%= data.intro.quote %>
+            </q>
+        </blockquote>
+    </section>
+    <hr>
+    <section class="body-sec poster-sec">
+        <hr class="heading-hr hr-top">
+        <h2>Group Poster</h2>
+        <hr class="heading-hr hr-btm">
+        <figure id="img-container">
+            <img src="./imgs/general/poster_final.jpg" id="poster" alt="Poster">
+        </figure>
 
-</html>
+        <p>
+            Roll over the poster to zoom
+            <button id="poster-modal" class="poster-modal">
+                Click here to View Full Poster
+            </button>
+        </p>
+
+        <!-- code for modal box -->
+
+
+        <div id="modal-box" class="modal-box">
+            <div class="modal-content">
+                <span class="close">
+                    <abbr title="Close">
+                        &times;
+                    </abbr>
+                </span>
+                <img src="./imgs/general/poster_final.jpg" alt="Poster modal-box">
+            </div>
+        </div>
+
+    </section>
+    <script>
+        var zoomOptions = {
+            width: 429.8,
+            height: 600,
+            zoomWidth: 850,
+            offset: {
+                vertical: 0,
+                horizontal: 10
+            },
+        }
+
+        new ImageZoom(document.getElementById('img-container'), zoomOptions);
+    </script>
+</section>
+<section id="typewriter-effect" class="clear-both split-right-sec typewriter">
+    <h3>Group Updates</h3>
+    <ul class="slideshow-container" id="slideshow-ul">
+        <% data.group_updates.forEach( update=> { %>
+
+            <li class="updates-li">
+                <%= update['point'] %>
+            </li>
+
+            <% }) %>
+
+    </ul>
+    <div id="see-all-btn" onclick="showAllUpdates()">Show All</div>
+</section>
+<style id="SlideshowStyles">
+    /* Code for slideshow animation will be dynamically added here by the following JavaScript Code */
+</style>
+<script>
+    // MAX 7 Updates allowed! Not more than that!!
+    const list = document.getElementsByClassName('updates-li')
+    const x = list.length // list size
+
+    const totalTime = 4 * x
+
+    const individualTime = Math.trunc(100 / x)
+
+    const slideshowStyles = document.getElementById('SlideshowStyles')
+    var stylesCode = `
+    .slideshow-container>* {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        animation: ${totalTime}s updates infinite ease-in-out;
+    }
+
+    @keyframes updates {
+        0% {
+            top: 100%;
+        }
+
+        1% {
+            top: 0%;
+        }
+
+        ${individualTime}% {
+            top: 0;
+        }
+
+        ${individualTime+1}% {
+            top: -100%;
+        }
+
+        100% {
+            top: -100%;
+        }
+    }
+    `
+
+    for (i = 0; i < x; i++){
+        var index = i + 1
+        var delay = 0 + i * 4
+        var statement = `
+            .slideshow-container>*:nth-child(${index}) {
+            animation-delay: ${delay}s;
+        }
+        `
+        stylesCode += '\n' + statement
+    }
+
+    slideshowStyles.innerHTML += stylesCode
+
+</script>

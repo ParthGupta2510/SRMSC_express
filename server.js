@@ -1,7 +1,8 @@
 require('dotenv').config()
 const express = require('express')
 const app = express()
-const bodyParser = require('body-parser')
+const expressLayouts = require('express-ejs-layouts')
+const methodOverride = require('method-override')
 
 // Requiring All Routes
 const indexRouter = require('./routes/index')
@@ -14,6 +15,9 @@ const adminRouter = require('./routes/admin')
 
 app.set('view engine', 'ejs')
 app.set('views', __dirname + '/views')
+app.set('layout', 'layouts/layout')
+app.use(expressLayouts)
+app.use(methodOverride('_method'))
 app.use(express.static('public'))
 app.use(express.urlencoded({
     limit: '10mb',

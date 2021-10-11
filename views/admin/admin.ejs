@@ -1,34 +1,170 @@
+<h1>Admin Dashboard</h1>
+
+<hr>
+
 <h2>Contact Form Data</h2>
 
-<form method="POST" action="/admin/logout?_method=DELETE">
+<form class="log-out" method="POST" action="/admin/logout?_method=DELETE">
     <button type="submit">Log Out</button>
 </form>
 
-<table>
-    <th>
-        <td>Name</td>
-        <td>Email</td>
-        <td>Subject</td>
-        <td>Message</td>
-    </th>
-    <% data.forEach( (entry, i=1) => { %>
-        <tr>
-            <td>
-                <%= i %> 
-                <% i++ %> 
-            </td>
-            <td>
-                <%= entry.name %>
-            </td>
-            <td>
-                <%= entry.email %>
-            </td>
-            <td>
-                <%= entry.subject %> 
-            </td>
-            <td>
-                <%= entry.message %> 
-            </td>
-        </tr>
-    <% }) %> 
+<table class="form-data">
+    <tr>
+        <th>Sr. No.</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Subject</th>
+        <th>Message</th>
+        <th>Action</th>
+    </tr>
+    <% var i=1 %>
+        <% data.forEach( entry=> { %>
+            <tr>
+                <td>
+                    <%= i %>
+                        <% i++ %>
+                </td>
+                <td>
+                    <%= entry.name %>
+                </td>
+                <td>
+                    <%= entry.email %>
+                </td>
+                <td>
+                    <%= entry.subject %>
+                </td>
+                <td>
+                    <%= entry.message %>
+                </td>
+                <td>
+                    <form method="POST" action="/admin/<%= entry._id %>?_method=DELETE">
+                        <button type="submit">Delete</button>
+                    </form>
+                </td>
+            </tr>
+            <% }) %>
 </table>
+<style>
+    h1,
+    h2 {
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
+        font-size: 2em;
+        padding: 20px 0;
+    }
+
+    h1 {
+        font-size: 2.5em;
+    }
+
+    .log-out {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+
+    .log-out button {
+        padding: 10px;
+        font-size: 1em;
+        box-shadow: none;
+        outline: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: all 0.5s;
+    }
+
+    .log-out button:hover {
+        background-color: darkgray;
+        text-decoration: underline;
+    }
+
+    .form-data {
+        width: 98%;
+        margin: 0 auto 20px;
+        padding: 20px;
+        border: solid 1px black;
+        overflow-x: scroll;
+    }
+
+    .form-data th,
+    .form-data td {
+        padding: 5px 0;
+        padding-left: 15px;
+        font-size: 1.2em;
+        vertical-align: top;
+        text-align: left;
+    }
+    
+    .form-data th {
+        vertical-align: center;
+    }
+
+    .form-data th:nth-child(1),
+    .form-data td:nth-child(1) {
+        width: 4%;
+        word-wrap: break-word;
+        text-align: center;
+    }
+
+    .form-data td:nth-child(1)::after {
+        content: '.';
+    }
+
+    .form-data th:nth-child(2),
+    .form-data td:nth-child(2) {
+        min-width: 150px;
+        width: 15%;
+        max-width: 200px;
+        word-wrap: break-word;
+    }
+
+    .form-data th:nth-child(3),
+    .form-data td:nth-child(3) {
+        min-width: 150px;
+        width: 25%;
+    }
+    
+    
+    .form-data th:nth-child(4),
+    .form-data td:nth-child(4) {
+        min-width: 100px;
+        width: 20%;
+        max-width: 200px;
+        word-wrap: break-word;
+    }
+
+    .form-data th:nth-child(5),
+    .form-data td:nth-child(5) {
+        width: 30%;
+        max-width: 400px;
+        word-wrap: break-word;
+    }
+
+    .form-data td:nth-child(6) {
+        width: 5%;
+    }
+
+    .form-data button {
+        padding: 5px 3px;
+        transition: all 0.3s;
+        cursor: pointer;
+    }
+
+    .form-data button:hover {
+        background-color: red;
+        text-decoration: underline;
+    }
+
+    .form-data tr {
+        transition: all 0.3s;
+    }
+
+    .form-data tr:hover {
+        background-color: lightskyblue;
+    }
+
+    .form-data tr:nth-child(1) {
+        background-color: lightblue;
+    }
+</style>

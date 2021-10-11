@@ -1,157 +1,147 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="./imgs/general/site-icon.png">
-    <title>SPP GROUP</title>
-    <link rel="stylesheet" href="./css/style.css">
-    <script src="./js/app.js"></script>
-    <style>
-        body {
-            overflow-x: hidden;
-        }
-    </style>
-</head>
-
-<body>
-    <header>
-        <section id="fixed-to-top">
-            <div class="brand-div">
-                <a href="./">
-                    <img src="./imgs/general/logo_Lab.png" alt="Lab Icon">
-                    <div>
-                        <p>Structure-Property-Processing Group</p>
-                        <span>Materials Science Center, Indian Institute of Technology Kharagpur, India</span>
-                    </div>
-                </a>
-            </div>
-            <nav class="clear-both">
-                <a href="./">Home</a>
-                <a href="#" class="active">Members</a>
-
-                <div class="hide-this">
-                    <a href="#Team">Team</a>
-                    <a href="#Alumni">Alumni</a>
-                </div>
-
-                <a class="nav-dropdown" href="./research">Research</a>
-
+<header>
+    <section id="fixed-to-top">
+        <div class="brand-div">
+            <a href="./">
+                <img src="./imgs/general/logo_Lab.png" alt="Lab Icon">
                 <div>
-                    <a href="./research.html#ongoing-work">Ongoing Work</a>
-                    <a href="./research.html#featured-work">Featured Work</a>
-                    <a href="./research.html#funding">Funding and Collaborators</a>
+                    <p>Structure-Property-Processing Group</p>
+                    <span>Materials Science Center, Indian Institute of Technology Kharagpur, India</span>
                 </div>
-
-                <a href="./facilities">Facilities</a>
-                <a href="./refreshment">Refreshment</a>
-                <a href="./contact">Contact</a>
-            </nav>
-        </section>
-    </header>
-
-    <section class="clear-both non-home-body-top-sec">
-        <h1>Group Members</h1>
-    </section>
-
-    <section class="members-nav" id="members-nav">
-        <div class="members-nav-option" id="show-team" onclick="toggleMemberNav(this)">
-            Team 
-            <div class="div-menu" id="menu-team">
-                <div id="bar1" class="bar"></div>
-                <div class="bar" id="bar2"></div>
-                <div id="bar3" class="bar"></div>
-            </div>
+            </a>
         </div>
-        <div class="members-nav-option" id="show-alumni" onclick="toggleMemberNav(this)">
-            Alumni 
-            <div class="div-menu" id="menu-alumni">
-                <div id="bar1" class="bar"></div>
-                <div class="bar" id="bar2"></div>
-                <div id="bar3" class="bar"></div>
+        <nav class="clear-both">
+            <a href="./">Home</a>
+            <a href="#" class="active">Members</a>
+
+            <div class="hide-this">
+                <a href="#Team">Team</a>
+                <a href="#Alumni">Alumni</a>
             </div>
-        </div>
-    </section>
 
-    <section class="for-gap" id="for-gap">
-        <!-- This section is created just to provide empty space on this page after the members nav, for smooth transition -->
-    </section>
+            <a class="nav-dropdown" href="./research">Research</a>
 
-    <section class="hide-this" id="team-sec">
-        <h2 id="Team" class="subpage-heading">Team</h2>
-        <div class="shibayan-sir">
-            <img src="./imgs/group_members/team_members/<%= data.shibayan_sir.img_url %> "alt="Shibayan Sir">
             <div>
-                <hr>
-                <h3> <%= data.shibayan_sir.name%> </h3>
-                <hr>
-                <article>
-                    <h5><%= data.shibayan_sir.role %></h5>
-                    <p>
-                        <%= data.shibayan_sir.para_content %>
-                    </p>
-                </article>
-                <!-- Links -->
-                <div class="shibayan-sir-links">
-                    <a href="<%= data.shibayan_sir.links.home_website %>" target="_blank">Home Website</a>
-                    <a href="<%= data.shibayan_sir.links.researcher_id %>" target="_blank">Researcher ID</a>
-                    <a href="<%= data.shibayan_sir.links.google_scholar %>" target="_blank">Google Scholar</a>
-                    <a href="mailto:<%= data.shibayan_sir.links.email %>" target="_blank">Email</a>
-                </div>
+                <a href="./research.html#ongoing-work">Ongoing Work</a>
+                <a href="./research.html#featured-work">Featured Work</a>
+                <a href="./research.html#funding">Funding and Collaborators</a>
+            </div>
+
+            <a href="./facilities">Facilities</a>
+            <a href="./refreshment">Refreshment</a>
+            <a href="./contact">Contact</a>
+        </nav>
+    </section>
+</header>
+
+<section class="clear-both non-home-body-top-sec">
+    <h1>Group Members</h1>
+</section>
+
+<section class="members-nav" id="members-nav">
+    <div class="members-nav-option" id="show-team" onclick="toggleMemberNav(this)">
+        Team
+        <div class="div-menu" id="menu-team">
+            <div id="bar1" class="bar"></div>
+            <div class="bar" id="bar2"></div>
+            <div id="bar3" class="bar"></div>
+        </div>
+    </div>
+    <div class="members-nav-option" id="show-alumni" onclick="toggleMemberNav(this)">
+        Alumni
+        <div class="div-menu" id="menu-alumni">
+            <div id="bar1" class="bar"></div>
+            <div class="bar" id="bar2"></div>
+            <div id="bar3" class="bar"></div>
+        </div>
+    </div>
+</section>
+
+<section class="for-gap" id="for-gap">
+    <!-- This section is created just to provide empty space on this page after the members nav, for smooth transition -->
+</section>
+
+<section class="hide-members members-tab" id="team-sec">
+    <h2 id="Team" class="subpage-heading">Team</h2>
+    <div class="shibayan-sir">
+        <img src="./imgs/group_members/team_members/<%= data.shibayan_sir.img_url %> " alt="Shibayan Sir">
+        <div>
+            <hr>
+            <h3>
+                <%= data.shibayan_sir.name%>
+            </h3>
+            <hr>
+            <article>
+                <h5>
+                    <%= data.shibayan_sir.role %>
+                </h5>
+                <p>
+                    <%= data.shibayan_sir.para_content %>
+                </p>
+            </article>
+            <!-- Links -->
+            <div class="shibayan-sir-links">
+                <a href="<%= data.shibayan_sir.links.home_website %>" target="_blank">Home Website</a>
+                <a href="<%= data.shibayan_sir.links.researcher_id %>" target="_blank">Researcher ID</a>
+                <a href="<%= data.shibayan_sir.links.google_scholar %>" target="_blank">Google Scholar</a>
+                <a href="mailto:<%= data.shibayan_sir.links.email %>" target="_blank">Email</a>
             </div>
         </div>
-        <div class="all-team">
+    </div>
+    <div class="all-team">
 
-            <% data.team_members.forEach( member => { %>
-                <div>
+        <% data.team_members.forEach( member=> { %>
+            <div>
 
-                    <figure>
-                        <img src="./imgs/group_members/team_members/<%= member.img_url %>" alt="<%= member.name %>">
-                        <figcaption>
-                            <%= member.name %>
+                <figure>
+                    <img src="./imgs/group_members/team_members/<%= member.img_url %>" alt="<%= member.name %>">
+                    <figcaption>
+                        <%= member.name %>
                             <br>
                             <span style="font-size: 0.8em;"> <strong>[ <%= member.role %> ]</strong> </span>
-                        </figcaption>
-                        <a href="<%= member.cv_link %>" target="_blank" class="cv_link"><abbr title="CV"><img src="./imgs/general/pop-out-icon.jpg" alt="pop-out-icon"></abbr></a>
-                    </figure>
-                    
-                </div>
+                    </figcaption>
+                    <a href="<%= member.cv_link %>" target="_blank" class="cv_link"><abbr title="CV"><img
+                                src="./imgs/general/pop-out-icon.jpg" alt="pop-out-icon"></abbr></a>
+                </figure>
+
+            </div>
             <% }) %>
                 <hr class="clear-both invisible">
-        </div>
-        <div id="team-interns">
-            <hr class="clear-both">
-            <h3>Interns</h3>
-            <hr>
-            <ul>
-                <% data.team_interns.forEach( intern => { %>
+    </div>
+    <div id="team-interns">
+        <hr class="clear-both">
+        <h3>Interns</h3>
+        <hr>
+        <ul>
+            <% data.team_interns.forEach( intern=> { %>
 
-                    <li> <%= intern.details %></li>
+                <li>
+                    <%= intern.details %>
+                </li>
 
                 <% }) %>
 
-            </ul>
-        </div>
-    </section>
-    <section class="hide-this" id="alumni-sec">
-        <h2 id="Alumni" class="subpage-heading">Alumni</h2>
-        <div>
-            <% data.alumni.forEach( alumni => { %>
+        </ul>
+    </div>
+</section>
+<section class="hide-members members-tab" id="alumni-sec">
+    <h2 id="Alumni" class="subpage-heading">Alumni</h2>
+    <div>
+        <% data.alumni.forEach( alumni=> { %>
 
-                <div class="individual-profile">
-                    <img src="./imgs/group_members/alumni/<%= alumni.img_url %>" alt="<%= alumni.name %>">
+            <div class="individual-profile">
+                <img src="./imgs/group_members/alumni/<%= alumni.img_url %>" alt="<%= alumni.name %>">
                 <article>
                     <h3>
                         <%= alumni.name %>
                     </h3>
                     <p>
-                        <ul>
-                            <% alumni.details.forEach( detail => { %>
-                                <li><%= detail.point %></li>
+                    <ul>
+                        <% alumni.details.forEach( detail=> { %>
+                            <li>
+                                <%= detail.point %>
+                            </li>
                             <% }) %>
-                        </ul>
+                    </ul>
                     </p>
                 </article>
                 <a href="mailto:<%= alumni.email %>">Contact</a>
@@ -159,21 +149,17 @@
 
             <% }) %>
 
-        </div>
-        <div id="alumni-interns">
-            <hr>
-            <h3>Intern Alumni</h3>
-            <hr>
-            <ul>
-                <% data.alumni_interns.forEach( intern => { %>
-                    <li> <%= intern.details %> </li>
+    </div>
+    <div id="alumni-interns">
+        <hr>
+        <h3>Intern Alumni</h3>
+        <hr>
+        <ul>
+            <% data.alumni_interns.forEach( intern=> { %>
+                <li>
+                    <%= intern.details %>
+                </li>
                 <% }) %>
-            </ul>
-        </div>
-    </section>
-    <footer class="clear-both">
-        &copy; 2021 by SPP GROUP
-    </footer>
-</body>
-
-</html>
+        </ul>
+    </div>
+</section>

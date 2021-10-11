@@ -80,7 +80,7 @@ function toggleMemberNav(clickedDiv) {
         if (Tstate == "open") {                     
 
             // close team 
-            Tsec.classList.add('hide-this');   
+            Tsec.classList.add('hide-members');   
 
             // hide team X
             Tmenu.classList.remove('clicked');      
@@ -91,14 +91,14 @@ function toggleMemberNav(clickedDiv) {
 
             //if gap hidden then display it
             if (gapState == "hidden") {
-                gapSec.classList.remove('hide-this');
+                gapSec.classList.remove('hide-members');
                 gapState = "not-hidden";
             }
 
         } else {
             
             // if team is closed and clicked, open team
-            Tsec.classList.remove('hide-this');
+            Tsec.classList.remove('hide-members');
 
             // show team X
             Tmenu.classList.add('clicked'); 
@@ -112,7 +112,7 @@ function toggleMemberNav(clickedDiv) {
 
             // if gap displayed then hide gap section
             if (gapState != "hidden") {
-                gapSec.classList.add('hide-this');
+                gapSec.classList.add('hide-members');
                 gapState = "hidden";
             }
 
@@ -120,7 +120,7 @@ function toggleMemberNav(clickedDiv) {
             if (Astate == "open") {    
                 
                 // close alumni
-                Asec.classList.add('hide-this');      
+                Asec.classList.add('hide-members');      
                 
                 // hide alumni X
                 Amenu.classList.remove('clicked');    
@@ -141,7 +141,7 @@ function toggleMemberNav(clickedDiv) {
         if (Astate == "open") {                     
             
             // close alumni 
-            Asec.classList.add('hide-this');   
+            Asec.classList.add('hide-members');   
             
             // hide alumni X
             Amenu.classList.remove('clicked');
@@ -152,14 +152,14 @@ function toggleMemberNav(clickedDiv) {
             
             //if gap hidden then display it
             if (gapState == "hidden") {
-                gapSec.classList.remove('hide-this');
+                gapSec.classList.remove('hide-members');
                 gapState = "not-hidden";
             }
             
         } else {
             
             // if alumni is closed and clicked, open alumni
-            Asec.classList.remove('hide-this');
+            Asec.classList.remove('hide-members');
             
             // show alumni X
             Amenu.classList.add('clicked'); 
@@ -173,7 +173,7 @@ function toggleMemberNav(clickedDiv) {
 
             // if gap displayed then hide gap section
             if (gapState != "hidden") {
-                gapSec.classList.add('hide-this');
+                gapSec.classList.add('hide-members');
                 gapState = "hidden";
             }
 
@@ -181,7 +181,7 @@ function toggleMemberNav(clickedDiv) {
             if (Tstate == "open") {    
                 
                 // close team
-                Tsec.classList.add('hide-this');      
+                Tsec.classList.add('hide-members');      
 
                 // hide team X
                 Tmenu.classList.remove('clicked');    
