@@ -688,28 +688,94 @@ db.createCollection('facilities')
 
 /// filing facilities data in collection
 
-db.facilities.insertOne(
+db.facilities.insertOne({
+	'top_msg' : {
+		'top_msg': 'Please contact us to access any of the facilities and softwares on a collaboration basis.'
+	},
+	'facilities': [
 	{
-		'lab' : [
-			{	
+		'index': '0',
+		'type': 'Metallography',
+		'facilities': [
+			{
 				'facility_id' : '00',
+				'name' : 'Grinder',
+				'img_url' : '1_grinder.jpeg',
+				'specifications' : [
+					{
+						'heading' : 'Company',
+						'detail' : 'Chennai Metco.'
+					},
+					{
+						'heading' : 'Model',
+						'detail' : 'BAINLINE'
+					},
+					{
+						'heading' : 'Electrical input',
+						'detail' : '415V ± 10%'
+					},
+					{
+						'heading' : 'Serial number',
+						'detail' : '7119'
+					},
+					{
+						'heading' : 'Frequency',
+						'detail' : '50/60 Hz'
+					},
+					{
+						'heading' : 'Phase',
+						'detail' : '3-Phase'
+					},
+					{
+						'heading' : 'Weight',
+						'detail' : '90 kg'
+					},
+					{
+						'heading' : 'Full load current',
+						'detail' : '2.2 amps'
+					},
+					{
+						'heading' : 'Input braker rating',
+						'detail' : '6 amps'
+					}
+				]
+			},
+			{	
+				'facility_id' : '01',
 				'name' : 'Low Speed Cutter',
 				'img_url' : '0_low_speed_cutter.jfif',
 				'specifications' : [
 					{
-						'heading' : '',
-						'detail' : ''
-					}
-				]
-			},
-			{
-				'facility_id' : '01',
-				'name' : 'Grinder',
-				'img_url' : '1_grinder.jfif',
-				'specifications' : [
+						'heading' : 'Manufacturer',
+						'detail' : 'Chennai Metco.'
+					},
 					{
-						'heading' : '',
-						'detail' : ''
+						'heading' : 'Model name',
+						'detail' : 'BAINCUT'
+					},
+					{
+						'heading' : 'Model No',
+						'detail' : 'LSS003'
+					},
+					{
+						'heading' : 'Serial No',
+						'detail' : '6989'
+					},
+					{
+						'heading' : 'Voltage',
+						'detail' : '230V±10%'
+					},
+					{
+						'heading' : 'Frequency',
+						'detail' : '50/60 Hz'
+					},
+					{
+						'heading' : 'Phase',
+						'detail' : 'Single Phase'
+					},
+					{
+						'heading' : 'Full load current',
+						'detail' : '6 A'
 					}
 				]
 			},
@@ -720,11 +786,11 @@ db.facilities.insertOne(
 				'specifications' : [
 					{
 						'heading' : 'Manufacturer',
-						'detail' : 'Chennai metco.'
+						'detail' : 'Chennai Metco.'
 					},
 					{
 						'heading' : 'Model name',
-						'detail' : 'Bainmount',
+						'detail' : 'BAINMOUNT',
 					},
 					{
 						'heading' : 'Working temperature',
@@ -742,19 +808,35 @@ db.facilities.insertOne(
 				'img_url' : '3_mechanical_polishing_machine.jpeg',
 				'specifications' : [
 					{
-						'heading' : '',
-						'detail' : ''
+						'heading' : 'Company',
+						'detail' : 'Chennai Metco.'
+					},
+					{
+						'heading' : 'Model',
+						'detail' : 'BAINPOL'
+					},
+					{
+						'heading' : 'Type',
+						'detail' : 'Table Top'
 					}
 				]
 			},
 			{
 				'facility_id' : '04',
-				'name' : 'VibroMet',
+				'name' : 'Vibratory Polisher',
 				'img_url' : '4_vibromet.jpg',
 				'specifications' : [
 					{
-						'heading': '',
-						'detail' : ''
+						'heading': 'Company',
+						'detail' : 'BUEHLER'
+					},
+					{
+						'heading': 'Model name',
+						'detail' : 'VibroMet'
+					},
+					{
+						'heading': 'Model',
+						'detail' : '67-1635-250'
 					}
 				]
 			},
@@ -768,20 +850,38 @@ db.facilities.insertOne(
 						'detail' : ''
 					}
 				]
-			},
+			}
+		]
+	},
+	{
+		'index': '1',
+		'type': 'Microscopy',
+		'facilities' : [
 			{
-				'facility_id' : '06',
+				'facility_id' : '00',
 				'name' : 'Optical Microscope',
-				'img_url' : '6_optical_microscope.jfif',
+				'img_url' : '6_optical_microscope.jpeg',
 				'specifications' : [
 					{
-						'heading' : '',
-						'detail' : ''
+						'heading' : 'Company',
+						'detail' : 'Chennai Metco.'
+					},
+					{
+						'heading' : 'Model',
+						'detail' : 'METSCOPE-1'
+					},
+					{
+						'heading' : 'Mode of Operation',
+						'detail' : 'Bright Field'
+					},
+					{
+						'heading' : 'Magnification',
+						'detail' : '1000x'
 					}
 				]
 			},
 			{
-				'facility_id' : '07',
+				'facility_id' : '01',
 				'name' : 'Optical Microscope with heating stage',
 				'img_url' : '7_optical_microscope_with_heating_stage.jfif',
 				'specifications' : [
@@ -804,65 +904,32 @@ db.facilities.insertOne(
 				]
 			},
 			{
-				'facility_id' : '08',
-				'name' : 'Microhardness Tester',
-				'img_url' : '8_microhardness_tester.jfif',
+				'facility_id' : '02',
+				'name' : 'Optical Microscope',
+				'img_url' : '8_OM.jpeg',
 				'specifications' : [
 					{
-						'heading' : 'Manufacturer',
-						'detail' : 'Omnitech'
+						'heading': 'Manufacturer',
+						'detail': 'Leica Microsystems'
 					},
 					{
-						'heading' : 'Model name',
-						'detail' : 'MHT- Smart'
+						'heading': 'Model type',
+						'detail': 'Upright'
 					},
 					{
-						'heading' : 'Load range',
-						'detail' : '10 gms to 1000gms'
-					},
-					{
-						'heading' : 'Dwell time',
-						'detail' : '5 – 99 sec'
-					},
-					{
-						'heading' : 'Microscope Magnification',
-						'detail' : '100 x, 400 x'
-					},
-					{
-						'heading' : '',
-						'detail' : 'Automatic loading and releasing'
+						'heading': 'Magnification',
+						'detail': 'upto 500X'
 					}
 				]
-			},
+ 			}
+		]
+	},
+	{
+		'index' : '2',
+		'type' : 'Mechanical Testing',
+		'facilities' : [
 			{
-				'facility_id' : '09',
-				'name' : 'Macrohardness Tester',
-				'img_url' : '9_macrohardness_tester.jpg',
-				'specifications' : [
-					{
-						'heading' : 'Company name',
-						'detail' : 'Vertex'
-					},
-					{
-						'heading' : 'Model number',
-						'detail' : 'VM-50'
-					},
-					{
-						'heading' : 'Testing Loads',
-						'detail' : '1, 5, 10, 20, 30, 50 kgf'
-					},
-					{
-						'heading' : 'Dwell time',
-						'detail' : '0.30 &plusmn; 2 sec'
-					},
-					{
-						'heading' : 'Indenter',
-						'detail' : 'Diamond Pyramid'
-					}
-				]
-			},
-			{
-				'facility_id' : '10',
+				'facility_id' : '00',
 				'name' : 'Scratch Tester',
 				'img_url' : '10_scratch_tester.jfif',
 				'specifications' : [
@@ -905,38 +972,72 @@ db.facilities.insertOne(
 				]
 			},
 			{
-				'facility_id' : '11',
-				'name' : 'Microwave Furnace',
-				'img_url' : '11_microwave_furnace.jfif',
+				'facility_id' : '01',
+				'name' : 'Computerized Vicker’s Microhardness Tester',
+				'img_url' : '8_microhardness_tester.jfif',
 				'specifications' : [
 					{
+						'heading' : 'Manufacturer',
+						'detail' : 'Omnitech'
+					},
+					{
+						'heading' : 'Model name',
+						'detail' : 'MHT- Smart'
+					},
+					{
+						'heading' : 'Load range',
+						'detail' : '10 gms to 1000gms'
+					},
+					{
+						'heading' : 'Dwell time',
+						'detail' : '5 – 99 sec'
+					},
+					{
+						'heading' : 'Microscope Magnification',
+						'detail' : '100 x, 400 x'
+					},
+					{
 						'heading' : '',
-						'detail' : ''
+						'detail' : 'Automatic loading and releasing'
 					}
 				]
 			},
 			{
-				'facility_id' : '12',
-				'name' : 'Muffle Furnace',
-				'img_url' : '12_muffle_furnace.jfif',
+				'facility_id' : '02',
+				'name' : 'Computerized Vicker’s Macrohardness Tester',
+				'img_url' : '9_macrohardness_tester.jpg',
 				'specifications' : [
 					{
-						'heading' : '',
-						'detail' : 'Box type'
+						'heading' : 'Company name',
+						'detail' : 'Vertex'
 					},
 					{
-						'heading' : 'Max working temperature',
-						'detail' : '850 ᵒC'
+						'heading' : 'Model number',
+						'detail' : 'VM-50'
+					},
+					{
+						'heading' : 'Testing Loads',
+						'detail' : '1, 5, 10, 20, 30, 50 kgf'
+					},
+					{
+						'heading' : 'Dwell time',
+						'detail' : '0.30 &plusmn; 2 sec'
+					},
+					{
+						'heading' : 'Indenter',
+						'detail' : 'Diamond Pyramid'
 					}
 				]
-			}
-		],
-		'departmental' : [
+			},
 			{
-				'facility_id' : '00',
-				'name' : 'UTM with DIC',
-				'img_url' : '0_UTM_with_DIC.jpg',
+				'facility_id' : '03',
+				'name' : 'Universal Testing Machine (UTM)',
+				'img_url' : '0_UTM_with_DIC.jfif',
 				'specifications' : [
+					{
+						'heading' : 'Attachment',
+						'detail': 'DIC'
+					},
 					{
 						'heading' : 'Company name',
 						'detail' : 'Zwick/Roell'
@@ -956,50 +1057,37 @@ db.facilities.insertOne(
 				]
 			},
 			{
-				'facility_id' : '01',
-				'name' : 'Vacuum Arc Melting Furnace',
-				'img_url' : '1_vacuum_arc_melting_furnace.jpg',
+				'facility_id' : '04',
+				'name' : 'Micro-UTM',
+				'img_url' : '15_micro_UTM.jpeg',
 				'specifications' : [
 					{
-						'heading' : 'Company name',
-						'detail' : 'Vacuum Technologies PVT. LTD, Bangalore'
+						'heading' : 'Company',
+						'detail' : 'Metatech Industries'
 					},
 					{
-						'heading' : 'Temperature',
-						'detail' : 'upto 2800ᵒC'
+						'heading' : 'Model',
+						'detail' : 'MUTM-V'
 					},
 					{
-						'heading' : 'Purging gas',
-						'detail' : 'Argon'
+						'heading' : 'Heating',
+						'detail' : 'upto 400ᵒC'
 					},
 					{
-						'heading' : 'Maximum bead size',
-						'detail' : '2cm diameter'
+						'heading' : 'Load Capacity',
+						'detail' : 'upto 500 Kg'
 					}
 				]
-			},
+			}
+		]
+	},
+	{
+		'index' : '3',
+		'type' : 'Advanced Structural and Microstructural Characterization',
+		'facilities' : [
 			{
-				'facility_id' : '02',
-				'name' : 'X-ray Diffractometer',
-				'img_url' : '2_x_ray_diffractometer.jpg',
-				'specifications' : [
-					{
-						'heading' : 'Manufacturer name',
-						'detail' : 'Panalytical'
-					},
-					{
-						'heading' : 'Model name',
-						'detail' : 'Empyrean'
-					},
-					{
-						'heading' : 'Facility',
-						'detail' : 'phase identification, stress, texture, high temperature, GIXRD, Thin film'
-					}
-				]
-			},
-			{
-				'facility_id' : '03',
-				'name' : 'SEM',
+				'facility_id' : '00',
+				'name' : 'Field Emission Secondary Electron Microscope (FE-SEM)',
 				'img_url' : '3_sem.jpg',
 				'specifications' : [
 					{
@@ -1027,10 +1115,445 @@ db.facilities.insertOne(
 						'detail' : 'In-lens SE; In-lens BSE; EDS'
 					}
 				]
+			},
+			{
+				'facility_id' : '01',
+				'name' : 'Scanning Electron Microscope (SEM)',
+				'img_url' : 'evo_sem.jpeg',
+				'specifications' : [
+					{
+						'heading' : 'Company name',
+						'detail' : 'Zeiss'
+					},
+					{
+						'heading' : 'Model number',
+						'detail' : 'EVO 60'
+					},
+					{
+						'heading' : 'Resolution',
+						'detail' : '50 nm'
+					},
+					{
+						'heading' : 'Filament',
+						'detail' : 'Tungsten'
+					},
+					{
+						'heading' : 'Detectors',
+						'detail' : 'SE; BSE; EDS; WDS; EBSD;'
+					}
+				]
+			},
+			{
+				'facility_id' : '02',
+				'name' : 'X-ray Diffractometer',
+				'img_url' : '2_x_ray_diffractometer.jpg',
+				'specifications' : [
+					{
+						'heading' : 'Manufacturer name:',
+						'detail' : 'Panalytical'
+					},
+					{
+						'heading' : 'Model name',
+						'detail' : 'Empyrean'
+					},
+					{
+						'heading' : 'Facility:',
+						'detail' : 'phase identification, stress, texture, high temperature, GIXRD, Thin film'
+					}
+				]
+			}
+		]
+	},
+	{
+		'index' : '4',
+		'type' : 'Heat Treatment',
+		'facilities' : [
+			{
+				'facility_id' : '00',
+				'name' : 'Muffle Furnace',
+				'img_url' : '12_muffle_furnace.jfif',
+				'specifications' : [
+					{
+						'heading' : 'Company',
+						'detail' : 'HERAEUS'
+					},
+					{
+						'heading' : 'Type',
+						'detail' : 'Box type'
+					},
+					{
+						'heading' : 'Max working temperature',
+						'detail' : '850 ᵒC'
+					}
+				]
+			},
+			{
+				'facility_id' : '01',
+				'name' : 'Muffle Furnace',
+				'img_url' : '2_muffle_furnace.jpeg',
+				'specifications' : [
+					{
+						'heading' : 'Company',
+						'detail' : 'Ants Ceramics'
+					},
+					{
+						'heading' : 'Max working temperature',
+						'detail' : '1200 ᵒC'
+					},
+					{
+						'heading' : 'Continuous working temperature',
+						'detail' : '1100 ᵒC'
+					},
+					{
+						'heading' : 'Rate of heating',
+						'detail' : 'Upto 10ᵒC'
+					},
+					{
+						'heading' : 'Control Zone',
+						'detail' : 'single'
+					}
+				]
+			},
+			{
+				'facility_id' : '02',
+				'name' : 'Tube Furnace',
+				'img_url' : '13_tube_furnace.jpeg',
+				'specifications' : [
+					{
+						'heading' : '',
+						'detail' : '1200ᵒC Horizontal single zone tube furnace'
+					},
+					{
+						'heading' : 'Company',
+						'detail' : 'Ants ceramics Pvt. Limited'
+					},
+					{
+						'heading' : 'Operating Temperature',
+						'detail' : 'Upto 1050ᵒC'
+					},
+					{
+						'heading' : 'ATM',
+						'detail' : 'Air'
+					},
+					{
+						'heading' : 'Cooling',
+						'detail' : 'Fan'
+					}
+				]
+			},
+			{
+				'facility_id' : '03',
+				'name' : 'Microwave Furnace',
+				'img_url' : '11_microwave_furnace.jfif',
+				'specifications' : [
+					{
+						'heading' : 'Company',
+						'detail' : 'Synotherm'
+					},
+					{
+						'heading' : 'Model',
+						'detail' : 'HAMiLab-M1500'
+					},
+					{
+						'heading' : 'Max operating temp',
+						'detail' : '1600ᵒC'
+					},
+					{
+						'heading' : 'ATM',
+						'detail' : 'Air'
+					},
+					{
+						'heading' : 'Cooling',
+						'detail' : 'Fan + Water'
+					}
+				]
+			},
+			{
+				'facility_id' : '04',
+				'name' : 'Calcination Furnace',
+				'img_url' : 'calcination_furnace.jpeg',
+				'specifications' : [
+					{
+						'heading' : 'Manufacturer',
+						'detail' : 'Ants Ceramics'
+					},
+					{
+						'heading' : 'Max working temperature',
+						'detail' : '1000 ᵒC'
+					}
+				]
+			}
+		]
+	},
+	{
+		'index' : '5',
+		'type' : 'Melting facilities',
+		'facilities' : [
+			{
+				'facility_id' : '00',
+				'name' : 'Vacuum Arc Melting Furnace',
+				'img_url' : '1_vacuum_arc_melting_furnace.jpg',
+				'specifications' : [
+					{
+						'heading' : 'Company name',
+						'detail' : 'Vacuum Technologies PVT. LTD, Bangalore'
+					},
+					{
+						'heading' : 'Temperature',
+						'detail' : 'upto 2800ᵒC'
+					},
+					{
+						'heading' : 'Purging gas',
+						'detail' : 'Argon'
+					},
+					{
+						'heading' : 'Maximum bead size',
+						'detail' : '2cm diameter'
+					}
+				]
+			},
+			{
+				'facility_id' : '01',
+				'name' : 'Glass Melting Furnace',
+				'img_url' : '14_glass_melting_furnace.jpeg',
+				'specifications' : [
+					{
+						'heading' : '',
+						'detail' : '1700ᵒC raising hearth furnace'
+					},
+					{
+						'heading' : 'Company',
+						'detail' : 'Ants ceramics Pvt. Limited'
+					},
+					{
+						'heading' : 'Max operating temp',
+						'detail' : '1600ᵒC'
+					},
+					{
+						'heading' : 'ATM',
+						'detail' : 'Air'
+					},
+					{
+						'heading' : 'Cooling',
+						'detail' : 'Fan'
+					}
+				]
+			},
+			{
+				'facility_id' : '02',
+				'name' : 'Induction melting furnace',
+				'img_url' : 'induction_melting_furnace.jpeg',
+				'specifications' : [
+					{
+						'heading' : 'Manufacturer',
+						'detail' : 'Rishav Furnace'
+					},
+					{
+						'heading' : 'Max working temperature',
+						'detail' : '1100 ᵒC'
+					}
+				]
+			}
+		]
+	},
+	{
+		'index' : '6',
+		'type' : 'Materials processing',
+		'facilities' : [
+			{
+				'facility_id' : '00',
+				'name' : 'Planetary Ball Mill',
+				'img_url' : 'planetary_ball_mill.jpeg',
+				'specifications' : [
+					{
+						'heading' : 'Model no',
+						'detail' : 'Pulverisette 6 classic line'
+					},
+					{
+						'heading' : 'Manufacturer',
+						'detail' : 'Fritsch GmbH'
+					},
+					{
+						'heading' : 'Rotational speed',
+						'detail' : '650 rpm'
+					},
+					{
+						'heading' : 'Max feeding size',
+						'detail' : '10 mm (approx.)'
+					},
+					{
+						'heading' : 'Max feeding amount',
+						'detail' : '225 ml'
+					},
+					{
+						'heading' : 'Dry grinding',
+						'detail' : 'up to d50< 20 micron'
+					},
+					{
+						'heading' : 'Wet grinding',
+						'detail' : 'up to d50 < 1 micron'
+					}
+				]
+			},			
+			{
+				'facility_id' : '01',
+				'name' : 'Hydraulic Press',
+				'img_url' : 'mechanical_hydraulic_press.jpeg',
+				'specifications' : [
+					{
+						'heading': 'Type',
+						'detail': 'Mechanical Press'
+					}
+				]
+			},
+			{
+				'facility_id' : '02',
+				'name' : 'Table-top Hydraulic Press',
+				'img_url' : 'automatic_hydraulic_press.jpeg',
+				'specifications' : [
+					{
+						'heading' : 'Model no',
+						'detail' : '3889_4NE0000'
+					},
+					{
+						'heading' : 'Serial no',
+						'detail' : '140160'
+					},
+					{
+						'heading' : 'Manufacturer',
+						'detail' : 'CARVER'
+					},
+					{
+						'heading' : 'Mode',
+						'detail' : 'Automatic'
+					},
+					{
+						'heading' : 'Compression force',
+						'detail' : '15'
+					}
+				]
+			},			
+			{
+				'facility_id' : '03',
+				'name' : 'Mechanical convection oven',
+				'img_url' : 'mechanical_convection_oven.jpeg',
+				'specifications' : [
+					{
+						'heading' : 'Manufacturer',
+						'detail' : 'S.D. Instruments and Equipments, Kolkata'
+					},
+					{
+						'heading' : 'Max. temperature',
+						'detail' : '~200ᵒC'
+					}
+				]
+			}			
+		]
+	},
+	{
+		'index' : '7',
+		'type' : 'Electrical testing',
+		'facilities' : [
+			{
+				'facility_id' : '00',
+				'name' : 'Precision Impedance Analyzer',
+				'img_url' : 'precision_impedance_analyzer.jpeg',
+				'specifications' : [
+					{
+						'heading' : 'Manufacturer',
+						'detail' : 'Agilent Technologies Japan, Ltd.'
+					},
+					{
+						'heading' : 'Model No',
+						'detail' : '4294A'
+					},
+					{
+						'heading' : 'Frequency',
+						'detail' : '40 Hz-110 MHz'
+					},
+					{
+						'heading' : 'Resolution',
+						'detail' : '1 mHz'
+					}
+				]
+			},
+			{
+				'facility_id' : '01',
+				'name' : 'Refractometer',
+				'img_url' : 'refractometer.jpeg',
+				'specifications' : [
+					{
+						'heading' : 'Manufacturer',
+						'detail' : 'Bellingham and Stanley Limited'
+					},
+					{
+						'heading' : 'Model No',
+						'detail' : '970'
+					},
+					{
+						'heading' : 'Operating range',
+						'detail' : '0 to 40ᵒC'
+					},
+					{
+						'heading' : 'Measuring low limit',
+						'detail' : '0 or 10 ºC below ambient (whichever greater)'
+					},
+					{
+						'heading' : 'Measuring upper limit',
+						'detail' : '80°C'
+					},
+					{
+						'heading' : 'Stability',
+						'detail' : '±0.05'
+					},
+					{
+						'heading' : 'Sensor Accuracy',
+						'detail' : '±0.03'
+					},
+					{
+						'heading' : 'Refractive index range',
+						'detail' : '1.30 to 1.70'
+					},
+					{
+						'heading' : 'Frequency',
+						'detail' : ' 50-60 Hz'
+					},
+					{
+						'heading' : 'Max current',
+						'detail' : '2 A'
+					}
+				]
 			}
 		]
 	}
-)
+],
+	'softwares': [
+		{
+			'software_id': '0',
+			'name': 'MATLAB 2020b'
+		},
+		{
+			'software_id': '1',
+			'name': 'X’pert Highscore Plus 2.2b'
+		},
+		{
+			'software_id': '2',
+			'name': 'Simpleware P-2019.09'
+		},
+		{
+			'software_id': '3',
+			'name': 'Aztec'
+		},
+		{
+			'software_id': '4',
+			'name': 'Channel 5'
+		},
+		{
+			'software_id': '5',
+			'name': 'TSL 7.2'
+		}
+	]
+})
 
 // create collection - refreshment
 

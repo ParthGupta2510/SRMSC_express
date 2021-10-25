@@ -1,40 +1,11 @@
 <header>
     <section id="fixed-to-top">
-        <div class="brand-div">
-            <a href="./">
-                <img src="./imgs/general/logo_Lab.png" alt="Lab Icon">
-                <div>
-                    <p>Structure-Property-Processing Group</p>
-                    <span>Materials Science Center, Indian Institute of Technology Kharagpur, India</span>
-                </div>
-            </a>
-        </div>
-        <nav class="clear-both">
-            <a href="./">Home</a>
-            <a href="#" class="active">Members</a>
-
-            <div class="hide-this">
-                <a href="#Team">Team</a>
-                <a href="#Alumni">Alumni</a>
-            </div>
-
-            <a class="nav-dropdown" href="./research">Research</a>
-
-            <div>
-                <a href="./research.html#ongoing-work">Ongoing Work</a>
-                <a href="./research.html#featured-work">Featured Work</a>
-                <a href="./research.html#funding">Funding and Collaborators</a>
-            </div>
-
-            <a href="./facilities">Facilities</a>
-            <a href="./refreshment">Refreshment</a>
-            <a href="./contact">Contact</a>
-        </nav>
+        <%- include('../partials/_navbar') %> 
     </section>
 </header>
 
 <section class="clear-both non-home-body-top-sec">
-    <h1>Group Members</h1>
+    <h1 id="page-heading">Group Members</h1>
 </section>
 
 <section class="members-nav" id="members-nav">
@@ -95,12 +66,14 @@
                 <figure>
                     <img src="./imgs/group_members/team_members/<%= member.img_url %>" alt="<%= member.name %>">
                     <figcaption>
-                        <%= member.name %>
-                            <br>
-                            <span style="font-size: 0.8em;"> <strong>[ <%= member.role %> ]</strong> </span>
+                        <a href="<%= member.cv_link %>" target="_blank" class="cv_link">
+                            <abbr title="CV">
+                                <%= member.name %>
+                                    <br>
+                                    <span style="font-size: 0.8em;"> <strong>[ <%= member.role %> ]</strong> </span>
+                            </abbr>
+                        </a>
                     </figcaption>
-                    <a href="<%= member.cv_link %>" target="_blank" class="cv_link"><abbr title="CV"><img
-                                src="./imgs/general/pop-out-icon.jpg" alt="pop-out-icon"></abbr></a>
                 </figure>
 
             </div>

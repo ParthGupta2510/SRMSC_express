@@ -1,147 +1,78 @@
 <header>
     <section id="fixed-to-top">
-        <div class="brand-div">
-            <a href="./">
-                <img src="./imgs/general/logo_Lab.png" alt="Lab Icon">
-                <div>
-                    <p>Structure-Property-Processing Group</p>
-                    <span>Materials Science Center, Indian Institute of Technology Kharagpur, India</span>
-                </div>
-            </a>
-        </div>
-        <nav class="clear-both">
-            <a href="./">Home</a>
-            <a href="./members">Members</a>
-
-            <div class="hide-this">
-                <a href="./members.html#Team">Team</a>
-                <a href="./members.html#Alumni">Alumni</a>
-            </div>
-
-            <a class="nav-dropdown" href="./research">Research</a>
-
-            <div>
-                <a href="./research.html#ongoing-work">Ongoing Work</a>
-                <a href="./research.html#featured-work">Featured Work</a>
-                <a href="./research.html#funding">Funding and Collaborators</a>
-            </div>
-
-            <a href="#" class="active">Facilities</a>
-            <a href="./refreshment">Refreshment</a>
-            <a href="./contact">Contact</a>
-        </nav>
+        <%- include('../partials/_top_msg') %>
+            <%- include('../partials/_navbar') %>
     </section>
     <section class="clear-both non-home-body-top-sec" id="page-heading-sec">
-        <h1>Facilities</h1>
+        <h1 id="page-heading">Facilities</h1>
     </section>
 </header>
 <section class="facilities-container">
 
     <h2 class="subpage-heading">Lab facilities</h2>
+    <section class="facilities-subcontainer">
+        <% data.facilities.forEach( group=> { %>
+            <details class="clear-both">
+                <summary class="facility-types">
+                    <%= group.type %>
+                </summary>
 
-    <div class="facility">
-        <% data.lab.forEach( facility=> { %>
+                <div class="facility-grid">
+                    <% group.facilities.forEach( facility=> { %>
 
-            <div onclick="showModal(this)" id="lab<%= facility.facility_id %>">
-                <figure>
-                    <img src="./imgs/facilities/lab/<%= facility.img_url %>" alt="<%= facility.name %>">
-                    <figcaption>
-                        <%= facility.name %>
-                    </figcaption>
-                </figure>
-            </div>
+                        <div onclick="showModal(this)" id="<%= group.index %>/<%= facility.facility_id %>">
+                            <figure>
+                                <img src="./imgs/facilities/<%= group.index %>/<%= facility.img_url %>"
+                                    alt="<%= facility.name %>">
+                                <figcaption>
+                                    <%= facility.name %>
+                                </figcaption>
+                            </figure>
+                        </div>
 
+                        <% }) %>
+                </div>
+                <% group.facilities.forEach( facility=> { %>
+
+                    <section class="modal-box" id="box<%= group.index %>/<%= facility.facility_id %>">
+                        <div class="modal-content facilities-modal">
+                            <span class="close close-facility-btn"
+                                id="close<%= group.index %>/<%= facility.facility_id %>" onclick="hideModal(this)">
+                                <abbr title="Close">
+                                    &times;
+                                </abbr>
+                            </span>
+                            <div>
+                                <figure>
+                                    <img src="./imgs/facilities/<%= group.index %>/<%= facility.img_url %>"
+                                        alt="<%= facility.name %>">
+                                </figure>
+                                <article>
+                                    <h4>
+                                        <%= facility.name %>
+                                    </h4>
+                                    <p>
+                                    <ul>
+                                        <% facility.specifications.forEach( specification=> { %>
+                                            <li>
+                                                <strong>
+                                                    <%= specification.heading %>
+                                                </strong> - <%= specification.detail %>
+                                            </li>
+                                            <% }) %>
+                                    </ul>
+                                    </p>
+                                </article>
+                            </div>
+                            <hr class="clear-both invisible">
+                        </div>
+                    </section>
+                <% }) %>
+            </details>
             <% }) %>
-    </div>
-
-    <% data.lab.forEach( facility=> { %>
-
-        <section class="modal-box" id="boxlab<%= facility.facility_id %>">
-            <div class="modal-content facilities-modal">
-                <span class="close" id="closelab<%= facility.facility_id %>" onclick="hideModal(this)">
-                    <abbr title="Close">
-                        &times;
-                    </abbr>
-                </span>
-                <figure>
-                    <img src="./imgs/facilities/lab/<%= facility.img_url %>" alt="<%= facility.name %>">
-                </figure>
-                <article>
-                    <h4>
-                        <%= facility.name %>
-                    </h4>
-                    <p>
-                    <ul>
-                        <% facility.specifications.forEach( specification=> { %>
-                            <li>
-                                <strong>
-                                    <%= specification.heading %>
-                                </strong> - <%= specification.detail %>
-                            </li>
-                            <% }) %>
-                    </ul>
-                    </p>
-                </article>
-                <hr class="clear-both invisible">
-            </div>
-        </section>
-        <% }) %>
+    </section>
 
 </section>
-<section class="facilities-container clear-both">
-
-    <h2 class="subpage-heading">Departmental facilities</h2>
-
-    <div class="facility">
-        <% data.departmental.forEach( facility=> { %>
-
-            <div onclick="showModal(this)" id="dep<%= facility.facility_id %>">
-                <figure>
-                    <img src="./imgs/facilities/departmental/<%= facility.img_url %>" alt="<%= facility.name %>">
-                    <figcaption>
-                        <%= facility.name %>
-                    </figcaption>
-                </figure>
-            </div>
-
-            <% }) %>
-    </div>
-
-    <% data.departmental.forEach( facility=> { %>
-
-        <section class="modal-box" id="boxdep<%= facility.facility_id %>">
-            <div class="modal-content facilities-modal">
-                <span class="close" id="closedep<%= facility.facility_id %>" onclick="hideModal(this)">
-                    <abbr title="Close">
-                        &times;
-                    </abbr>
-                </span>
-                <figure>
-                    <img src="./imgs/facilities/departmental/<%= facility.img_url %>" alt="<%= facility.name %>">
-                </figure>
-                <article>
-                    <h4>
-                        <%= facility.name %>
-                    </h4>
-                    <p>
-                    <ul>
-                        <% facility.specifications.forEach( specification=> { %>
-                            <li>
-                                <strong>
-                                    <%= specification.heading %>
-                                </strong> - <%= specification.detail %>
-                            </li>
-                            <% }) %>
-                    </ul>
-                    </p>
-                </article>
-                <hr class="clear-both invisible">
-            </div>
-        </section>
-        <% }) %>
-
-</section>
-
 <section class="facilities-container clear-both">
 
     <h2 class="subpage-heading">Softwares</h2>
@@ -168,7 +99,7 @@
 
     function hideModal(btn) {
         var id = btn.id;
-        var modal = document.getElementById("box" + id.slice(-5));
+        var modal = document.getElementById("box" + id.slice(-4));
         modal.style.display = "none";
     }
 
@@ -179,3 +110,24 @@
     }
 
 </script>
+<style>
+    /* # The Rotating Marker # */
+    details summary::-webkit-details-marker {
+        display: none;
+    }
+
+    summary::before {
+        font-family: "Hiragino Mincho ProN", "Open Sans", sans-serif;
+        content: "▶";
+        position: absolute;
+        left: 0;
+        transform: rotate(0);
+        transform-origin: center;
+        transition: 0.2s transform ease;
+    }
+
+    details[open]>summary:before {
+        transform: rotate(90deg);
+        transition: 0.45s transform ease;
+    }
+</style>

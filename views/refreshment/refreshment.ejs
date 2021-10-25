@@ -1,38 +1,9 @@
 <header>
     <section id="fixed-to-top">
-        <div class="brand-div">
-            <a href="./">
-                <img src="./imgs/general/logo_Lab.png" alt="Lab Icon">
-                <div>
-                    <p>Structure-Property-Processing Group</p>
-                    <span>Materials Science Center, Indian Institute of Technology Kharagpur, India</span>
-                </div>
-            </a>
-        </div>
-        <nav class="clear-both">
-            <a href="./">Home</a>
-            <a href="./members">Members</a>
-
-            <div class="hide-this">
-                <a href="./members.html#Team">Team</a>
-                <a href="./members.html#Alumni">Alumni</a>
-            </div>
-
-            <a class="nav-dropdown" href="./research">Research</a>
-
-            <div>
-                <a href="./research.html#ongoing-work">Ongoing Work</a>
-                <a href="./research.html#featured-work">Featured Work</a>
-                <a href="./research.html#funding">Funding and Collaborators</a>
-            </div>
-
-            <a href="./facilities">Facilities</a>
-            <a href="#" class="active">Refreshment</a>
-            <a href="./contact">Contact</a>
-        </nav>
+        <%- include('../partials/_navbar') %>
     </section>
     <section class="clear-both non-home-body-top-sec" id="page-heading-sec">
-        <h1>Refreshment</h1>
+        <h1 id="page-heading">Refreshment</h1>
     </section>
 </header>
 <section class="refreshment-container">
@@ -49,13 +20,73 @@
         </ol>
     </div>
 </section>
-<section class="refreshment-container">
-    <% data.fun_imgs.forEach( img=> { %>
-        <img src="./imgs/refreshment/fun/<%= img.img_url %>" class="fun-img" alt="Fun Img <%= img.img_id %>">
-        <% }) %>
+<section>
+
+    <div id="carouselExampleIndicators" class="carousel slide carousel-dark" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <% var i=0 %>
+                <% data.fun_imgs.forEach( img=> { %>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="<%= i %>"
+                        class="carousel-indicator-btns" aria-current="true" aria-label="Slide <%= i %>"></button>
+                    <% i++ %>
+                        <% }) %>
+        </div>
+        <div class="carousel-inner">
+            <% data.fun_imgs.forEach( img=> { %>
+                <div class="carousel-item a-random-var">
+                    <img src="./imgs/refreshment/fun/<%= img.img_url %>" class="fun-img"
+                        alt="Fun Img <%= img.img_id %>">
+                </div>
+                <% }) %>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
 </section>
 <section class="refreshment-container">
     <% data.videos.forEach( vid=> { %>
         <video src="./imgs/refreshment/<%= vid.vid_url %>" controls>Video Not Supported</video>
         <% }) %>
 </section>
+<script>
+    const firstSlide = document.getElementsByClassName('a-random-var')[0]
+    firstSlide.className += " active"
+
+    const firstBtn = document.getElementsByClassName('carousel-indicator-btns')[0]
+    firstBtn.className += " active"
+</script>
+<style>
+    .carousel-inner {
+        width: 100%;
+    }
+
+    .fun-img {
+        display: block;
+        width: 50% !important;
+        max-height: 500px;
+        padding: 50px;
+        margin: auto;
+    }
+
+    .carousel-item .active {
+        background-color: white !important;
+    }
+
+    .carousel-caption h5 {
+        width: 70%;
+        padding: 10px;
+        margin: auto;
+        color: black;
+        font-size: 2em;
+        background-color: lightblue;
+        outline: solid black 2px;
+    }
+</style>

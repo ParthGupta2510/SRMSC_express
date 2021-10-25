@@ -1,41 +1,7 @@
 <header>
     <section id="fixed-to-top">
-        <div id="top-msg">
-            <span>
-                <%= data.top_msg.top_msg %>
-            </span>
-            <button onclick="closeTopMsg()" onmouseover="showRedBkgrnd(this)"></button>
-        </div>
-        <div class="brand-div">
-            <a href="#">
-                <img src="./imgs/general/logo_Lab.png" alt="Lab Icon">
-                <div>
-                    <p>Structure-Property-Processing Group</p>
-                    <span>Materials Science Center, Indian Institute of Technology Kharagpur, India</span>
-                </div>
-            </a>
-        </div>
-        <nav class="clear-both">
-            <a href="#" class="active">Home</a>
-            <a href="./members">Members</a>
-
-            <div class="hide-this">
-                <a href="./members.html#Team">Team</a>
-                <a href="./members.html#Alumni">Alumni</a>
-            </div>
-
-            <a class="nav-dropdown" href="./research">Research</a>
-
-            <div>
-                <a href="./research.html#ongoing-work">Ongoing Work</a>
-                <a href="./research.html#featured-work">Featured Work</a>
-                <a href="./research.html#funding">Funding and Collaborators</a>
-            </div>
-
-            <a href="./facilities">Facilities</a>
-            <a href="./refreshment">Refreshment</a>
-            <a href="./contact">Contact</a>
-        </nav>
+        <%- include('./partials/_top_msg') %> 
+        <%- include('./partials/_navbar') %> 
     </section>
 </header>
 <section class="split-left-sec">
@@ -77,11 +43,13 @@
 
         <div id="modal-box" class="modal-box">
             <div class="modal-content">
-                <span class="close">
-                    <abbr title="Close">
-                        &times;
-                    </abbr>
-                </span>
+                <p>
+                    <span class="close">
+                        <abbr title="Close">
+                            &times;
+                        </abbr>
+                    </span>
+                </p>
                 <img src="./imgs/general/poster_final.jpg" alt="Poster modal-box">
             </div>
         </div>
