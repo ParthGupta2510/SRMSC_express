@@ -20,6 +20,9 @@ const refreshmentSchema = new mongoose.Schema({
         },
         vid_url: {
             type: String
+        },
+        caption: {
+            type: String
         }
     }]
 },

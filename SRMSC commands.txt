@@ -478,7 +478,7 @@ db.research.insertOne({
 			{
 				'ongoing_id' : '0',
 				'title' : 'Microstructure formation, macro-zone removal of Ti-alloys',
-				'members_involved' : 'Souvik Sahoo',
+				'members_involved' : 'Souvik Sahoo & Saumya Gupta',
 				'para_content' : 'The objective of the study is to observe microstructure and texture evolution in as-cast and thermo-mechanically processed (rolled, forged, and extruded) two-phase Ti-6Al-4V alloys. For that, reconstruction of β-phase from room temperature α-phase was carried out to observe prior β grain morphology and texture. Furthermore, grain boundary α and elemental distribution effect were considered for microstructure and texture formation. In addition, crystallography of the α/β- or α/α-phase interface was noticed for the as-cast and thermo-mechanically processed alloys.',
 				'img_url' : [
 					{
@@ -506,7 +506,7 @@ db.research.insertOne({
 			{
 				'ongoing_id' : '2',
 				'title' : 'Machinable glass ceramics',
-				'members_involved' : 'Kamalika Manadal & Faizal Usaama J.',
+				'members_involved' : 'Kamalika Mandal & Faizal Usaama J.',
 				'para_content' : 'Glass-ceramics is a unique type of material that contains randomly oriented crystals in the glass matrix. Mica glass-ceramics shows good machinability and can be made in complex shapes like metals. These materials are used in Aerospace/space applications. In our study, Microstructure development and mechanical properties of Mica machinable glass-ceramics are observed by varying processing parameters like temperature, heating rate, composition, etc. using different characterization techniques like XRD, SEM, TEM, EBSD, and fracture test.',
 				'img_url' : [
 					{
@@ -531,7 +531,7 @@ db.research.insertOne({
 			{
 				'ongoing_id' : '4',
 				'title' : 'Additive manufacturing of metallic systems',
-				'members_involved' : 'Saumya Gupta & Ashoktaru Chakraborty',
+				'members_involved' : 'Saumya Gupta & Ashoktaru Chakraborty & Lalit Ahlawat',
 				'para_content' : 'Laser metal deposited stainless steel (17-4 Ar PH and 316L) and WSU 100 (a Ni-based superalloy) systems are extensively studied. To date, the effect of extensive thermal cycles in the as-deposited specimens has been studied via various methods. It includes microstructure-based characterizations (OM, SEM, quantification with EBSD and XRD, etc.) and mechanical testing (micro-hardness, etc.). In addition, the porosities were identified and analyzed with the help of X-ray micro-CT. Currently, heat treatment and high temperature-based studies are going on in these systems and will be further compared from the as-deposited ones.',
 				'img_url' : [
 					{
@@ -545,7 +545,7 @@ db.research.insertOne({
 			{
 				'ongoing_id' : '5',
 				'title' : 'Carbon fiber reinforced Ultra high-temperature ceramic composites',
-				'members_involved' : 'Samar Mondal & Arjun Mahato',
+				'members_involved' : 'Samar Mondal & Arjun Mahato & Malarvizhi Thangarasu',
 				'para_content' : 'Ultra-high temperature applicability has made carbon fiber reinforced silicon carbide (C-SiC) composites, a potential solution in the field of aerospace. C-SiC composite is a thermo-structural material that has excellent thermal shock resistance, erosion, and oxidation resistance properties. Because of its high fracture toughness and damage tolerability, it is considered an appropriate candidate for structural applications.3D nonwoven needle-punched Carbon fiber reinforced Silicon Carbide (C-SiC) composites were synthesized by the liquid silicon infiltration (LSI) method. The microstructure, mechanical, chemical, ablation (by plasma arc jet testing), and thermal properties are being investigated in our study.',
 				'img_url' : [
 					{
@@ -699,7 +699,7 @@ db.facilities.insertOne({
 		'facilities': [
 			{
 				'facility_id' : '00',
-				'name' : 'Grinder',
+				'name' : 'Twin Wet Belt Grinder',
 				'img_url' : '1_grinder.jpeg',
 				'specifications' : [
 					{
@@ -871,6 +871,10 @@ db.facilities.insertOne({
 						'detail' : 'METSCOPE-1'
 					},
 					{
+						'heading': 'Type',
+						'detail': 'Inverted'
+					},
+					{
 						'heading' : 'Mode of Operation',
 						'detail' : 'Bright Field'
 					},
@@ -1021,7 +1025,7 @@ db.facilities.insertOne({
 					},
 					{
 						'heading' : 'Dwell time',
-						'detail' : '0.30 &plusmn; 2 sec'
+						'detail' : '0.30 ± 2 sec'
 					},
 					{
 						'heading' : 'Indenter',
@@ -1034,10 +1038,6 @@ db.facilities.insertOne({
 				'name' : 'Universal Testing Machine (UTM)',
 				'img_url' : '0_UTM_with_DIC.jfif',
 				'specifications' : [
-					{
-						'heading' : 'Attachment',
-						'detail': 'DIC'
-					},
 					{
 						'heading' : 'Company name',
 						'detail' : 'Zwick/Roell'
@@ -1053,6 +1053,10 @@ db.facilities.insertOne({
 					{
 						'heading' : 'Grips and platen',
 						'detail' : '3-point bend testing grip; tensile grip; compression platen'
+					},
+					{
+						'heading' : 'Attachment',
+						'detail': 'DIC'
 					}
 				]
 			},
@@ -1087,7 +1091,7 @@ db.facilities.insertOne({
 		'facilities' : [
 			{
 				'facility_id' : '00',
-				'name' : 'Field Emission Secondary Electron Microscope (FE-SEM)',
+				'name' : 'Field Emission Scanning Electron Microscope (FE-SEM)',
 				'img_url' : '3_sem.jpg',
 				'specifications' : [
 					{
@@ -1139,7 +1143,7 @@ db.facilities.insertOne({
 					},
 					{
 						'heading' : 'Detectors',
-						'detail' : 'SE; BSE; EDS; WDS; EBSD;'
+						'detail' : 'SE; BSE; EDS; WDS; EBSD'
 					}
 				]
 			},
@@ -1158,7 +1162,7 @@ db.facilities.insertOne({
 					},
 					{
 						'heading' : 'Facility:',
-						'detail' : 'phase identification, stress, texture, high temperature, GIXRD, Thin film'
+						'detail' : 'Phase identification, stress, texture, high temperature, GIXRD, Thin film'
 					}
 				]
 			}
@@ -1387,11 +1391,11 @@ db.facilities.insertOne({
 					},
 					{
 						'heading' : 'Dry grinding',
-						'detail' : 'up to d50< 20 micron'
+						'detail' : 'up to d<sub>50</sub>< 20 micron'
 					},
 					{
 						'heading' : 'Wet grinding',
-						'detail' : 'up to d50 < 1 micron'
+						'detail' : 'up to d<sub>50</sub> < 1 micron'
 					}
 				]
 			},			
@@ -1402,7 +1406,7 @@ db.facilities.insertOne({
 				'specifications' : [
 					{
 						'heading': 'Type',
-						'detail': 'Mechanical Press'
+						'detail': 'Manual Press'
 					}
 				]
 			},
@@ -1599,11 +1603,23 @@ db.refreshment.insertOne({
 		},
 		{
 			'img_id' : '5',
-			'img_url' : '5.jpg'
+			'img_url' : '5.jpeg'
 		},
 		{
 			'img_id' : '6',
-			'img_url' : '6.jpg'
+			'img_url' : '6.jpeg'
+		}
+	],
+	'videos': [
+		{
+			'vid_id': '0',
+			'vid_url': 'glass_furnace_in_action.mp4',
+			'caption': 'GLASS MELTING'
+		},
+		{
+			'vid_id' : '1',
+			'vid_url': 'thermal_conductivity_testing.mp4',
+			'caption': 'Thermal conductivity testing at 2000 degC Of C-SiC composite'
 		}
 	]
 })

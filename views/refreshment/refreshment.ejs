@@ -53,7 +53,10 @@
 </section>
 <section class="refreshment-container">
     <% data.videos.forEach( vid=> { %>
-        <video src="./imgs/refreshment/<%= vid.vid_url %>" controls>Video Not Supported</video>
+        <div class="vid-container">
+            <video src="./imgs/refreshment/<%= vid.vid_url %>" controls>Video Not Supported</video>
+            <span class="vid-caption"><%= vid.caption %></span>
+        </div>
         <% }) %>
 </section>
 <script>

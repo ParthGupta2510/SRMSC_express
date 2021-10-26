@@ -1674,6 +1674,45 @@ details[open] > *:not(summary) { color: inherit; }
   margin: 1.99%;
 }
 
+.vid-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 50% !important;
+  text-align: center;
+  justify-content: center;
+  align-content: center;
+  margin: 1%;
+  padding: 0;
+  outline: solid black 2px;
+  background-color: lightblue;
+  transition: all 0.5s ease-in-out;
+}
+
+.vid-container:hover {
+  background-color: lightskyblue;
+}
+
+.vid-container video {
+  width: 70% !important;
+  min-height: 300px;
+  padding: 0 !important;
+}
+
+.vid-container span {
+  width: 100%;
+  text-align: center;
+  padding: 5px 0;
+  background-color: teal;
+  font-size: 1.3em;
+  outline: 2px solid black;
+  color: white;
+  transition: underline 0.5s ease-in-out;
+}
+
+.vid-container span:hover {
+  text-decoration: underline;
+}
+
 .fun-img {
   /* margin: 4.99%; */
   outline: solid black 2px;
