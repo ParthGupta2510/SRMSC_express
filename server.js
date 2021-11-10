@@ -3,6 +3,7 @@ const express = require('express')
 const app = express()
 const expressLayouts = require('express-ejs-layouts')
 const methodOverride = require('method-override')
+const path = require('path')
 
 // Requiring All Routes
 const indexRouter = require('./routes/index')
@@ -23,6 +24,20 @@ app.use(express.urlencoded({
     limit: '10mb',
     extended: false
 }))
+
+// for development purpose ONLY
+if (process.env.NODE_ENV !== 'production') {
+    const livereload = require('livereload')
+    const liveReloadServer = livereload.createServer()
+    liveReloadServer.watch(path.join(__dirname, 'public'))
+    const connectLivereload = require('connect-livereload')
+    app.use(connectLivereload())
+    liveReloadServer.server.once('connection', () => {
+        setTimeout( () => {
+            liveReloadServer.refresh('/')
+        }, 100)
+    })
+}
 
 // Database Connection
 const mongoose = require('mongoose')
