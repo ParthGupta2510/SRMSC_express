@@ -3,7 +3,7 @@ const router = express.Router()
 const bcrypt = require('bcrypt')
 const passport = require('passport')
 const flash = require('express-flash')
-const session = require('express-session')
+const session = require('cookie-session')
 const methodOverride = require('method-override')
 
 const AdminCredentials = require('../models/adminCredentials')
